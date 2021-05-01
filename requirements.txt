@@ -1,0 +1,2 @@
+parsimonious  # language parsing (PEG)
+scikit-learn  # symbol model training and recognition 

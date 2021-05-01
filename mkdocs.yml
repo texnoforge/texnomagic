@@ -1,0 +1,8 @@
+site_name: TexnoMagic
+theme: readthedocs
+nav:
+  - README.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: True
