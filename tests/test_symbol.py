@@ -27,10 +27,10 @@ def abc(tmp_path_factory):
     use a shared temporary copy of built-in testing alphabet in all tests
     """
     tmp_path = tmp_path_factory.mktemp('tenxomagic_tests')
-    abc_path = tmp_path / ABC.base_path.name
-    shutil.copytree(ABC.base_path, abc_path)
+    abc_path = tmp_path / ABC.path.name
+    shutil.copytree(ABC.path, abc_path)
 
-    abc = TexnoMagicAlphabet(base_path=abc_path)
+    abc = TexnoMagicAlphabet(path=abc_path)
     abc.load()
     return abc
 

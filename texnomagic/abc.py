@@ -10,29 +10,29 @@ from texnomagic.symbol import TexnoMagicSymbol
 
 
 class TexnoMagicAlphabet:
-    def __init__(self, name=None, base_path=None):
+    def __init__(self, path=None, name=None):
+        self.path = path
         self.name = name
-        self.base_path = base_path
         self._symbols = None
 
     @property
     def info_path(self):
-        return self.base_path / 'texno_alphabet.json'
+        return self.path / 'texno_alphabet.json'
 
     @property
     def symbols_path(self):
-        return self.base_path / 'symbols'
+        return self.path / 'symbols'
 
-    def load(self, base_path=None):
-        if base_path:
-            self.base_path = base_path
+    def load(self, path=None):
+        if path:
+            self.path = path
 
-        assert self.base_path
+        assert self.path
         info = json.load(self.info_path.open())
 
         name = info.get('name')
         if not name:
-            name = self.base_path.name
+            name = self.path.name
         self.name = name
 
         return self
@@ -58,7 +58,7 @@ class TexnoMagicAlphabet:
         self._symbols = known + self._symbols
 
     def save(self):
-        os.makedirs(self.base_path, exist_ok=True)
+        os.makedirs(self.path, exist_ok=True)
         info = {
             'name': self.name,
         }
@@ -70,7 +70,7 @@ class TexnoMagicAlphabet:
         if self._symbols is None:
             self.load_symbols()
 
-        symbol.base_path = self.symbols_path / common.name2fn(symbol.name)
+        symbol.path = self.symbols_path / common.name2fn(symbol.name)
         symbol.save()
         return self._symbols.insert(0, symbol)
 
@@ -81,12 +81,12 @@ class TexnoMagicAlphabet:
         if not out_path:
             out_path = common.EXPORT_PATH
 
-        ar_fn = self.base_path.name
+        ar_fn = self.path.name
         out_fn = out_path / ar_fn
         return shutil.make_archive(
             out_fn, 'zip',
-            root_dir=self.base_path.parent,
-            base_dir=self.base_path.name,
+            root_dir=self.path.parent,
+            base_dir=self.path.name,
         )
 
     def calibrate(self):

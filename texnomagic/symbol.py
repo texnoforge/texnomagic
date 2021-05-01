@@ -10,24 +10,24 @@ from texnomagic.model import TexnoMagicSymbolModel
 
 
 class TexnoMagicSymbol:
-    def __init__(self, name=None, meaning=None, base_path=None):
+    def __init__(self, path=None, name=None, meaning=None):
+        self.path = path
         self.name = name
         self.meaning = meaning
-        self.base_path = base_path
         self._drawings = None
         self._model = None
 
     @property
     def info_path(self):
-        return self.base_path / 'texno_symbol.json'
+        return self.path / 'texno_symbol.json'
 
     @property
     def drawings_path(self):
-        return self.base_path / 'drawings'
+        return self.path / 'drawings'
 
     @property
     def model_path(self):
-        return self.base_path / 'model'
+        return self.path / 'model'
 
     @property
     def model(self):
@@ -35,16 +35,16 @@ class TexnoMagicSymbol:
             self.load_model()
         return self._model
 
-    def load(self, base_path=None):
-        if base_path:
-            self.base_path = base_path
+    def load(self, path=None):
+        if path:
+            self.path = path
 
-        assert self.base_path
+        assert self.path
         info = json.load(self.info_path.open())
 
         name = info.get('name')
         if not name:
-            name = self.base_path.name
+            name = self.path.name
         self.name = name
         self.meaning = info.get('meaning')
 
@@ -63,7 +63,7 @@ class TexnoMagicSymbol:
         self._model = model
 
     def save(self):
-        os.makedirs(self.base_path, exist_ok=True)
+        os.makedirs(self.path, exist_ok=True)
         info = {
             'name': self.name,
             'meaning': self.meaning,
@@ -99,4 +99,4 @@ class TexnoMagicSymbol:
         return self.model.train_symbol(self)
 
     def __repr__(self):
-        return '<TexnoMagicSymbol %s (%s) @ %s>' % (self.name, self.meaning, self.base_path)
+        return '<TexnoMagicSymbol %s (%s) @ %s>' % (self.name, self.meaning, self.path)
