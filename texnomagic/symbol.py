@@ -58,12 +58,17 @@ class TexnoMagicSymbol:
             self._drawings.append(drawing)
 
     def load_model(self):
-        model = TexnoMagicSymbolModel()
-        model.load(self.model_path)
+        model = TexnoMagicSymbolModel(self.model_path)
+        model.load()
         self._model = model
 
+    def train_model(self):
+        if not self._model:
+            model = TexnoMagicSymbolModel(path=self.model_path)
+        return self.model.train_symbol(self)
+
     def save(self):
-        os.makedirs(self.path, exist_ok=True)
+        self.path.mkdir(parents=True, exist_ok=True)
         info = {
             'name': self.name,
             'meaning': self.meaning,
@@ -90,13 +95,10 @@ class TexnoMagicSymbol:
     def get_all_drawing_points(self):
         return np.concatenate([d.points for d in self.drawings])
 
-    def get_random_drawing(self):
+    def random_drawing(self):
         if self.drawings:
             return random.choice(self.drawings)
         return None
-
-    def train_model_from_drawings(self):
-        return self.model.train_symbol(self)
 
     def __repr__(self):
         return '<TexnoMagicSymbol %s (%s) @ %s>' % (self.name, self.meaning, self.path)

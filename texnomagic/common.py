@@ -1,7 +1,8 @@
-import re
+import json
+import numpy as np
 import os
 from pathlib import Path
-import subprocess
+import re
 
 
 def name2fn(name):
@@ -26,6 +27,10 @@ MODS_DATA_PATH = DATA_PATH / 'mods'
 EXPORT_PATH = DATA_PATH / 'export'
 
 ALPHABETS_DIR = 'alphabets'
+ALPHABETS_PATHS = {
+    'user': USER_DATA_PATH / ALPHABETS_DIR,
+    'mods': MODS_DATA_PATH / ALPHABETS_DIR,
+}
 
 CORE_SYMBOLS_ORDER = [
     # elements
@@ -61,3 +66,10 @@ CORE_SYMBOLS_ORDER = [
     'slow',
     'homing',
 ]
+
+
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)

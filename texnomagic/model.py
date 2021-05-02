@@ -1,5 +1,6 @@
+from collections import Counter
 import numpy as np
-import pickle
+import json
 
 from sklearn import mixture
 
@@ -7,61 +8,112 @@ from sklearn import mixture
 # hidden import for PyInstaller
 import sklearn.utils._weight_vector
 
+from texnomagic.common import NumpyEncoder
 
 class TexnoMagicSymbolModel:
 
-    def __init__(self, path=None, n_gauss=10):
+    def __init__(self, path=None):
         self.path = path
-        self.n_gauss = n_gauss
+        self.ready = False
         self.gmm = None
+        self.n_gauss = 10
+        self.score_avg = 0
+        self.labels_avg = []
 
     @property
-    def data_path(self):
+    def info_path(self):
         if self.path:
-            return self.path / 'model.gmm'
+            return self.path / 'texno_model.json'
         return None
 
     def train_symbol(self, symbol):
-        self.train(symbol.get_all_drawing_points())
+        """
+        train symbol model from its drawings
+        """
+        points = symbol.get_all_drawing_points()
+        n_points = len(points)
+        if n_points < 2 * self.n_gauss:
+            # insufficient data
+            return False
 
+        self.train_GMM(points)
+
+        score_sum = 0.0
+        label_sums = np.zeros(self.gmm.n_components)
         for d in symbol.drawings:
-            s = self.gmm.score(d.points)
+            score_sum += self.gmm.score(d.points)
             labels = self.gmm.predict(d.points)
+            labels_norm = normalize_labels(labels, self.gmm.n_components)
+            label_sums += labels_norm
 
-        # TODO: average these and save as model params
+        self.labels_avg = label_sums / label_sums.sum()
+        self.score_avg = score_sum / len(symbol.drawings)
+        self.ready = True
+        return True
 
-    def train(self, data, n_gauss=None):
+    def train_GMM(self, data):
         """
-        traing symbol model from data points
+        traing GMM model from data points
         """
-        if n_gauss:
-            self.n_gauss = n_gauss
         # thanks scikit-learn <3
         self.gmm = mixture.GaussianMixture(n_components=self.n_gauss)
         if data is None:
             return
         self.gmm.fit(data)
 
+    def score(self, drawing):
+        if not self.ready:
+            return -1
+        log_score = self.gmm.score(drawing.points)
+        labels = self.gmm.predict(drawing.points)
+
+        score = self.score_avg / log_score
+        label_counts = normalize_labels(labels, self.n_gauss)
+        label_diff = sum(abs(label_counts - self.labels_avg))
+        label_k = max(1 - label_diff, 0.3)
+
+        return score * label_k
+
+    def save(self):
+        self.path.mkdir(parents=True, exist_ok=True)
+        info = {
+            'model_type': 'gmm',
+            'n_gauss': self.n_gauss,
+            'score_avg': self.score_avg,
+            'labels_avg': self.labels_avg,
+            'params': self.gmm._get_parameters()
+        }
+        return json.dump(info, self.info_path.open('w'), cls=NumpyEncoder)
+
     def load(self, path=None):
         if path:
             self.path = path
 
-        gmm_path = self.data_path
-        if gmm_path.exists():
-            try:
-                self.gmm = pickle.load(gmm_path.open('rb'))
-                self.n_gauss = self.gmm.n_components
-            except Exception:
-                print("MODEL: load FAIL: %s " % gmm_path)
+        # reinit model before load
+        self.__init__(path=self.path)
 
-    def save(self):
-        self.path.mkdir(parents=True, exist_ok=True)
-        pickle.dump(self.gmm, self.data_path.open('wb'))
+        if not self.path.exists():
+            return False
 
-    def score(self, drawing):
-        if not self.gmm:
-            return -999999999
-        return self.gmm.score(drawing.points)
+        info = json.load(self.info_path.open())
+        self.n_gauss = info['n_gauss']
+        self.score_avg = info['score_avg']
+        self.labels_avg = np.array(info['labels_avg'])
+        self.gmm = mixture.GaussianMixture(n_components=self.n_gauss)
+        params = [np.array(p) for p in info['params']]
+        self.gmm._set_parameters(params)
+        self.ready = True
+        return True
 
     def __repr__(self):
         return '<TexnoMagicSymbolModel @ %s>' % self.path
+
+
+def normalize_labels(labels, n):
+    counts = dict(Counter(labels))
+    for i in range(n):
+        if i not in counts:
+            counts[i] = 0
+    counts = np.array([c for _, c in sorted(counts.items(), key=lambda x: x[0])])
+    counts = counts / counts.sum()
+    return counts

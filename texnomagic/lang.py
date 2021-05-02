@@ -52,6 +52,20 @@ ws = " "+
 """
 
 
+class TexnoMagicLanguage:
+    def __init__(self):
+        self.grammar = Grammar(TEXNO_MAGIC_GRAMMAR)
+
+    def parse(self, text):
+        """
+        use this to parse TexnoMagic spell into its data representation
+        """
+        tree = self.grammar.parse(text)
+        v = TexnoVisitor()
+        output = v.visit(tree)
+        return output
+
+
 class TexnoVisitor(NodeVisitor):
     def visit_element(self, node, vc):
         return node.text
@@ -171,17 +185,6 @@ class TexnoVisitor(NodeVisitor):
 
     def generic_visit(self, node, vc):
         return vc or node
-
-
-class TexnoMagicLanguage:
-    def __init__(self):
-        self.grammar = Grammar(TEXNO_MAGIC_GRAMMAR)
-
-    def parse(self, text):
-        tree = self.grammar.parse(text)
-        v = TexnoVisitor()
-        output = v.visit(tree)
-        return output
 
 
 def boltlike_spell(name, node, vc):
