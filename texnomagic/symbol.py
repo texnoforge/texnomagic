@@ -93,12 +93,20 @@ class TexnoMagicSymbol:
         return self._drawings
 
     def get_all_drawing_points(self):
-        return np.concatenate([d.points for d in self.drawings])
+        pp = [d.points for d in self.drawings]
+        if pp:
+            return np.concatenate(pp)
+        return np.array([])
 
     def random_drawing(self):
         if self.drawings:
             return random.choice(self.drawings)
         return None
 
+    def stats(self, full=False):
+        if full:
+            return '%s (%s): %s drawings @ %s' % (self.name, self.meaning, len(self.drawings), self.path)
+        return '%s (%s)' % (self.name, self.meaning)
+
     def __repr__(self):
-        return '<TexnoMagicSymbol %s (%s) @ %s>' % (self.name, self.meaning, self.path)
+        return '<TexnoMagicSymbol %s>' % self.stats()

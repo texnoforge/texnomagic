@@ -92,7 +92,7 @@ class TexnoMagicSymbolModel:
         # reinit model before load
         self.__init__(path=self.path)
 
-        if not self.path.exists():
+        if not self.info_path.exists():
             return False
 
         info = json.load(self.info_path.open())

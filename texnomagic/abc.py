@@ -102,10 +102,18 @@ class TexnoMagicAlphabet:
 
         train only missing models by default, use all to (re-)train all
         """
+        new, fail, old = [], [], []
         for symbol in self.symbols:
             if all or not symbol.model.ready:
-                symbol.model.train_symbol(symbol)
-                symbol.model.save()
+                if symbol.model.train_symbol(symbol):
+                    symbol.model.save()
+                    new.append(symbol)
+                else:
+                    fail.append(symbol)
+            else:
+                old.append(symbol)
+        return new, fail, old
+
 
     def calibrate(self):
         self.train_models(all=True)
@@ -131,30 +139,42 @@ class TexnoMagicAlphabet:
         check alphabet for problems
         """
         warns = dict()
-        for symbol in self.symbols:
-            for s in self.symbols:
-                for drawing in symbol.drawings:
-                    scores = self.scores(drawing)
-                    rsymbol, rscore = scores[0]
-                    if rsymbol.meaning != symbol.meaning:
-                        "%s recognized instead of %s with score: %s" % (rsymbol.meaning, symbol.meaning, rscore)
 
-                    for rsy, rsc in scores[1:]:
-                        # check scores for other symbols too
-                        if rsc > 0.6:
-                            warn = (symbol, rsy)
-                            if warn in warns:
-                                sc, n = warns[warn]
-                                warns[warn] = ((sc * n + rsc) / (n + 1), n + 1)
-                            else:
-                                warns[warn] = (rsc, 1)
+        def log_warn(key, val=1.0):
+            if key in warns:
+                n, v = warns[key]
+                warns[key] = (n + 1, (v * n + val) / (n + 1))
+            else:
+                warns[key] = (1, val)
+
+        for symbol in self.symbols:
+            if not symbol.model.ready:
+                log_warn(('warn', 'missing_model', symbol), -1)
+            for drawing in symbol.drawings:
+                scores = self.scores(drawing)
+                rsymbol, rscore = scores[0]
+                if rsymbol.meaning != symbol.meaning:
+                    log_warn(('error', 'wrong_symbol', symbol, rsymbol), rscore)
+                    prob = 'wrong_symbol'
+
+                for rsy, rsc in scores[1:]:
+                    # check scores for other symbols too
+                    if rsc > 0.6:
+                        lvl = 'warn'
+                        if rsc > 0.8:
+                            lvl = 'error'
+                        log_warn((lvl,'high_score', symbol, rsy), rsc)
 
         results = {}
-        for (wrong, correct), (score, n) in warns.items():
-            level = 'warn'
-            if score > 0.8:
-                level = 'error'
-            msg = "%s drawing got high score in %s: %s  (%s)" % (wrong.meaning, correct.meaning, score, n)
+        for (level, prob, *args), (n, score) in warns.items():
+            if prob == 'high_score':
+                msg = "%s drawing got high score in %s: %s" % (args[0].meaning, args[1].meaning, score)
+            elif prob == 'missing_model':
+                msg = "%s symbol is missing model" % args[0].meaning
+            else:
+                msg = "%s drawing recognized as %s: %s" % (args[0].meaning, args[1].meaning, score)
+            if n > 1:
+                msg += "  (x%s)" % n
             if level not in results:
                 results[level] = []
             results[level].append(msg)
@@ -170,5 +190,10 @@ class TexnoMagicAlphabet:
             return None
         return random.choice(symbols)
 
+    def stats(self, full=False):
+        if full:
+            return "%s: %s symbols @ %s" % (self.name, len(self.symbols), self.path)
+        return "%s: %s symbols" % (self.name, len(self.symbols))
+
     def __repr__(self):
-        return "<TexnoMagicAlphabet: %s: %s symbols>" % (self.name, len(self.symbols))
+        return "<TexnoMagicAlphabet: %s>" % self.stats()
