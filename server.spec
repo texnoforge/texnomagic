@@ -5,7 +5,6 @@ block_cipher = None
 
 
 a = Analysis(['texnomagic\\server.py'],
-             pathex=['C:\\Users\\yac\\source\\py\\texnomagic'],
              binaries=[],
              datas=[],
              hiddenimports=[],

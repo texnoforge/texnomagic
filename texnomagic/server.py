@@ -7,6 +7,7 @@ import socketserver
 import sys
 
 from texnomagic import __version__
+from texnomagic import common
 from texnomagic.abcs import TexnoMagicAlphabets
 from texnomagic.lang import TexnoMagicLanguage
 from texnomagic.drawing import TexnoMagicDrawing
@@ -37,22 +38,36 @@ def serve(host='localhost', port=DEFAULT_PORT, abcs=None):
 
 class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
     def handle(self):
-        # self.request is the TCP socket connected to the client
-        data_raw = self.request.recv(1024).strip()
-        try:
-            self.data = json.loads(data_raw)
-        except Exception:
-            return self.send_error("invalid data format - expecting JSON")
-        if not self.data or 'query' not in self.data:
-            return self.send_error('invalid request format')
-        query = self.data.get('query')
+        while True:
+            # self.request is the TCP socket connected to the client
+            size_raw = self.request.recv(4)
+            size = common.bytes2int(size_raw)
+            logging.info("new packet: %s bytes", size)
+            i = 0
+            data_raw = bytes()
+            while i < size:
+                rest = size - i
+                n = min(rest, common.BUFFER_SIZE)
+                data_raw += self.request.recv(n)
+                i += n
+                logging.info("RECV %s of %s", i, size)
+            logging.info("REQUEST %s", data_raw[:80])
+            try:
+                self.data = json.loads(data_raw)
+            except Exception:
+                return self.send_error("invalid data format - expecting JSON")
+            try:
+                query = self.data['query']
+            except Exception:
+                return self.send_error('invalid request format - no query')
+            query = self.data.get('query')
 
-        fun_name = 'query_%s' % query
-        fun = getattr(self, fun_name, None)
-        if fun is None:
-            return self.send_error("unknown query: %s" % query)
-        reply = fun()
-        return self.send_data(reply)
+            fun_name = 'query_%s' % query
+            fun = getattr(self, fun_name, None)
+            if fun is None:
+                return self.send_error("unknown query: %s" % query)
+            reply = fun()
+            self.send_data(reply)
 
     def query_spell(self):
         text = self.data.get('text')
@@ -102,10 +117,16 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
             'status': 'error',
             'error_message': msg,
         }
+        logging.warning("invalid request: %s" % msg)
         return self.send_data(reply)
 
     def send_data(self, data):
-        return self.request.sendall(bytes(json.dumps(data).encode('utf-8')))
+        raw_data = bytes(json.dumps(data).encode('utf-8'))
+        head = common.int2bytes(len(raw_data))
+        payload = head + raw_data
+        logging.info("HEAD len: %s", len(head))
+        logging.info("PAYLOAD size: %s", len(payload))
+        return self.request.sendall(payload)
 
 
 if __name__ == "__main__":

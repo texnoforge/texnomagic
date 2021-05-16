@@ -32,7 +32,7 @@ def test_invalid_query(client):
     assert reply == {
         "query": "error",
         "status": "error",
-        "error_message": "invalid request format",
+        "error_message": "invalid request format - no query",
     }
 
 

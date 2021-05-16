@@ -32,6 +32,8 @@ ALPHABETS_PATHS = {
     'mods': MODS_DATA_PATH / ALPHABETS_DIR,
 }
 
+BUFFER_SIZE = 1024
+
 CORE_SYMBOLS_ORDER = [
     # elements
     'fire',
@@ -73,3 +75,11 @@ class NumpyEncoder(json.JSONEncoder):
         if isinstance(obj, np.ndarray):
             return obj.tolist()
         return json.JSONEncoder.default(self, obj)
+
+
+def int2bytes(x):
+    return x.to_bytes(4, byteorder="little")
+
+
+def bytes2int(b):
+    return int.from_bytes(b, byteorder="little")
