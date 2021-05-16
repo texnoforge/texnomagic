@@ -14,11 +14,11 @@ def get_data_path():
     appdata = os.environ.get('APPDATA')
     if appdata:
         # windows system
-        p = Path(appdata) / 'Words of Power'
+        p = Path(appdata)
     else:
         # normal system :)
-        p = Path.home() / '.words_of_power'
-    return p
+        p = Path.home() / '.local/share'
+    return p / 'WordsOfPower'
 
 
 DATA_PATH = get_data_path()
