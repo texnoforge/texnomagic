@@ -15,9 +15,11 @@ from texnomagic.drawing import TexnoMagicDrawing
 LOG_FORMAT = '[TexnoMagic] %(message)s'
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format=LOG_FORMAT)
 
+DEFAULT_PORT = 6969
 
-def serve(host='127.0.0.1', port=6969, abcs=None):
-    logging.info("server %s starting..." % __version__)
+
+def serve(host='localhost', port=DEFAULT_PORT, abcs=None):
+    logging.info("server %s starting on %s:%s ..." % (__version__, host, port))
     if not abcs:
         abcs = TexnoMagicAlphabets()
         abcs.load()
@@ -107,4 +109,8 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
 
 
 if __name__ == "__main__":
-    serve()
+    args = sys.argv[1:]
+    port = DEFAULT_PORT
+    if args:
+        port = int(args[0])
+    serve(port=port)
