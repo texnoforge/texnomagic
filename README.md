@@ -1,3 +1,6 @@
+<a href="https://github.com/texnoforge/texnomagic/releases" alt="latest release"><img src="https://img.shields.io/github/v/release/texnoforge/texnomagic"/></a>
+<a href="https://pypi.org/project/texnomagic/" alt="pypi version"><img src="https://img.shields.io/pypi/v/texnomagic?color=blue"/></a>
+
 # [TexnoMagic docs online][docs]
 
 ## [TexnoMagic docs on GitLab](https://github.com/texnoforge/texnomagic/tree/master/docs)
