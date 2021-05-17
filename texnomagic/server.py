@@ -7,6 +7,7 @@ import socketserver
 import sys
 
 from texnomagic import __version__
+from texnomagic import common
 from texnomagic.abcs import TexnoMagicAlphabets
 from texnomagic.lang import TexnoMagicLanguage
 from texnomagic.drawing import TexnoMagicDrawing
@@ -38,13 +39,24 @@ def serve(host='localhost', port=DEFAULT_PORT, abcs=None):
 class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
     def handle(self):
         # self.request is the TCP socket connected to the client
-        data_raw = self.request.recv(1024).strip()
+        size_raw = self.request.recv(4)
+        size = common.bytes2int(size_raw)
+        i = 0
+        data_raw = bytes()
+        while i < size:
+            rest = size - i
+            n = min(rest, common.BUFFER_SIZE)
+            data_raw += self.request.recv(n)
+            i += n
+        logging.info("REQUEST (%s): %s", size, data_raw[:80])
         try:
             self.data = json.loads(data_raw)
         except Exception:
             return self.send_error("invalid data format - expecting JSON")
-        if not self.data or 'query' not in self.data:
-            return self.send_error('invalid request format')
+        try:
+            query = self.data['query']
+        except Exception:
+            return self.send_error('invalid request format - no query')
         query = self.data.get('query')
 
         fun_name = 'query_%s' % query
@@ -52,7 +64,7 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
         if fun is None:
             return self.send_error("unknown query: %s" % query)
         reply = fun()
-        return self.send_data(reply)
+        self.send_data(reply)
 
     def query_spell(self):
         text = self.data.get('text')
@@ -105,7 +117,12 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
         return self.send_data(reply)
 
     def send_data(self, data):
-        return self.request.sendall(bytes(json.dumps(data).encode('utf-8')))
+        j = json.dumps(data)
+        raw_data = bytes(j.encode('utf-8'))
+        head = common.int2bytes(len(raw_data))
+        payload = head + raw_data
+        logging.info("RESPONSE (%s): %s", len(payload), j[:80])
+        return self.request.sendall(payload)
 
 
 if __name__ == "__main__":

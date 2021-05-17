@@ -1,5 +1,6 @@
 import multiprocessing
 from pathlib import Path
+from time import sleep
 
 import pytest
 
@@ -15,6 +16,8 @@ def start_server():
         target=serve,
         kwargs={'abcs': commontest.ABCS})
     p.start()
+    # give the server some time to start
+    sleep(0.2)
     yield
     p.terminate()
 
@@ -32,7 +35,7 @@ def test_invalid_query(client):
     assert reply == {
         "query": "error",
         "status": "error",
-        "error_message": "invalid request format",
+        "error_message": "invalid request format - no query",
     }
 
 
