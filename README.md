@@ -7,13 +7,12 @@
 
 ## TexnoMagic docs offline
 
-See docs/README.md and other files in docs/ directory.
+See docs/index.md and other files in docs/ directory.
 
-You can also render docs into HTML using mkdocs:
+You can also render docs into HTML using portray:
 
-    pip install mkdocs
-    mkdocs build
-    browser site/index.html
+    pip install portray
+    protray as_html
 
 #### read the [docs] and have a nice magic ᕕ( ᐛ )ᕗ
 

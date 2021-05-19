@@ -1,7 +1,7 @@
 site_name: TexnoMagic
 theme: readthedocs
 nav:
-  - README.md
+  - index.md
 markdown_extensions:
   - admonition
   - toc:
