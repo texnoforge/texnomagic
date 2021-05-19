@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -27,9 +26,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install flake8 pytest
+        python -m pip install flake8 pytest portray
         pip install -r requirements.txt
     - name: Test with pytest
       run: |
         python setup.py develop --user
         pytest
+    - name: Test docs build
+      run: |
+        portray as_html
