@@ -131,8 +131,6 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
         }
         return reply
 
-
-
     def send_error(self, msg, q='error'):
         reply = {
             'query': q,

@@ -35,6 +35,10 @@ def cli(*cargs):
     spell_parser.add_argument('text', nargs='+',
         help="TexnoMagic spell to parse")
 
+    list_parser = subparsers.add_parser("flip_y")
+    list_parser.add_argument('abc',
+        help="alphabet to flip Y axis")
+
     if len(cargs) < 1:
         parser.print_usage()
         return 1
@@ -130,6 +134,23 @@ def command_spell(**kwargs):
     except TypeError:
         print(out)
     return 0
+
+
+def command_flip_y(**kwargs):
+    abc_name = kwargs.get('abc')
+    abcs = TexnoMagicAlphabets()
+    abcs.load()
+    abc = abcs.get_abc_by_name(abc_name)
+    if not abc:
+        print("alphabet not found: %s" % abc_name)
+        return 20
+    print(abc)
+    for symbol in abc.symbols:
+        print(symbol)
+        for drawing in symbol.drawings:
+            drawing.load_curves()
+            drawing.flip_y_axis()
+            drawing.save()
 
 
 def main():

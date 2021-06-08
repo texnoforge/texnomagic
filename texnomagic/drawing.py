@@ -89,6 +89,14 @@ class TexnoMagicDrawing:
         offset = (self.points_range - np.max(self._points, axis=0)) / 2
         self._points += offset
 
+    def flip_y_axis(self):
+        """
+        flip drawing along Y axis in-place
+
+        useful for compatibility with systems that use different Y axis sign
+        """
+        self._points[:,1] = self.points_range - self._points[:,1]
+
     def curves_fit_area(self, pos, size):
         """
         return curves scaled to fit area
