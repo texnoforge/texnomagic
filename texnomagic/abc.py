@@ -114,7 +114,6 @@ class TexnoMagicAlphabet:
                 old.append(symbol)
         return new, fail, old
 
-
     def calibrate(self):
         self.train_models(all=True)
 
@@ -180,6 +179,12 @@ class TexnoMagicAlphabet:
             results[level].append(msg)
 
         return results
+
+    def get_symbol_by_name(self, name):
+        for s in self.symbols:
+            if s.name == name:
+                return s
+        return None
 
     def random_symbol(self, exclude=None):
         if exclude:

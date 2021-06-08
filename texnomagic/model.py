@@ -10,6 +10,7 @@ import sklearn.utils._weight_vector
 
 from texnomagic.common import NumpyEncoder
 
+
 class TexnoMagicSymbolModel:
 
     def __init__(self, path=None):
@@ -83,7 +84,7 @@ class TexnoMagicSymbolModel:
             'labels_avg': self.labels_avg,
             'params': self.gmm._get_parameters()
         }
-        return json.dump(info, self.info_path.open('w'), cls=NumpyEncoder)
+        return json.dump(info, self.info_path.open('w'), cls=NumpyEncoder, indent=2)
 
     def load(self, path=None):
         if path:

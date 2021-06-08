@@ -108,6 +108,31 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
         }
         return reply
 
+    def query_train_symbol(self):
+        abc_name = self.data.get('abc')
+        if not abc_name:
+            return self.send_error('missing required arg: abc (alphabet name)', q='train_symbol')
+        symbol_name = self.data.get('symbol')
+        if not abc_name:
+            return self.send_error('missing required arg: symbol (symbol name)', q='train_symbol')
+        abc = self.server.abcs.get_abc_by_name(name=abc_name)
+        if not abc:
+            return self.send_error("requested alphabet isn't available: %s" % abc_name, q='train_symbol')
+        symbol = abc.get_symbol_by_name(name=symbol_name)
+        if not symbol:
+            return self.send_error("requested symbol isn't available: %s" % symbol_name, q='train_symbol')
+        logging.info("TRAIN SYMBOL model: %s" % symbol_name)
+        r = symbol.train_model()
+        assert(r)
+        symbol.model.save()
+        reply = {
+            'query': 'train_symbol',
+            'status': 'ok'
+        }
+        return reply
+
+
+
     def send_error(self, msg, q='error'):
         reply = {
             'query': q,
