@@ -54,7 +54,7 @@ class TexnoMagicDrawing:
         with self.path.open('r') as f:
             reader = csv.reader(f)
             for row in reader:
-                if row is None or '' in row:
+                if not row or '' in row:
                     curves.append(curve)
                     curve = []
                     continue
