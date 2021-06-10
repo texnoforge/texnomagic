@@ -75,6 +75,9 @@ class TexnoMagicSymbolModel:
 
         return score * label_k
 
+    def get_preview(self):
+        return {'pre': 'view'}
+
     def save(self):
         self.path.mkdir(parents=True, exist_ok=True)
         info = {

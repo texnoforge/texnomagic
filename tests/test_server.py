@@ -82,4 +82,4 @@ def test_symbol_query(client):
     assert reply['query'] == 'symbol'
     assert reply['status'] == 'ok'
     assert reply['reply']['symbol']
-    assert reply['reply']['score'] < 0
+    assert reply['reply']['score'] > 0
