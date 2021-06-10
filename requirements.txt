@@ -1,2 +1,3 @@
-parsimonious  # language parsing (PEG)
-scikit-learn  # symbol model training and recognition 
+jsonrpcserver  # JSON-RPC server
+parsimonious   # language parsing (PEG)
+scikit-learn   # symbol model training and recognition 

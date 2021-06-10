@@ -30,56 +30,42 @@ def client():
     c.close()
 
 
-def test_invalid_query(client):
-    reply = client.request({'test': 'kek'})
-    assert reply == {
-        "query": "error",
-        "status": "error",
-        "error_message": "invalid request format - no query",
+def test_req_invalid_method(client):
+    reply = client.request('KEKW')
+    assert 'error' in reply
+    error = reply['error']
+    assert error == {
+        'code': -32601,
+        'message': 'Method not found',
     }
 
 
-def test_spell_query_valid(client):
-    reply = client.request({
-        'query': 'spell',
-        'text': 'big slow ice death fast homing bolt random',
-    })
-    exp = {
-        "query": "spell",
-        "status": "ok",
-        "reply": {
-            "spell": "bolt",
-            "effect": ["ice", "death"],
-            "effect_mods": {"size": 2, "speed": 0.5},
-            "spell_mods": {"speed": 2, "homing": 1},
-            "direction": "random",
-        }
+def test_req_spell(client):
+    reply = client.request(
+        'spell',
+        ['big slow ice death fast homing bolt random'],
+    )
+    assert 'error' not in reply
+    assert 'result' in reply
+    result = reply['result']
+    assert result == {
+        'direction': 'random',
+        'effect': ['ice', 'death'],
+        'effect_mods': {'size': 2, 'speed': 0.5},
+        'spell': 'bolt',
+        'spell_mods': {'homing': 1, 'speed': 2},
     }
-    assert reply == exp
-
-def test_spell_query_invalid(client):
-    reply = client.request({
-        'query': 'spell',
-        'text': 'big fire fail',
-    })
-    exp = {
-        "query": "spell",
-        "status": "ok",
-        "reply": {
-            "spell": "",
-            "parse_error": "Rule 'mod_size' didn't match at 'fail' (line 1, column 10).",
-        }
-    }
-    assert reply == exp
 
 
-def test_symbol_query(client):
-    reply = client.request({
-        'query': 'symbol',
-        'abc': commontest.ABC.name,
-        'curves': [[[1,1], [10,10], [100, 100]]]
-    })
-    assert reply['query'] == 'symbol'
-    assert reply['status'] == 'ok'
-    assert reply['reply']['symbol']
-    assert reply['reply']['score'] > 0
+def test_req_symbol(client):
+    reply = client.request(
+        'symbol',
+        {
+            'abc': commontest.ABC.name,
+            'curves': [[[1,1], [10,10], [100, 100]]],
+        })
+    assert 'error' not in reply
+    assert 'result' in reply
+    result = reply['result']
+    assert 'symbol' in result
+    assert 'score' in result
