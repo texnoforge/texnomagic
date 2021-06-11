@@ -53,7 +53,7 @@ def serve(host='localhost', port=DEFAULT_PORT, abcs=None):
         logging.info("server is RUNNING at %s:%s (CTRL+C to terminate)", host, port)
         try:
             server.serve_forever()
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, SystemExit):
             logging.info("server is SHUTTING DOWN, bye o/")
 
 
