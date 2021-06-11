@@ -6,14 +6,16 @@ import sys
 from texnomagic import __version__
 from texnomagic import lang
 from texnomagic.abcs import TexnoMagicAlphabets
+from texnomagic import mods
 
 
 def cli(*cargs):
     parser = argparse.ArgumentParser()
-    subparsers = parser.add_subparsers(help='command', dest='command')
+    subparsers = parser.add_subparsers(help='command to run', dest='command')
     parser.add_argument('--version', action='version', version='TexnoMagic %s' % __version__)
 
-    list_parser = subparsers.add_parser("list")
+    list_parser = subparsers.add_parser(
+        "list-abcs", help="list available alphabets")
     list_parser.add_argument('abc', nargs='*',
         help="alphabets to list (default: all)")
     list_parser.add_argument('--names', action='store_true',
@@ -21,21 +23,26 @@ def cli(*cargs):
     list_parser.add_argument('--full', action='store_true',
         help="list everything")
 
-    check_parser = subparsers.add_parser("check")
+    check_parser = subparsers.add_parser(
+        "check-abcs", help="check alphabets for issues")
     check_parser.add_argument('abc', nargs='*',
         help="alphabets to check (default: all)")
 
-    train_parser = subparsers.add_parser("train")
+    train_parser = subparsers.add_parser(
+        "train-abcs", help="train (missing) models for selected alphabets")
     train_parser.add_argument('abc', nargs='*',
         help="alphabets to train (default: all)")
     train_parser.add_argument('--all', action='store_true',
         help="re-train all models (default: only missing)")
 
-    spell_parser = subparsers.add_parser("spell")
+
+    spell_parser = subparsers.add_parser(
+        "spell", help="parse TexnoMagic spell")
     spell_parser.add_argument('text', nargs='+',
         help="TexnoMagic spell to parse")
 
-    list_parser = subparsers.add_parser("flip_y")
+    list_parser = subparsers.add_parser(
+        "flip-y", help="flip Y axis for all symbols in alphabet")
     list_parser.add_argument('abc',
         help="alphabet to flip Y axis")
 
@@ -44,11 +51,12 @@ def cli(*cargs):
         return 1
 
     args = parser.parse_args(cargs)
-    fun = 'command_%s' % args.command
+    cmd = args.command.replace('-', '_')
+    fun = 'command_%s' % cmd
     return globals()[fun](**vars(args))
 
 
-def command_list(**kwargs):
+def command_list_abcs(**kwargs):
     abcs = TexnoMagicAlphabets()
     abcs.load()
     only_abcs = kwargs.get('abc')
@@ -75,7 +83,7 @@ def command_list(**kwargs):
     return 0
 
 
-def command_check(**kwargs):
+def command_check_abcs(**kwargs):
     all_abcs = TexnoMagicAlphabets()
     all_abcs.load()
     only_abcs = kwargs.get('abc')
@@ -92,7 +100,7 @@ def command_check(**kwargs):
     return 0
 
 
-def command_train(**kwargs):
+def command_train_abcs(**kwargs):
     all_abcs = TexnoMagicAlphabets()
     all_abcs.load()
     only_abcs = kwargs.get('abc')
@@ -151,6 +159,11 @@ def command_flip_y(**kwargs):
             drawing.load_curves()
             drawing.flip_y_axis()
             drawing.save()
+
+
+def command_list_mods(**_):
+    m = mods.get_online_mods()
+    print(m)
 
 
 def main():
