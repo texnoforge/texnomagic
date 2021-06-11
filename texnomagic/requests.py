@@ -9,6 +9,7 @@ import logging
 from jsonrpcserver import method
 from jsonrpcserver.response import InvalidParamsResponse
 
+from texnomagic import __version__
 from texnomagic.drawing import TexnoMagicDrawing
 
 
@@ -59,3 +60,8 @@ def model_preview(context, abc, symbol):
         return {}
     p = model.get_preview()
     return p
+
+
+@method
+def version(context):
+    return __version__
