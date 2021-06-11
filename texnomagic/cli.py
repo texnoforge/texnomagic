@@ -35,15 +35,22 @@ def cli(*cargs):
     train_parser.add_argument('--all', action='store_true',
         help="re-train all models (default: only missing)")
 
+    list_parser = subparsers.add_parser(
+        "list-mods", help="list available mods from wop.mod.io")
+
+    dl_parser = subparsers.add_parser(
+        "download-mods", help="download mod(s) from wop.mod.io")
+    dl_parser.add_argument('mod', nargs='+',
+        help="Words of Power mod to download")
 
     spell_parser = subparsers.add_parser(
         "spell", help="parse TexnoMagic spell")
     spell_parser.add_argument('text', nargs='+',
         help="TexnoMagic spell to parse")
 
-    list_parser = subparsers.add_parser(
+    flip_parser = subparsers.add_parser(
         "flip-y", help="flip Y axis for all symbols in alphabet")
-    list_parser.add_argument('abc',
+    flip_parser.add_argument('abc',
         help="alphabet to flip Y axis")
 
     if len(cargs) < 1:
@@ -162,8 +169,20 @@ def command_flip_y(**kwargs):
 
 
 def command_list_mods(**_):
-    m = mods.get_online_mods()
-    print(m)
+    for m in mods.get_online_mods():
+        print("%s: %s  @ %s" % (m.name_id, m.name, m.profile_url))
+
+
+def command_download_mods(**kwargs):
+    all_mods = mods.get_online_mods()
+    for mod_id in kwargs.get('mod', []):
+        for m in all_mods:
+            if m.name_id == mod_id or m.name == mod_id:
+                print("DOWNLOAD MOD: %s" % m)
+                m.download()
+                break
+        else:
+            print("mod not found - skipping: %s" % mod_id)
 
 
 def main():
