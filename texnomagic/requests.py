@@ -37,7 +37,7 @@ def train_symbol(context, abc, symbol):
     _abc = context['abcs'].get_abc_by_name(name=abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
-    _symbol = abc.get_symbol_by_name(name=symbol)
+    _symbol = _abc.get_symbol_by_name(name=symbol)
     if not _symbol:
         raise ValueError("requested symbol isn't available: %s" % symbol)
     r = _symbol.train_model()
@@ -51,7 +51,7 @@ def model_preview(context, abc, symbol):
     _abc = context['abcs'].get_abc_by_name(name=abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
-    _symbol = abc.get_symbol_by_name(name=symbol)
+    _symbol = _abc.get_symbol_by_name(name=symbol)
     if not _symbol:
         raise ValueError("requested symbol isn't available: %s" % symbol)
     model = _symbol.model
