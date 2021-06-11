@@ -11,6 +11,7 @@ from jsonrpcserver.response import InvalidParamsResponse
 
 from texnomagic import __version__
 from texnomagic.drawing import TexnoMagicDrawing
+from texnomagic import mods
 
 
 @method
@@ -60,6 +61,16 @@ def model_preview(context, abc, symbol):
         return {}
     p = model.get_preview()
     return p
+
+
+@method
+def download_mod(context, mod):
+    all_mods = mods.get_online_mods()
+    for m in all_mods:
+        if m.name_id == mod or m.name == mod:
+            m.download()
+            return True
+    return False
 
 
 @method
