@@ -76,7 +76,37 @@ class TexnoMagicSymbolModel:
         return score * label_k
 
     def get_preview(self):
-        return {'pre': 'view'}
+        """
+        return data for drawing a model preview
+        """
+        slen = 1000.0
+        ssize = np.array([slen, slen])
+
+        p = {
+            'type': 'gmm',
+            'components': []
+        }
+        comps = []
+        if not self.gmm or not hasattr(self.gmm, 'means_'):
+            return p
+
+        means = self.gmm.means_
+        covs = self.gmm.covariances_
+        weights = self.gmm.weights_
+        # draw covariances for each Gaussian
+        for i, cov in enumerate(covs):
+            # eigen vectors are magic
+            v, w = np.linalg.eigh(cov)
+            u = w[0] / np.linalg.norm(w[0])
+            angle = np.arctan2(u[1], u[0])
+            #angle = 180 * angle / np.pi  # convert to degrees
+            size = 2. * np.sqrt(2.) * np.sqrt(v)
+            center = means[i, :2]
+            weight = weights[i]
+            comp = [center.tolist(), size.tolist(), angle, weight]
+            comps.append(comp)
+        p['components'] = comps
+        return p
 
     def save(self):
         self.path.mkdir(parents=True, exist_ok=True)
