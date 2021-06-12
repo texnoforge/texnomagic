@@ -7,6 +7,7 @@ from texnomagic import __version__
 from texnomagic import lang
 from texnomagic.abcs import TexnoMagicAlphabets
 from texnomagic import mods
+from texnomagic import server
 
 
 def cli(*cargs):
@@ -47,6 +48,11 @@ def cli(*cargs):
         "spell", help="parse TexnoMagic spell")
     spell_parser.add_argument('text', nargs='+',
         help="TexnoMagic spell to parse")
+
+    server_parser = subparsers.add_parser(
+        "server", help="start TexnoMagic TCP server")
+    server_parser.add_argument('port', nargs='?', type=int, default=server.DEFAULT_PORT,
+        help="TCP port number to run on (default: %s)" % server.DEFAULT_PORT)
 
     flip_parser = subparsers.add_parser(
         "flip-y", help="flip Y axis for all symbols in alphabet")
@@ -149,6 +155,11 @@ def command_spell(**kwargs):
     except TypeError:
         print(out)
     return 0
+
+
+def command_server(**kwargs):
+    port = kwargs.get('port', server.DEFAULT_PORT)
+    server.serve(port=port)
 
 
 def command_flip_y(**kwargs):

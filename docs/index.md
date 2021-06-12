@@ -72,19 +72,34 @@ python -m texnomagic.cli list-abcs
 
 ### TexnoMagic JSON-RPC over TCP server
 
-You can start universal language-agnostic TexnoMagic JSON-RPC over TCP server as
-a python module:
+You can start universal language-agnostic TexnoMagic JSON-RPC over TCP server using CLI:
+
+```
+texnomagic server
+
+# optionally select a port
+texnomagic server 12345
+```
+
+You can also invoke `texnomagic.server` module directly:
 
 ```
 python -m texnomagic.server
 ```
 
-or compile a binary using PyInstaller:
+It's possible to create stand-alone binary using PyInstaller:
 
 ```
 pyinstaller server.spec
 # results in dist/texnomagic-server
 ```
+
+!!! NOTE
+    You currently need `master`
+    [pyinstaller-hooks-contrib](https://github.com/pyinstaller/pyinstaller-hooks-contrib)
+    which includes
+    [my hook](https://github.com/pyinstaller/pyinstaller-hooks-contrib/pull/126)
+    required by `jsonrpcserver` used by TexnoMagic.
 
 Simple reference python client is provided in `texnomagic.client` although it's
 only used for testing in TexnoMagic.

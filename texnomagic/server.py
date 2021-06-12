@@ -39,7 +39,7 @@ def serve(host='localhost', port=DEFAULT_PORT, abcs=None):
     """
     start TexnoMagic TCP server and serve forever
     """
-    logging.info("server %s starting on %s:%s ..." % (__version__, host, port))
+    logging.info("START TexnoMagic TCP server %s on %s:%s ..." % (__version__, host, port))
     if not abcs:
         abcs = TexnoMagicAlphabets()
         abcs.load()
