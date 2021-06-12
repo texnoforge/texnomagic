@@ -95,11 +95,11 @@ class TexnoMagicSymbolModel:
         weights = self.gmm.weights_
         # draw covariances for each Gaussian
         for i, cov in enumerate(covs):
-            # eigen vectors are magic
+            # eigenvectors are magic
             v, w = np.linalg.eigh(cov)
             u = w[0] / np.linalg.norm(w[0])
             angle = np.arctan2(u[1], u[0])
-            #angle = 180 * angle / np.pi  # convert to degrees
+            angle = 180 * angle / np.pi  # convert to degrees
             size = 2. * np.sqrt(2.) * np.sqrt(v)
             center = means[i, :2]
             weight = weights[i]
