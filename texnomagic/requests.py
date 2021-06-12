@@ -35,14 +35,14 @@ def symbol(context, abc, curves):
 
 
 @method
-def train_symbol(context, abc, symbol):
+def train_symbol(context, abc, symbol, n_gauss=0):
     _abc = context['abcs'].get_abc_by_name(name=abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
     _symbol = _abc.get_symbol_by_name(name=symbol)
     if not _symbol:
         raise ValueError("requested symbol isn't available: %s" % symbol)
-    r = _symbol.train_model()
+    r = _symbol.train_model(n_gauss=n_gauss)
     assert(r)
     _symbol.model.save()
     return True

@@ -62,10 +62,12 @@ class TexnoMagicSymbol:
         model.load()
         self._model = model
 
-    def train_model(self):
+    def train_model(self, n_gauss=0):
         if not self._model:
-            model = TexnoMagicSymbolModel(path=self.model_path)
-        return self.model.train_symbol(self)
+            self._model = TexnoMagicSymbolModel(self.model_path)
+        if n_gauss:
+            self._model.n_gauss = n_gauss
+        return self._model.train_symbol(self)
 
     def save(self):
         self.path.mkdir(parents=True, exist_ok=True)
