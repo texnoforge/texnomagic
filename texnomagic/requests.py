@@ -74,5 +74,13 @@ def download_mod(context, mod):
 
 
 @method
+def export_abc(context, abc):
+    _abc = context['abcs'].get_abc_by_name(name=abc)
+    if not _abc:
+        raise ValueError("requested alphabet isn't available: %s" % abc)
+    return _abc.export()
+
+
+@method
 def version(context):
     return __version__
