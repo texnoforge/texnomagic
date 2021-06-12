@@ -29,7 +29,7 @@ from texnomagic.drawing import TexnoMagicDrawing
 from texnomagic import requests
 
 
-LOG_FORMAT = '[TexnoMagic] %(message)s'
+LOG_FORMAT = '[TexnoMagic] %(message).70s'
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format=LOG_FORMAT)
 
 DEFAULT_PORT = 6969
@@ -92,7 +92,6 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
                 data_raw += self.request.recv(n)
                 i += n
             data = data_raw.decode('utf-8')
-            logging.info("REQUEST (%s): %s", size, data)
             # please see requests.py for individual requests' code
             response = dispatch(data, context=self.server.context)
             if response.wanted:
@@ -106,7 +105,6 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
         raw_data = bytes(j.encode('utf-8'))
         head = common.int2bytes(len(raw_data))
         payload = head + raw_data
-        logging.info("RESPONSE (%s): %s", len(payload), j)
         return self.request.sendall(payload)
 
 
