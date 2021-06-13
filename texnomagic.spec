@@ -1,10 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
+#
+# This is a spec file for PyInstaller
+#
+# You can compile texnomagic binary using:
+#
+#     pyinstaller texnomagic.spec
 
 
 block_cipher = None
 
 
-a = Analysis(['texnomagic\\server.py'],
+a = Analysis(['texnomagic\\cli.py'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -21,7 +27,7 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='texnomagic-server',
+          name='texnomagic',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -34,4 +40,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='texnomagic-server')
+               name='texnomagic')

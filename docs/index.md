@@ -87,11 +87,11 @@ You can also invoke `texnomagic.server` module directly:
 python -m texnomagic.server
 ```
 
-It's possible to create stand-alone binary using PyInstaller:
+It's also possible to compile stand-alone `texnomagic` binary using PyInstaller:
 
 ```
-pyinstaller server.spec
-# results in dist/texnomagic-server
+pyinstaller texnomagic.spec
+# results in dist/texnomagic
 ```
 
 !!! NOTE
