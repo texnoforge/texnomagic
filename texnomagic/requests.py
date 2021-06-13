@@ -4,14 +4,17 @@ TexnoMagic RPC handling logic
 Individual functions in this module marked with @jsonrpcserver.method decorator
 are used for Remote Procedure Calls (RPC) by the TexnoMagic server.
 """
-import logging
-
 from jsonrpcserver import method
-from jsonrpcserver.response import InvalidParamsResponse
 
 from texnomagic import __version__
 from texnomagic.drawing import TexnoMagicDrawing
 from texnomagic import mods
+
+
+@method
+def reload(context):
+    context['abcs'].load()
+    return True
 
 
 @method
@@ -20,18 +23,39 @@ def spell(context, text):
 
 
 @method
-def symbol(context, abc, curves):
+def recognize(context, abc, curves):
+    if not curves:
+        return []
     _abc = context['abcs'].get_abc_by_name(name=abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
 
     drawing = TexnoMagicDrawing(curves=curves)
+    drawing.normalize()
     symbol, score = _abc.recognize(drawing)
     r = {
-        'symbol': symbol.name,
+        'symbol': symbol.name if symbol else None,
         'score': score,
     }
     return r
+
+
+@method
+def recognize_top(context, abc, curves, n=0):
+    if not curves:
+        return []
+    _abc = context['abcs'].get_abc_by_name(name=abc)
+    if not _abc:
+        raise ValueError("requested alphabet isn't available: %s" % abc)
+
+    drawing = TexnoMagicDrawing(curves=curves)
+    drawing.normalize()
+    symbols = _abc.scores(drawing)
+    symbols = [s for s in symbols if s[1] > 0]
+    if n:
+        n = int(n)
+        symbols = symbols[:n]
+    return [(s.name, score) for (s, score) in symbols]
 
 
 @method

@@ -57,9 +57,9 @@ def test_req_spell(client):
     }
 
 
-def test_req_symbol(client):
+def test_req_recognize(client):
     reply = client.request(
-        'symbol',
+        'recognize',
         {
             'abc': commontest.ABC.name,
             'curves': [[[1,1], [10,10], [100, 100]]],

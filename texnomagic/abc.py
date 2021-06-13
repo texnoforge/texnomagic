@@ -131,7 +131,10 @@ class TexnoMagicAlphabet:
         s = self.scores(drawing)
         if not s:
             return None, -1
-        return s[0]
+        _symbol, score = s[0]
+        if score < common.MIN_SCORE:
+            return None, score
+        return s
 
     def check(self):
         """

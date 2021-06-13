@@ -29,7 +29,7 @@ from texnomagic.drawing import TexnoMagicDrawing
 from texnomagic import requests
 
 
-LOG_FORMAT = '[TexnoMagic] %(message).70s'
+LOG_FORMAT = '[TexnoMagic] %(message).64s'
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format=LOG_FORMAT)
 
 DEFAULT_PORT = 6969

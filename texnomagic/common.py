@@ -20,6 +20,7 @@ def get_data_path():
         p = Path.home() / '.local/share'
     return p / 'WordsOfPower'
 
+MIN_SCORE = 0.6
 
 DATA_PATH = get_data_path()
 USER_DATA_PATH = DATA_PATH / 'user'
