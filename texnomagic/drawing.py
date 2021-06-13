@@ -33,7 +33,7 @@ class TexnoMagicDrawing:
 
     def set_curves(self, curves):
         # keep all points in single continuous numpy array
-        self._points = np.array(list(itertools.chain(*curves)))
+        self._points = np.array(list(itertools.chain(*curves)), dtype=np.float64)
         self._curves = []
         i = 0
         for curve in curves:
