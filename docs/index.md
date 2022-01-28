@@ -19,20 +19,22 @@ to get a better idea of what I'm trying to achieve.
 
 ## Status
 
-**alpha**: integration with [wopeditor]/Godot and [wop.mod.io] mod portal
+**alpha**: integration with [wopeditor] and [wop.mod.io] mod portal
 
-* save and load symbols to/from user files
-* portable open format based on simple JSON/CSV files
-* first user-created alphabets uploaded to [wop.mod.io] mod portal
-* train Gaussian Mixture Models (GMM) from symbol data
-* real-time symbol recognition
-* spell language parser based of Parsing Expression Grammars (PEG)
-* interfaces:
-  * python module from [PyPI] (`texnomagic`)
-  * Command-Line Interface (`texnomagic.cli`)
-  * simple TCP server using JSON-RPC (`texnomagic.server`) - universal interface
-* ⚠ format and API not stable yet
-* ⚠ docs need more content
+### Features
+
+- save and load symbols to/from user files
+- portable open format based on simple JSON/CSV files
+- first user-created alphabets uploaded to [wop.mod.io] mod portal
+- train Gaussian Mixture Models (GMM) from symbol data
+- real-time symbol recognition
+- spell language parser based of Parsing Expression Grammars (PEG)
+- interfaces:
+    - python module from [PyPI] (`texnomagic`)
+    - Command-Line Interface (`texnomagic.cli`)
+    - simple TCP server using JSON-RPC (`texnomagic.server`) - universal interface
+- ⚠ format and API not stable yet
+- ⚠ docs need more content
 
 
 ## Install
@@ -43,36 +45,79 @@ TexnoMagic is available from [PyPI]:
 pip install texnomagic
 ```
 
-You can install/develop from source as with any other python module.
+You can `install`/`develop` from source as with any other python module.
 
 
 ## Use
 
+### GUI 🖱️
+
+[wopeditor] is a project dedicated to providing comprehensive GUI for
+TexnoMagic.
+
+### CLI ⌨️
+
+`texnomagic` script should be installed, run it without arguments to get a
+summary of avaliable commands options:
+
+```
+$> texnomagic
+
+Usage: texnomagic [OPTIONS] COMMAND [ARGS]...
+
+  TexnoMagic CLI
+
+Options:
+  --version   Show TexnoMagic version and exit.
+  -h, --help  Show this message and exit.
+
+Commands:
+  check-abcs     Check all/selected alphabets for issues.
+  download-mods  Download Words of Power mods from wop.mod.io.
+  flip-y         Flip Y axis for all symbols in alphabet.
+  list-abcs      List all/selected TexnoMagic alphabets.
+  list-mods      List online Words of Power mods from wop.mod.io.
+  server         Start TexnoMagic TCP server on PORT.
+  spell          Parse TexnoMagic spell.
+  train-abcs     Train (missing) models for all/selected alphabets.
+```
+
+Add `-h`/`--help` after a command to get usage for that command:
+
+```
+$> texnomagic download-mods -h
+```
+
+If your shell doesn't see the script (i.e. when not in `$PATH`), you can invoke
+the `texnomagic.cli` module directly:
+
+```
+$> python -m texnomagic.cli list-abcs --full
+```
+
 ### Python 🐍
+
+You can find code examples in:
+
+* [tests/](https://github.com/texnoforge/texnomagic/tree/master/tests)
+* [texnomagic/cli.py](https://github.com/texnoforge/texnomagic/blob/master/texnomagic/cli.py)
+* [python-wopeditor](https://github.com/texnoforge/python-wopeditor/blob/master/wopeditor/wopeditor.py) (archived project)
 
 See [reference docs] for `texnomagic` python module.
 
-Use `tests/` and [python-wopeditor] as examples.
+### Godot Engine ⚙️
 
-### CLI
+[wopeditor] contains GDScript implementation of client for TexnoMagic
+server: [wopeditor.client].
 
-`texnomagic` script should be installed, run it with `-h`/`--help` to get a
-summary of options:
+You can use Godot's `JSONRPC` module to form requests and send them as strings
+using standard Godot networking which TexnoMagic adpoted (messages prefixed with
+4 bytes of total message length).
 
-```
-texnomagic -h
-```
 
-If your shell doesn't see the script (i.e. when not in `$PATH`), invoke the
-`texnomagic.cli` module directly:
+### JSON-RPC 🌍
 
-```
-python -m texnomagic.cli list-abcs
-```
-
-### TexnoMagic JSON-RPC over TCP server
-
-You can start universal language-agnostic TexnoMagic JSON-RPC over TCP server using CLI:
+You can start universal language-agnostic JSON-RPC over TCP server using `texnomagic` CLI:
 
 ```
 texnomagic server
@@ -81,7 +126,7 @@ texnomagic server
 texnomagic server 12345
 ```
 
-You can also invoke `texnomagic.server` module directly:
+You can also invoke [texnomagic.server] module directly:
 
 ```
 python -m texnomagic.server
@@ -94,31 +139,11 @@ pyinstaller texnomagic.spec
 # results in dist/texnomagic
 ```
 
-!!! NOTE
-    You currently need `master`
-    [pyinstaller-hooks-contrib](https://github.com/pyinstaller/pyinstaller-hooks-contrib)
-    which includes
-    [my hook](https://github.com/pyinstaller/pyinstaller-hooks-contrib/pull/126)
-    required by `jsonrpcserver` used by TexnoMagic.
-
-Simple reference python client is provided in `texnomagic.client` although it's
+Simple reference python client is provided in [texnomagic.client] although it's
 only used for testing in TexnoMagic.
 
-For a full-fledged client implementation see [wopeditor].
+For a full-fledged client implementation see [wopeditor.client].
 
-### Godot Engine
-
-[wopeditor] contains GDScript implementation of client for TexnoMagic
-server (`texnomagic.server`).
-
-You can use Godot's `JSONRPC` module to form requests and send them as strings
-using standard Godot networking which TexnoMagic adpoted (messages prefixed with
-4 bytes of total message length).
-
-### GUI
-
-[wopeditor] is a project dedicated to providing comprehensive GUI for
-TexnoMagic.
 
 ## Bugs and Feature Requests
 
@@ -136,6 +161,8 @@ Feel free to drop by
 
 [reference docs]: https://texnoforge.github.io/texnomagic/reference/texnomagic/
 [wopeditor]: https://texnoforge.github.io/wopeditor/
-[python-wopeditor]: https://texnoforge.github.io/python-wopeditor/
+[texnomagic.client]: https://github.com/texnoforge/texnomagic/blob/master/texnomagic/client.py
+[texnomagic.server]: https://github.com/texnoforge/texnomagic/blob/master/texnomagic/server.py
+[wopeditor.client]: https://github.com/texnoforge/wopeditor/blob/master/texnomagic/client.gd
 [PyPI]: https://pypi.org/project/texnomagic/
 [wop.mod.io]: https://wop.mod.io
