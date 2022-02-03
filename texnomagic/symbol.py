@@ -30,6 +30,10 @@ class TexnoMagicSymbol:
         return self.path / 'model'
 
     @property
+    def handle(self):
+        return common.name2handle(self.name)
+
+    @property
     def model(self):
         if self._model is None:
             self.load_model()

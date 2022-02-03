@@ -10,6 +10,10 @@ def name2fn(name):
     return fn
 
 
+def name2handle(name):
+    return ''.join(ch for ch in name.lower() if ch.isalnum())
+
+
 def get_data_path():
     appdata = os.environ.get('APPDATA')
     if appdata:

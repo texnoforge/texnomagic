@@ -25,6 +25,10 @@ class TexnoMagicAlphabet:
         return self.path / 'symbols'
 
     @property
+    def handle(self):
+        return common.name2handle(self.name)
+
+    @property
     def symbols(self):
         if self._symbols is None:
             self.load_symbols()
