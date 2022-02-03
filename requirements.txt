@@ -1,4 +1,4 @@
-click          # clean CLI library
-jsonrpcserver  # JSON-RPC server
-parsimonious   # language parsing (PEG)
-scikit-learn   # symbol model training and recognition
+click               # clean CLI library
+jsonrpcserver >= 5  # JSON-RPC server
+parsimonious        # language parsing (PEG)
+scikit-learn        # symbol model training and recognition

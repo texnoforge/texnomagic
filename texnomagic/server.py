@@ -94,15 +94,14 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
             data = data_raw.decode('utf-8')
             # please see requests.py for individual requests' code
             response = dispatch(data, context=self.server.context)
-            if response.wanted:
-                self.send_data(response.deserialized())
+            if response:
+                self.send_data(response)
 
     def finish(self):
         logging.info("STREAM CLOSED: %s", self.client_address)
 
     def send_data(self, data):
-        j = json.dumps(data)
-        raw_data = bytes(j.encode('utf-8'))
+        raw_data = bytes(data.encode('utf-8'))
         head = common.int2bytes(len(raw_data))
         payload = head + raw_data
         return self.request.sendall(payload)

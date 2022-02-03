@@ -37,6 +37,7 @@ def test_req_invalid_method(client):
     assert error == {
         'code': -32601,
         'message': 'Method not found',
+        'data': 'KEKW',
     }
 
 
@@ -64,6 +65,7 @@ def test_req_recognize(client):
             'abc': commontest.ABC.name,
             'curves': [[[1,1], [10,10], [100, 100]]],
         })
+    assert isinstance(reply, dict)
     assert 'error' not in reply
     assert 'result' in reply
     result = reply['result']
