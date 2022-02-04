@@ -1,0 +1,1611 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.0">
+    
+    
+      
+        <title>Model - TexnoMagic</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8b42a75e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-texnomagicmodel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TexnoMagic" class="md-header__button md-logo" aria-label="TexnoMagic" data-md-component="logo">
+      
+  <img src="../../../docs/img/x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TexnoMagic
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/texnoforge/texnomagic/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TexnoMagic" class="md-nav__button md-logo" aria-label="TexnoMagic" data-md-component="logo">
+      
+  <img src="../../../docs/img/x.png" alt="logo">
+
+    </a>
+    TexnoMagic
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/texnoforge/texnomagic/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Texnomagic
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Texnomagic" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Texnomagic
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abc/" class="md-nav__link">
+        Abc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abcs/" class="md-nav__link">
+        Abcs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common/" class="md-nav__link">
+        Common
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drawing/" class="md-nav__link">
+        Drawing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/" class="md-nav__link">
+        Lang
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Model
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normalize_labels" class="md-nav__link">
+    normalize_labels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texnomagicsymbolmodel" class="md-nav__link">
+    TexnoMagicSymbolModel
+  </a>
+  
+    <nav class="md-nav" aria-label="TexnoMagicSymbolModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-variables" class="md-nav__link">
+    Instance variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_preview" class="md-nav__link">
+    get_preview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load" class="md-nav__link">
+    load
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    save
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score" class="md-nav__link">
+    score
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train_gmm" class="md-nav__link">
+    train_GMM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train_symbol" class="md-nav__link">
+    train_symbol
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mods/" class="md-nav__link">
+        Mods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requests/" class="md-nav__link">
+        Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symbol/" class="md-nav__link">
+        Symbol
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normalize_labels" class="md-nav__link">
+    normalize_labels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texnomagicsymbolmodel" class="md-nav__link">
+    TexnoMagicSymbolModel
+  </a>
+  
+    <nav class="md-nav" aria-label="TexnoMagicSymbolModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-variables" class="md-nav__link">
+    Instance variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_preview" class="md-nav__link">
+    get_preview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load" class="md-nav__link">
+    load
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    save
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score" class="md-nav__link">
+    score
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train_gmm" class="md-nav__link">
+    train_GMM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train_symbol" class="md-nav__link">
+    train_symbol
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="module-texnomagicmodel">Module texnomagic.model</h1>
+<p>None</p>
+<p>None</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">mixture</span>
+
+<span class="c1"># TODO: fix in PyInstaller upstream</span>
+
+<span class="c1"># hidden import for PyInstaller</span>
+
+<span class="kn">import</span> <span class="nn">sklearn.utils._weight_vector</span>
+
+<span class="kn">from</span> <span class="nn">texnomagic.common</span> <span class="kn">import</span> <span class="n">NumpyEncoder</span>
+
+<span class="k">class</span> <span class="nc">TexnoMagicSymbolModel</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ready</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span> <span class="o">=</span> <span class="mi">10</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@property</span>
+
+    <span class="k">def</span> <span class="nf">info_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">/</span> <span class="s1">&#39;texno_model.json&#39;</span>
+
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">train_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        train symbol model from its drawings</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">points</span> <span class="o">=</span> <span class="n">symbol</span><span class="o">.</span><span class="n">get_all_drawing_points</span><span class="p">()</span>
+
+        <span class="n">n_points</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">:</span>
+
+            <span class="c1"># insufficient data</span>
+
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_GMM</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="n">score_sum</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="n">label_sums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">n_components</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">symbol</span><span class="o">.</span><span class="n">drawings</span><span class="p">:</span>
+
+            <span class="n">score_sum</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+            <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+            <span class="n">labels_norm</span> <span class="o">=</span> <span class="n">normalize_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">n_components</span><span class="p">)</span>
+
+            <span class="n">label_sums</span> <span class="o">+=</span> <span class="n">labels_norm</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span> <span class="o">=</span> <span class="n">label_sums</span> <span class="o">/</span> <span class="n">label_sums</span><span class="o">.</span><span class="kp">sum</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span> <span class="o">=</span> <span class="n">score_sum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">symbol</span><span class="o">.</span><span class="n">drawings</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ready</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">train_GMM</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        traing GMM model from data points</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># thanks scikit-learn &lt;3</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">drawing</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="n">log_score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">drawing</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">drawing</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span> <span class="o">/</span> <span class="n">log_score</span>
+
+        <span class="n">label_counts</span> <span class="o">=</span> <span class="n">normalize_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">)</span>
+
+        <span class="n">label_diff</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">label_counts</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="p">))</span>
+
+        <span class="n">label_k</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">label_diff</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">score</span> <span class="o">*</span> <span class="n">label_k</span>
+
+    <span class="k">def</span> <span class="nf">get_preview</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        return data for drawing a model preview</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">slen</span> <span class="o">=</span> <span class="mf">1000.0</span>
+
+        <span class="n">ssize</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">array</span><span class="p">([</span><span class="n">slen</span><span class="p">,</span> <span class="n">slen</span><span class="p">])</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;gmm&#39;</span><span class="p">,</span>
+
+            <span class="s1">&#39;components&#39;</span><span class="p">:</span> <span class="p">[]</span>
+
+        <span class="p">}</span>
+
+        <span class="n">comps</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="p">,</span> <span class="s1">&#39;means_&#39;</span><span class="p">):</span>
+
+            <span class="k">return</span> <span class="n">p</span>
+
+        <span class="n">means</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">means_</span>
+
+        <span class="n">covs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">covariances_</span>
+
+        <span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">weights_</span>
+
+        <span class="c1"># draw covariances for each Gaussian</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="kp">cov</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">covs</span><span class="p">):</span>
+
+            <span class="c1"># eigenvectors are magic</span>
+
+            <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="kp">cov</span><span class="p">)</span>
+
+            <span class="n">u</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+            <span class="kp">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">arctan2</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+            <span class="kp">angle</span> <span class="o">=</span> <span class="mi">180</span> <span class="o">*</span> <span class="kp">angle</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>  <span class="c1"># convert to degrees</span>
+
+            <span class="kp">size</span> <span class="o">=</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="kp">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="kp">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+            <span class="n">center</span> <span class="o">=</span> <span class="n">means</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+            <span class="n">comp</span> <span class="o">=</span> <span class="p">[</span><span class="n">center</span><span class="o">.</span><span class="kp">tolist</span><span class="p">(),</span> <span class="kp">size</span><span class="o">.</span><span class="kp">tolist</span><span class="p">(),</span> <span class="kp">angle</span><span class="p">,</span> <span class="n">weight</span><span class="p">]</span>
+
+            <span class="n">comps</span><span class="o">.</span><span class="kp">append</span><span class="p">(</span><span class="n">comp</span><span class="p">)</span>
+
+        <span class="n">p</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comps</span>
+
+        <span class="k">return</span> <span class="n">p</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="kp">info</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;gmm&#39;</span><span class="p">,</span>
+
+            <span class="s1">&#39;n_gauss&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">,</span>
+
+            <span class="s1">&#39;score_avg&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span><span class="p">,</span>
+
+            <span class="s1">&#39;labels_avg&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="p">,</span>
+
+            <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">_get_parameters</span><span class="p">()</span>
+
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="kp">dump</span><span class="p">(</span><span class="kp">info</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">),</span> <span class="bp">cls</span><span class="o">=</span><span class="n">NumpyEncoder</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+
+        <span class="c1"># reinit model before load</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="kp">info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">open</span><span class="p">())</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span> <span class="o">=</span> <span class="kp">info</span><span class="p">[</span><span class="s1">&#39;n_gauss&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span> <span class="o">=</span> <span class="kp">info</span><span class="p">[</span><span class="s1">&#39;score_avg&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">array</span><span class="p">(</span><span class="kp">info</span><span class="p">[</span><span class="s1">&#39;labels_avg&#39;</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="kp">array</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="kp">info</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">_set_parameters</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ready</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&lt;TexnoMagicSymbolModel @ </span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span>
+
+<span class="k">def</span> <span class="nf">normalize_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+
+    <span class="n">counts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+
+            <span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">array</span><span class="p">([</span><span class="n">c</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">counts</span> <span class="o">/</span> <span class="n">counts</span><span class="o">.</span><span class="kp">sum</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">counts</span>
+</code></pre></div>
+
+</details>
+<h2 id="functions">Functions</h2>
+<h3 id="normalize_labels">normalize_labels</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">normalize_labels</span><span class="p">(</span>
+    <span class="n">labels</span><span class="p">,</span>
+    <span class="n">n</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">normalize_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dict</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nl">counts</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">counts</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="k">array</span><span class="p">(</span><span class="o">[</span><span class="n">c for _, c in sorted(counts.items(), key=lambda x: x[0</span><span class="o">]</span><span class="p">)</span><span class="err">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">counts</span><span class="p">.</span><span class="nf">sum</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">counts</span><span class="w"></span>
+</code></pre></div>
+
+</details>
+<h2 id="classes">Classes</h2>
+<h3 id="texnomagicsymbolmodel">TexnoMagicSymbolModel</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">TexnoMagicSymbolModel</span><span class="p">(</span>
+    <span class="n">path</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">TexnoMagicSymbolModel</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="o">=</span><span class="n">None</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">False</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">None</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">@</span><span class="n">property</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">info_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s1">&#39;texno_model.json&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">None</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">train_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">symbol</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        train symbol model from its drawings</span>
+
+<span class="sd">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">symbol</span><span class="o">.</span><span class="n">get_all_drawing_points</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">n_points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">n_points</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="c1"># insufficient data</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">False</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">train_GMM</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">score_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">label_sums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">n_components</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">symbol</span><span class="o">.</span><span class="n">drawings</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">score_sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">labels_norm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalize_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">n_components</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">label_sums</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">labels_norm</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label_sums</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">label_sums</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">score_sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">symbol</span><span class="o">.</span><span class="n">drawings</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">True</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">True</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">train_GMM</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        traing GMM model from data points</span>
+
+<span class="sd">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1"># thanks scikit-learn &lt;3</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mixture</span><span class="o">.</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">None</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">drawing</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">log_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">drawing</span><span class="o">.</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">drawing</span><span class="o">.</span><span class="n">points</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">log_score</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">label_counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalize_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">label_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">label_counts</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">label_k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">label_diff</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">label_k</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_preview</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        return data for drawing a model preview</span>
+
+<span class="sd">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">slen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000.0</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">ssize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">slen</span><span class="p">,</span><span class="w"> </span><span class="n">slen</span><span class="p">])</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;gmm&#39;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;components&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">comps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;means_&#39;</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">means</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">means_</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">covs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">covariances_</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">weights_</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1"># draw covariances for each Gaussian</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">cov</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">enumerate</span><span class="p">(</span><span class="n">covs</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">            </span><span class="c1"># eigenvectors are magic</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="w">  </span><span class="c1"># convert to degrees</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">means</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">comp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">center</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span><span class="w"> </span><span class="n">size</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span><span class="w"> </span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">comps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">comp</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">comps</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="n">True</span><span class="p">,</span><span class="w"> </span><span class="n">exist_ok</span><span class="o">=</span><span class="n">True</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;model_type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;gmm&#39;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;n_gauss&#39;</span><span class="p">:</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;score_avg&#39;</span><span class="p">:</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;labels_avg&#39;</span><span class="p">:</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;params&#39;</span><span class="p">:</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">_get_parameters</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">cls</span><span class="o">=</span><span class="n">NumpyEncoder</span><span class="p">,</span><span class="w"> </span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="nb">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="o">=</span><span class="n">None</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">path</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1"># reinit model before load</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">False</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">open</span><span class="p">())</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;n_gauss&#39;</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;score_avg&#39;</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;labels_avg&#39;</span><span class="p">])</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mixture</span><span class="o">.</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]]</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">_set_parameters</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">True</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">True</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;&lt;TexnoMagicSymbolModel @ </span><span class="si">%s</span><span class="s1">&gt;&#39;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="w"></span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="instance-variables">Instance variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">info_path</span>
+</code></pre></div>
+
+<h4 id="methods">Methods</h4>
+<h4 id="get_preview">get_preview</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_preview</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>return data for drawing a model preview</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_preview</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        return data for drawing a model preview</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">slen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000.0</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">ssize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="k">array</span><span class="p">(</span><span class="o">[</span><span class="n">slen, slen</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;type&#39;</span><span class="err">:</span><span class="w"> </span><span class="s1">&#39;gmm&#39;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">            </span><span class="s1">&#39;components&#39;</span><span class="err">:</span><span class="w"> </span><span class="err">[]</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">comps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">gmm</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">hasattr</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">gmm</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;means_&#39;</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">means</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">gmm</span><span class="p">.</span><span class="n">means_</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">covs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">gmm</span><span class="p">.</span><span class="n">covariances_</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">gmm</span><span class="p">.</span><span class="n">weights_</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">draw</span><span class="w"> </span><span class="n">covariances</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">Gaussian</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">cov</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">enumerate</span><span class="p">(</span><span class="n">covs</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">eigenvectors</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">magic</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">w</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">w</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">u</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="nf">pi</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nf">convert</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nf">degrees</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">means</span><span class="o">[</span><span class="n">i, :2</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weights</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">comp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">center.tolist(), size.tolist(), angle, weight</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">comps</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">comp</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">p</span><span class="o">[</span><span class="n">&#39;components&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">comps</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+</code></pre></div>
+
+</details>
+<h4 id="load">load</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">load</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="nb">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="o">=</span><span class="n">None</span><span class="p">):</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">path</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1"># reinit model before load</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">False</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info_path</span><span class="o">.</span><span class="n">open</span><span class="p">())</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;n_gauss&#39;</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">score_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;score_avg&#39;</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">labels_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;labels_avg&#39;</span><span class="p">])</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mixture</span><span class="o">.</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_gauss</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;params&#39;</span><span class="p">]]</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">_set_parameters</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">True</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">True</span><span class="w"></span>
+</code></pre></div>
+
+</details>
+<h4 id="save">save</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">save</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    <span class="nv">def</span> <span class="nv">save</span><span class="ss">(</span><span class="nv">self</span><span class="ss">)</span>:
+
+        <span class="nv">self</span>.<span class="nv">path</span>.<span class="nv">mkdir</span><span class="ss">(</span><span class="nv">parents</span><span class="o">=</span><span class="nv">True</span>, <span class="nv">exist_ok</span><span class="o">=</span><span class="nv">True</span><span class="ss">)</span>
+
+        <span class="nv">info</span> <span class="o">=</span> {
+
+            <span class="s1">&#39;</span><span class="s">model_type</span><span class="s1">&#39;</span>: <span class="s1">&#39;</span><span class="s">gmm</span><span class="s1">&#39;</span>,
+
+            <span class="s1">&#39;</span><span class="s">n_gauss</span><span class="s1">&#39;</span>: <span class="nv">self</span>.<span class="nv">n_gauss</span>,
+
+            <span class="s1">&#39;</span><span class="s">score_avg</span><span class="s1">&#39;</span>: <span class="nv">self</span>.<span class="nv">score_avg</span>,
+
+            <span class="s1">&#39;</span><span class="s">labels_avg</span><span class="s1">&#39;</span>: <span class="nv">self</span>.<span class="nv">labels_avg</span>,
+
+            <span class="s1">&#39;</span><span class="s">params</span><span class="s1">&#39;</span>: <span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">_get_parameters</span><span class="ss">()</span>
+
+        }
+
+        <span class="k">return</span> <span class="nv">json</span>.<span class="nv">dump</span><span class="ss">(</span><span class="nv">info</span>, <span class="nv">self</span>.<span class="nv">info_path</span>.<span class="nv">open</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">w</span><span class="s1">&#39;</span><span class="ss">)</span>, <span class="nv">cls</span><span class="o">=</span><span class="nv">NumpyEncoder</span>, <span class="nv">indent</span><span class="o">=</span><span class="mi">2</span><span class="ss">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="score">score</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">score</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">drawing</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    <span class="nv">def</span> <span class="nv">score</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">drawing</span><span class="ss">)</span>:
+
+        <span class="k">if</span> <span class="nv">not</span> <span class="nv">self</span>.<span class="nv">ready</span>:
+
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="nv">log_score</span> <span class="o">=</span> <span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">score</span><span class="ss">(</span><span class="nv">drawing</span>.<span class="nv">points</span><span class="ss">)</span>
+
+        <span class="nv">labels</span> <span class="o">=</span> <span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">predict</span><span class="ss">(</span><span class="nv">drawing</span>.<span class="nv">points</span><span class="ss">)</span>
+
+        <span class="nv">score</span> <span class="o">=</span> <span class="nv">self</span>.<span class="nv">score_avg</span> <span class="o">/</span> <span class="nv">log_score</span>
+
+        <span class="nv">label_counts</span> <span class="o">=</span> <span class="nv">normalize_labels</span><span class="ss">(</span><span class="nv">labels</span>, <span class="nv">self</span>.<span class="nv">n_gauss</span><span class="ss">)</span>
+
+        <span class="nv">label_diff</span> <span class="o">=</span> <span class="nv">sum</span><span class="ss">(</span><span class="nv">abs</span><span class="ss">(</span><span class="nv">label_counts</span> <span class="o">-</span> <span class="nv">self</span>.<span class="nv">labels_avg</span><span class="ss">))</span>
+
+        <span class="nv">label_k</span> <span class="o">=</span> <span class="nv">max</span><span class="ss">(</span><span class="mi">1</span> <span class="o">-</span> <span class="nv">label_diff</span>, <span class="mi">0</span>.<span class="mi">3</span><span class="ss">)</span>
+
+        <span class="k">return</span> <span class="nv">score</span> <span class="o">*</span> <span class="nv">label_k</span>
+</code></pre></div>
+
+</details>
+<h4 id="train_gmm">train_GMM</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">train_GMM</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">data</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>traing GMM model from data points</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    <span class="nv">def</span> <span class="nv">train_GMM</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">data</span><span class="ss">)</span>:
+
+        <span class="s2">&quot;&quot;&quot;</span>
+
+        <span class="nv">traing</span> <span class="nv">GMM</span> <span class="nv">model</span> <span class="nv">from</span> <span class="nv">data</span> <span class="nv">points</span>
+
+        <span class="s2">&quot;&quot;&quot;</span>
+
+        # <span class="nv">thanks</span> <span class="nv">scikit</span><span class="o">-</span><span class="nv">learn</span> <span class="o">&lt;</span><span class="mi">3</span>
+
+        <span class="nv">self</span>.<span class="nv">gmm</span> <span class="o">=</span> <span class="nv">mixture</span>.<span class="nv">GaussianMixture</span><span class="ss">(</span><span class="nv">n_components</span><span class="o">=</span><span class="nv">self</span>.<span class="nv">n_gauss</span><span class="ss">)</span>
+
+        <span class="k">if</span> <span class="nv">data</span> <span class="nv">is</span> <span class="nv">None</span>:
+
+            <span class="k">return</span>
+
+        <span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">fit</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="train_symbol">train_symbol</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">train_symbol</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">symbol</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>train symbol model from its drawings</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    <span class="nv">def</span> <span class="nv">train_symbol</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">symbol</span><span class="ss">)</span>:
+
+        <span class="s2">&quot;&quot;&quot;</span>
+
+        <span class="nv">train</span> <span class="nv">symbol</span> <span class="nv">model</span> <span class="nv">from</span> <span class="nv">its</span> <span class="nv">drawings</span>
+
+        <span class="s2">&quot;&quot;&quot;</span>
+
+        <span class="nv">points</span> <span class="o">=</span> <span class="nv">symbol</span>.<span class="nv">get_all_drawing_points</span><span class="ss">()</span>
+
+        <span class="nv">n_points</span> <span class="o">=</span> <span class="nv">len</span><span class="ss">(</span><span class="nv">points</span><span class="ss">)</span>
+
+        <span class="k">if</span> <span class="nv">n_points</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="nv">self</span>.<span class="nv">n_gauss</span>:
+
+            # <span class="nv">insufficient</span> <span class="nv">data</span>
+
+            <span class="k">return</span> <span class="nv">False</span>
+
+        <span class="nv">self</span>.<span class="nv">train_GMM</span><span class="ss">(</span><span class="nv">points</span><span class="ss">)</span>
+
+        <span class="nv">score_sum</span> <span class="o">=</span> <span class="mi">0</span>.<span class="mi">0</span>
+
+        <span class="nv">label_sums</span> <span class="o">=</span> <span class="nv">np</span>.<span class="nv">zeros</span><span class="ss">(</span><span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">n_components</span><span class="ss">)</span>
+
+        <span class="k">for</span> <span class="nv">d</span> <span class="nv">in</span> <span class="nv">symbol</span>.<span class="nv">drawings</span>:
+
+            <span class="nv">score_sum</span> <span class="o">+=</span> <span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">score</span><span class="ss">(</span><span class="nv">d</span>.<span class="nv">points</span><span class="ss">)</span>
+
+            <span class="nv">labels</span> <span class="o">=</span> <span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">predict</span><span class="ss">(</span><span class="nv">d</span>.<span class="nv">points</span><span class="ss">)</span>
+
+            <span class="nv">labels_norm</span> <span class="o">=</span> <span class="nv">normalize_labels</span><span class="ss">(</span><span class="nv">labels</span>, <span class="nv">self</span>.<span class="nv">gmm</span>.<span class="nv">n_components</span><span class="ss">)</span>
+
+            <span class="nv">label_sums</span> <span class="o">+=</span> <span class="nv">labels_norm</span>
+
+        <span class="nv">self</span>.<span class="nv">labels_avg</span> <span class="o">=</span> <span class="nv">label_sums</span> <span class="o">/</span> <span class="nv">label_sums</span>.<span class="nv">sum</span><span class="ss">()</span>
+
+        <span class="nv">self</span>.<span class="nv">score_avg</span> <span class="o">=</span> <span class="nv">score_sum</span> <span class="o">/</span> <span class="nv">len</span><span class="ss">(</span><span class="nv">symbol</span>.<span class="nv">drawings</span><span class="ss">)</span>
+
+        <span class="nv">self</span>.<span class="nv">ready</span> <span class="o">=</span> <span class="nv">True</span>
+
+        <span class="k">return</span> <span class="nv">True</span>
+</code></pre></div>
+
+</details>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../lang/" title="Lang" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lang
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../mods/" title="Mods" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Mods
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      
+    
+  </body>
+</html>

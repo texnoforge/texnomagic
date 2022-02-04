@@ -1,0 +1,1379 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.0">
+    
+    
+      
+        <title>Common - TexnoMagic</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8b42a75e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-texnomagiccommon" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TexnoMagic" class="md-header__button md-logo" aria-label="TexnoMagic" data-md-component="logo">
+      
+  <img src="../../../docs/img/x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TexnoMagic
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Common
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/texnoforge/texnomagic/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TexnoMagic" class="md-nav__button md-logo" aria-label="TexnoMagic" data-md-component="logo">
+      
+  <img src="../../../docs/img/x.png" alt="logo">
+
+    </a>
+    TexnoMagic
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/texnoforge/texnomagic/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Texnomagic
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Texnomagic" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Texnomagic
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abc/" class="md-nav__link">
+        Abc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abcs/" class="md-nav__link">
+        Abcs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Common
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bytes2int" class="md-nav__link">
+    bytes2int
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_data_path" class="md-nav__link">
+    get_data_path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int2bytes" class="md-nav__link">
+    int2bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name2fn" class="md-nav__link">
+    name2fn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name2handle" class="md-nav__link">
+    name2handle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpyencoder" class="md-nav__link">
+    NumpyEncoder
+  </a>
+  
+    <nav class="md-nav" aria-label="NumpyEncoder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encode" class="md-nav__link">
+    encode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterencode" class="md-nav__link">
+    iterencode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drawing/" class="md-nav__link">
+        Drawing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/" class="md-nav__link">
+        Lang
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mods/" class="md-nav__link">
+        Mods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requests/" class="md-nav__link">
+        Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symbol/" class="md-nav__link">
+        Symbol
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bytes2int" class="md-nav__link">
+    bytes2int
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_data_path" class="md-nav__link">
+    get_data_path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int2bytes" class="md-nav__link">
+    int2bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name2fn" class="md-nav__link">
+    name2fn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name2handle" class="md-nav__link">
+    name2handle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpyencoder" class="md-nav__link">
+    NumpyEncoder
+  </a>
+  
+    <nav class="md-nav" aria-label="NumpyEncoder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encode" class="md-nav__link">
+    encode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterencode" class="md-nav__link">
+    iterencode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="module-texnomagiccommon">Module texnomagic.common</h1>
+<p>None</p>
+<p>None</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">name2fn</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+
+    <span class="n">fn</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">fn</span>
+
+<span class="k">def</span> <span class="nf">name2handle</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">ch</span><span class="o">.</span><span class="n">isalnum</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">get_data_path</span><span class="p">():</span>
+
+    <span class="n">appdata</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;APPDATA&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">appdata</span><span class="p">:</span>
+
+        <span class="c1"># windows system</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">appdata</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># normal system :)</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;.local/share&#39;</span>
+
+    <span class="k">return</span> <span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;WordsOfPower&#39;</span>
+
+<span class="n">MIN_SCORE</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="n">get_data_path</span><span class="p">()</span>
+
+<span class="n">USER_DATA_PATH</span> <span class="o">=</span> <span class="n">DATA_PATH</span> <span class="o">/</span> <span class="s1">&#39;user&#39;</span>
+
+<span class="n">MODS_DATA_PATH</span> <span class="o">=</span> <span class="n">DATA_PATH</span> <span class="o">/</span> <span class="s1">&#39;mods&#39;</span>
+
+<span class="n">EXPORT_PATH</span> <span class="o">=</span> <span class="n">DATA_PATH</span> <span class="o">/</span> <span class="s1">&#39;export&#39;</span>
+
+<span class="n">ALPHABETS_DIR</span> <span class="o">=</span> <span class="s1">&#39;alphabets&#39;</span>
+
+<span class="n">ALPHABETS_PATHS</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="n">USER_DATA_PATH</span> <span class="o">/</span> <span class="n">ALPHABETS_DIR</span><span class="p">,</span>
+
+    <span class="s1">&#39;mods&#39;</span><span class="p">:</span> <span class="n">MODS_DATA_PATH</span> <span class="o">/</span> <span class="n">ALPHABETS_DIR</span><span class="p">,</span>
+
+<span class="p">}</span>
+
+<span class="n">BUFFER_SIZE</span> <span class="o">=</span> <span class="mi">1024</span>
+
+<span class="n">CORE_SYMBOLS_ORDER</span> <span class="o">=</span> <span class="p">[</span>
+
+    <span class="c1"># elements</span>
+
+    <span class="s1">&#39;fire&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;ice&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;lightning&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;water&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;air&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;earth&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;life&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;death&#39;</span><span class="p">,</span>
+
+    <span class="c1"># shapes</span>
+
+    <span class="s1">&#39;bolt&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;ball&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;beam&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;area&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;cone&#39;</span><span class="p">,</span>
+
+    <span class="c1"># targets</span>
+
+    <span class="s1">&#39;self&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;friend&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;enemy&#39;</span><span class="p">,</span>
+
+    <span class="c1"># selectors</span>
+
+    <span class="s1">&#39;close&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;far&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;weak&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;strong&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;random&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;all&#39;</span><span class="p">,</span>
+
+    <span class="c1"># modifiers</span>
+
+    <span class="s1">&#39;big&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;small&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;fast&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;slow&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;homing&#39;</span><span class="p">,</span>
+
+<span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">NumpyEncoder</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+
+            <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="kp">tolist</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">int2bytes</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">bytes2int</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h2 id="variables">Variables</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">ALPHABETS_DIR</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">ALPHABETS_PATHS</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">BUFFER_SIZE</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">CORE_SYMBOLS_ORDER</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">DATA_PATH</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">EXPORT_PATH</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">MIN_SCORE</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">MODS_DATA_PATH</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">USER_DATA_PATH</span>
+</code></pre></div>
+
+<h2 id="functions">Functions</h2>
+<h3 id="bytes2int">bytes2int</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">bytes2int</span><span class="p">(</span>
+    <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="nv">def</span> <span class="nv">bytes2int</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>:
+
+    <span class="k">return</span> <span class="nv">int</span>.<span class="nv">from_bytes</span><span class="ss">(</span><span class="nv">b</span>, <span class="nv">byteorder</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">little</span><span class="s2">&quot;</span><span class="ss">)</span>
+</code></pre></div>
+
+</details>
+<h3 id="get_data_path">get_data_path</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_path</span><span class="p">(</span>
+
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="nv">def</span> <span class="nv">get_data_path</span><span class="ss">()</span>:
+
+    <span class="nv">appdata</span> <span class="o">=</span> <span class="nv">os</span>.<span class="nv">environ</span>.<span class="nv">get</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">APPDATA</span><span class="s1">&#39;</span><span class="ss">)</span>
+
+    <span class="k">if</span> <span class="nv">appdata</span>:
+
+        # <span class="nv">windows</span> <span class="nv">system</span>
+
+        <span class="nv">p</span> <span class="o">=</span> <span class="nv">Path</span><span class="ss">(</span><span class="nv">appdata</span><span class="ss">)</span>
+
+    <span class="k">else</span>:
+
+        # <span class="nv">normal</span> <span class="nv">system</span> :<span class="ss">)</span>
+
+        <span class="nv">p</span> <span class="o">=</span> <span class="nv">Path</span>.<span class="nv">home</span><span class="ss">()</span> <span class="o">/</span> <span class="s1">&#39;</span><span class="s">.local/share</span><span class="s1">&#39;</span>
+
+    <span class="k">return</span> <span class="nv">p</span> <span class="o">/</span> <span class="s1">&#39;</span><span class="s">WordsOfPower</span><span class="s1">&#39;</span>
+</code></pre></div>
+
+</details>
+<h3 id="int2bytes">int2bytes</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">int2bytes</span><span class="p">(</span>
+    <span class="n">x</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="nv">def</span> <span class="nv">int2bytes</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span>:
+
+    <span class="k">return</span> <span class="nv">x</span>.<span class="nv">to_bytes</span><span class="ss">(</span><span class="mi">4</span>, <span class="nv">byteorder</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">little</span><span class="s2">&quot;</span><span class="ss">)</span>
+</code></pre></div>
+
+</details>
+<h3 id="name2fn">name2fn</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">name2fn</span><span class="p">(</span>
+    <span class="n">name</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="nv">def</span> <span class="nv">name2fn</span><span class="ss">(</span><span class="nv">name</span><span class="ss">)</span>:
+
+    <span class="nv">fn</span> <span class="o">=</span> <span class="nv">re</span>.<span class="nv">sub</span><span class="ss">(</span><span class="nv">r</span><span class="s1">&#39;</span><span class="s">\s+</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">-</span><span class="s1">&#39;</span>, <span class="nv">name</span>.<span class="nv">lower</span><span class="ss">())</span>
+
+    <span class="k">return</span> <span class="nv">fn</span>
+</code></pre></div>
+
+</details>
+<h3 id="name2handle">name2handle</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">name2handle</span><span class="p">(</span>
+    <span class="n">name</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="nv">def</span> <span class="nv">name2handle</span><span class="ss">(</span><span class="nv">name</span><span class="ss">)</span>:
+
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span>.<span class="nv">join</span><span class="ss">(</span><span class="nv">ch</span> <span class="k">for</span> <span class="nv">ch</span> <span class="nv">in</span> <span class="nv">name</span>.<span class="nv">lower</span><span class="ss">()</span> <span class="k">if</span> <span class="nv">ch</span>.<span class="nv">isalnum</span><span class="ss">())</span>
+</code></pre></div>
+
+</details>
+<h2 id="classes">Classes</h2>
+<h3 id="numpyencoder">NumpyEncoder</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">NumpyEncoder</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">skipkeys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">check_circular</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">allow_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">separators</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">NumpyEncoder</span>(<span class="n">json</span>.<span class="n">JSONEncoder</span>):
+
+    <span class="n">def</span> <span class="k">default</span>(<span class="nb">self</span>, <span class="n">obj</span>):
+
+        <span class="k">if</span> <span class="n">isinstance</span>(<span class="n">obj</span>, <span class="n">np</span>.<span class="n">ndarray</span>):
+
+            <span class="k">return</span> <span class="n">obj</span>.<span class="n">tolist</span>()
+
+        <span class="k">return</span> <span class="n">json</span>.<span class="n">JSONEncoder</span>.<span class="k">default</span>(<span class="nb">self</span>, <span class="n">obj</span>)
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro">Ancestors (in MRO)</h4>
+<ul>
+<li>json.encoder.JSONEncoder</li>
+</ul>
+<h4 id="class-variables">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">item_separator</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">key_separator</span>
+</code></pre></div>
+
+<h4 id="methods">Methods</h4>
+<h4 id="default">default</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">default</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">obj</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Implement this method in a subclass such that it returns</p>
+<p>a serializable object for <code>o</code>, or calls the base implementation
+(to raise a <code>TypeError</code>).</p>
+<p>For example, to support arbitrary iterators, you could
+implement default like this::</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">def</span> <span class="nv">default</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">o</span><span class="ss">)</span>:
+    <span class="nv">try</span>:
+        <span class="nv">iterable</span> <span class="o">=</span> <span class="nv">iter</span><span class="ss">(</span><span class="nv">o</span><span class="ss">)</span>
+    <span class="nv">except</span> <span class="nv">TypeError</span>:
+        <span class="nv">pass</span>
+    <span class="k">else</span>:
+        <span class="k">return</span> <span class="nv">list</span><span class="ss">(</span><span class="nv">iterable</span><span class="ss">)</span>
+    # <span class="nv">Let</span> <span class="nv">the</span> <span class="nv">base</span> <span class="nv">class</span> <span class="nv">default</span> <span class="nv">method</span> <span class="nv">raise</span> <span class="nv">the</span> <span class="nv">TypeError</span>
+    <span class="k">return</span> <span class="nv">JSONEncoder</span>.<span class="nv">default</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">o</span><span class="ss">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    <span class="nv">def</span> <span class="nv">default</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">obj</span><span class="ss">)</span>:
+
+        <span class="k">if</span> <span class="nv">isinstance</span><span class="ss">(</span><span class="nv">obj</span>, <span class="nv">np</span>.<span class="nv">ndarray</span><span class="ss">)</span>:
+
+            <span class="k">return</span> <span class="nv">obj</span>.<span class="nv">tolist</span><span class="ss">()</span>
+
+        <span class="k">return</span> <span class="nv">json</span>.<span class="nv">JSONEncoder</span>.<span class="nv">default</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">obj</span><span class="ss">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="encode">encode</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">encode</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">o</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Return a JSON string representation of a Python data structure.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from json.encoder import JSONEncoder
+JSONEncoder().encode({"foo": ["bar", "baz"]})
+'{"foo": ["bar", "baz"]}'</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    <span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;Return a JSON string representation of a Python data structure.</span>
+
+<span class="sd">        &gt;&gt;&gt; from json.encoder import JSONEncoder</span>
+
+<span class="sd">        &gt;&gt;&gt; JSONEncoder().encode({&quot;foo&quot;: [&quot;bar&quot;, &quot;baz&quot;]})</span>
+
+<span class="sd">        &#39;{&quot;foo&quot;: [&quot;bar&quot;, &quot;baz&quot;]}&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># This is for extremely simple cases and benchmarks.</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_ascii</span><span class="p">:</span>
+
+                <span class="k">return</span> <span class="n">encode_basestring_ascii</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="k">return</span> <span class="n">encode_basestring</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+
+        <span class="c1"># This doesn&#39;t pass the iterator directly to &#39;&#39;.join() because the</span>
+
+        <span class="c1"># exceptions aren&#39;t as detailed.  The list call should be roughly</span>
+
+        <span class="c1"># equivalent to the PySequence_Fast that &#39;&#39;.join() would do.</span>
+
+        <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">_one_shot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+
+            <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="iterencode">iterencode</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">iterencode</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">o</span><span class="p">,</span>
+    <span class="n">_one_shot</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Encode the given object and yield each string</p>
+<p>representation as available.</p>
+<p>For example::</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="nv">chunk</span> <span class="nv">in</span> <span class="nv">JSONEncoder</span><span class="ss">()</span>.<span class="nv">iterencode</span><span class="ss">(</span><span class="nv">bigobject</span><span class="ss">)</span>:
+    <span class="nv">mysocket</span>.<span class="nv">write</span><span class="ss">(</span><span class="nv">chunk</span><span class="ss">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    <span class="nv">def</span> <span class="nv">iterencode</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">o</span>, <span class="nv">_one_shot</span><span class="o">=</span><span class="nv">False</span><span class="ss">)</span>:
+
+        <span class="s2">&quot;&quot;&quot;</span><span class="s">Encode the given object and yield each string</span>
+
+        <span class="nv">representation</span> <span class="nv">as</span> <span class="nv">available</span>.
+
+        <span class="k">For</span> <span class="nv">example</span>::
+
+            <span class="k">for</span> <span class="nv">chunk</span> <span class="nv">in</span> <span class="nv">JSONEncoder</span><span class="ss">()</span>.<span class="nv">iterencode</span><span class="ss">(</span><span class="nv">bigobject</span><span class="ss">)</span>:
+
+                <span class="nv">mysocket</span>.<span class="nv">write</span><span class="ss">(</span><span class="nv">chunk</span><span class="ss">)</span>
+
+        <span class="s2">&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nv">self</span>.<span class="nv">check_circular</span>:
+
+            <span class="nv">markers</span> <span class="o">=</span> {}
+
+        <span class="k">else</span>:
+
+            <span class="nv">markers</span> <span class="o">=</span> <span class="nv">None</span>
+
+        <span class="k">if</span> <span class="nv">self</span>.<span class="nv">ensure_ascii</span>:
+
+            <span class="nv">_encoder</span> <span class="o">=</span> <span class="nv">encode_basestring_ascii</span>
+
+        <span class="k">else</span>:
+
+            <span class="nv">_encoder</span> <span class="o">=</span> <span class="nv">encode_basestring</span>
+
+        <span class="nv">def</span> <span class="nv">floatstr</span><span class="ss">(</span><span class="nv">o</span>, <span class="nv">allow_nan</span><span class="o">=</span><span class="nv">self</span>.<span class="nv">allow_nan</span>,
+
+                <span class="nv">_repr</span><span class="o">=</span><span class="nv">float</span>.<span class="nv">__repr__</span>, <span class="nv">_inf</span><span class="o">=</span><span class="nv">INFINITY</span>, <span class="nv">_neginf</span><span class="o">=-</span><span class="nv">INFINITY</span><span class="ss">)</span>:
+
+            # <span class="nv">Check</span> <span class="k">for</span> <span class="nv">specials</span>.  <span class="nv">Note</span> <span class="nv">that</span> <span class="nv">this</span> <span class="nv">type</span> <span class="nv">of</span> <span class="nv">test</span> <span class="nv">is</span> <span class="nv">processor</span>
+
+            # <span class="nv">and</span><span class="o">/</span><span class="nv">or</span> <span class="nv">platform</span><span class="o">-</span><span class="nv">specific</span>, <span class="nv">so</span> <span class="k">do</span> <span class="nv">tests</span> <span class="nv">which</span> <span class="nv">don</span><span class="s1">&#39;</span><span class="s">t depend on the</span>
+
+            # <span class="nv">internals</span>.
+
+            <span class="k">if</span> <span class="nv">o</span> <span class="o">!=</span> <span class="nv">o</span>:
+
+                <span class="nv">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">NaN</span><span class="s1">&#39;</span>
+
+            <span class="nv">elif</span> <span class="nv">o</span> <span class="o">==</span> <span class="nv">_inf</span>:
+
+                <span class="nv">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">Infinity</span><span class="s1">&#39;</span>
+
+            <span class="nv">elif</span> <span class="nv">o</span> <span class="o">==</span> <span class="nv">_neginf</span>:
+
+                <span class="nv">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">-Infinity</span><span class="s1">&#39;</span>
+
+            <span class="k">else</span>:
+
+                <span class="k">return</span> <span class="nv">_repr</span><span class="ss">(</span><span class="nv">o</span><span class="ss">)</span>
+
+            <span class="k">if</span> <span class="nv">not</span> <span class="nv">allow_nan</span>:
+
+                <span class="nv">raise</span> <span class="nv">ValueError</span><span class="ss">(</span>
+
+                    <span class="s2">&quot;</span><span class="s">Out of range float values are not JSON compliant: </span><span class="s2">&quot;</span> <span class="o">+</span>
+
+                    <span class="nv">repr</span><span class="ss">(</span><span class="nv">o</span><span class="ss">))</span>
+
+            <span class="k">return</span> <span class="nv">text</span>
+
+        <span class="k">if</span> <span class="ss">(</span><span class="nv">_one_shot</span> <span class="nv">and</span> <span class="nv">c_make_encoder</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">None</span>
+
+                <span class="nv">and</span> <span class="nv">self</span>.<span class="nv">indent</span> <span class="nv">is</span> <span class="nv">None</span><span class="ss">)</span>:
+
+            <span class="nv">_iterencode</span> <span class="o">=</span> <span class="nv">c_make_encoder</span><span class="ss">(</span>
+
+                <span class="nv">markers</span>, <span class="nv">self</span>.<span class="nv">default</span>, <span class="nv">_encoder</span>, <span class="nv">self</span>.<span class="nv">indent</span>,
+
+                <span class="nv">self</span>.<span class="nv">key_separator</span>, <span class="nv">self</span>.<span class="nv">item_separator</span>, <span class="nv">self</span>.<span class="nv">sort_keys</span>,
+
+                <span class="nv">self</span>.<span class="nv">skipkeys</span>, <span class="nv">self</span>.<span class="nv">allow_nan</span><span class="ss">)</span>
+
+        <span class="k">else</span>:
+
+            <span class="nv">_iterencode</span> <span class="o">=</span> <span class="nv">_make_iterencode</span><span class="ss">(</span>
+
+                <span class="nv">markers</span>, <span class="nv">self</span>.<span class="nv">default</span>, <span class="nv">_encoder</span>, <span class="nv">self</span>.<span class="nv">indent</span>, <span class="nv">floatstr</span>,
+
+                <span class="nv">self</span>.<span class="nv">key_separator</span>, <span class="nv">self</span>.<span class="nv">item_separator</span>, <span class="nv">self</span>.<span class="nv">sort_keys</span>,
+
+                <span class="nv">self</span>.<span class="nv">skipkeys</span>, <span class="nv">_one_shot</span><span class="ss">)</span>
+
+        <span class="k">return</span> <span class="nv">_iterencode</span><span class="ss">(</span><span class="nv">o</span>, <span class="mi">0</span><span class="ss">)</span>
+</code></pre></div>
+
+</details>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../client/" title="Client" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Client
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../drawing/" title="Drawing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Drawing
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      
+    
+  </body>
+</html>
