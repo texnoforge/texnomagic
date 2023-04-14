@@ -2,7 +2,6 @@
 TexnoMagic CLI
 """
 import json
-import sys
 
 import click
 

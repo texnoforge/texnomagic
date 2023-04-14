@@ -6,7 +6,7 @@ from sklearn import mixture
 
 # TODO: fix in PyInstaller upstream
 # hidden import for PyInstaller
-import sklearn.utils._weight_vector
+import sklearn.utils._weight_vector  # noqa
 
 from texnomagic.common import NumpyEncoder
 
@@ -79,9 +79,6 @@ class TexnoMagicSymbolModel:
         """
         return data for drawing a model preview
         """
-        slen = 1000.0
-        ssize = np.array([slen, slen])
-
         p = {
             'type': 'gmm',
             'components': []

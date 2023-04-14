@@ -13,7 +13,6 @@ networking or simply write a client of your own in a language of your choice.
 
 Please see `client.py` for a reference implementation of a client.
 """
-import json
 import logging
 import socketserver
 import sys
@@ -24,9 +23,8 @@ from texnomagic import __version__
 from texnomagic import common
 from texnomagic.abcs import TexnoMagicAlphabets
 from texnomagic.lang import TexnoMagicLanguage
-from texnomagic.drawing import TexnoMagicDrawing
 # must be loaded in order for jsonrpc.dispatch() to work
-from texnomagic import requests
+from texnomagic import requests  # noqa
 
 
 LOG_FORMAT = '[TexnoMagic] %(message).64s'
@@ -76,12 +74,12 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
                 logging.info("ABORTED connection")
                 return
 
-            l = len(size_raw)
-            if l == 0:
+            n_read = len(size_raw)
+            if n_read == 0:
                 logging.info("DISCONNECT (0 bytes read)")
                 return
-            elif l != 4:
-                logging.warning("TOO FEW BYTES: %s", l)
+            elif n_read != 4:
+                logging.warning("TOO FEW BYTES: %s", n_read)
                 return
             size = common.bytes2int(size_raw)
             i = 0
@@ -108,7 +106,8 @@ class TexnoMagicTCPHandler(socketserver.BaseRequestHandler):
 
 
 if __name__ == "__main__":
-    # primitive TexnoMagic server ggCLI
+    # primitive TexnoMagic server module interface
+    # $ python -m texnomagic.server 6969
     args = sys.argv[1:]
     port = DEFAULT_PORT
     if args:

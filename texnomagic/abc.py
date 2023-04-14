@@ -1,10 +1,7 @@
 import json
 import os
-from pathlib import Path
 import random
 import shutil
-
-import numpy as np
 
 from texnomagic import common
 from texnomagic.symbol import TexnoMagicSymbol

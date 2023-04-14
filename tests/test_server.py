@@ -1,5 +1,4 @@
 import multiprocessing
-from pathlib import Path
 from time import sleep
 
 import pytest

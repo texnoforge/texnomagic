@@ -1,9 +1,3 @@
-import multiprocessing
-from pathlib import Path
-
-import pytest
-
-from texnomagic.abcs import TexnoMagicAlphabets
 import commontest  # common testing code
 
 

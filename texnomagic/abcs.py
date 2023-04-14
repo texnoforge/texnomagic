@@ -1,7 +1,3 @@
-
-import glob
-from pathlib import Path
-
 from texnomagic.abc import TexnoMagicAlphabet
 from texnomagic import common
 
