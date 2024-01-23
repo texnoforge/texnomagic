@@ -13,7 +13,7 @@ from texnomagic import common
 
 MODIO_API_KEY = "2071808b470b7abc78fc289e5d3396d1"
 MODIO_GAME_ID = 1986
-MODIO_API_URL = "https://api.mod.io/v1"
+MODIO_API_URL = "https://g-%s.modapi.io/v1" % MODIO_GAME_ID
 MODIO_MODS_URL = "%s/games/%s/mods" % (MODIO_API_URL, MODIO_GAME_ID)
 
 
