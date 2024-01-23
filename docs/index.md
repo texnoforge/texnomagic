@@ -39,7 +39,9 @@ to get a better idea of what I'm trying to achieve.
 
 ## Install
 
-TexnoMagic is available from [PyPI] for Python 3.8+:
+TexnoMagic is available from [PyPI] for Python **3.8+**,
+
+Latest tested working Python version: **3.12**
 
 ```
 pip install texnomagic
