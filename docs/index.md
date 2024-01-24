@@ -33,21 +33,37 @@ to get a better idea of what I'm trying to achieve.
     - python module from [PyPI] (`texnomagic`)
     - Command-Line Interface (`texnomagic.cli`)
     - simple TCP server using JSON-RPC (`texnomagic.server`) - universal interface
+- tests, linting, CI
 - ⚠ format and API not stable yet
 - ⚠ docs need more content
 
 
 ## Install
 
-TexnoMagic is available from [PyPI] for Python **3.8+**,
-
-Latest tested working Python version: **3.12**
+TexnoMagic is available from [PyPI] for Python **3.8+** (latest tested: **3.12**):
 
 ```
 pip install texnomagic
 ```
 
-You can `install`/`develop` from source as with any other python module.
+You can install / develop / build from source as with any other python module.
+
+
+```
+cd texnomagic
+
+# install from source
+pip install .
+
+# install in --editable mode (great for development)
+pip install -e .
+
+# isolated install using pipx
+pipx install .
+
+# build package
+python -m build
+```
 
 
 ## Use
