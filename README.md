@@ -14,10 +14,11 @@
 
 See docs/index.md and other files in docs/ directory.
 
-You can also render docs into HTML using portray:
+You can also render docs into HTML using MkDocs:
 
-    pip install portray
-    protray as_html
+    pip install mkdocs-material
+    mkdocs build
+    # see site/index.html
 
 #### read the [docs] and have a nice magic ᕕ( ᐛ )ᕗ
 

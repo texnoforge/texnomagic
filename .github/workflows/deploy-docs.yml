@@ -1,20 +1,23 @@
-name: Deploy docs
+name: Docs
 on:
   push:
     branches:
       - master
-      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions-texnomagic[bot]
+          git config user.email ci@noreply
+      - uses: actions/setup-python@v4
         with:
           python-version: 3.x
       - name: Install deps
         run: |
           pip install .
-          pip install portray
-      - run: portray on_github_pages --force
+          pip install mkdocs-material
+      - run: mkdocs gh-deploy --force

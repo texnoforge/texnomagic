@@ -1,20 +1,3 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
-
-[tool.portray.mkdocs]
-site_name = "TexnoMagic"
-repo_url = "https://github.com/texnoforge/texnomagic/"
-edit_uri = ""
-
-[[tool.portray.mkdocs.nav]]
-Overview = "docs/index.md"
-
-[tool.portray.mkdocs.theme]
-name = "material"
-logo = "docs/img/x.png"
-
-[tool.portray.mkdocs.theme.palette]
-scheme = "slate"
-primary = "black"
-accent = "cyan"

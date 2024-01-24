@@ -1,5 +1,14 @@
 site_name: TexnoMagic
-theme: readthedocs
+site_url: https://texnoforge.github.io/texnomagic/
+repo_name: texnoforge/texnomagic
+repo_url: https://github.com/texnoforge/texnomagic
+theme:
+  name: material
+  logo: img/x.png
+  palette:
+    scheme: slate
+    primary: black
+    accent: cyan
 nav:
   - index.md
 markdown_extensions:
