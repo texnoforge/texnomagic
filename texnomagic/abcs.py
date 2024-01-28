@@ -1,4 +1,4 @@
-from texnomagic.abc import TexnoMagicAlphabet
+from texnomagic import abc as abc_
 from texnomagic import common
 
 
@@ -12,10 +12,12 @@ class TexnoMagicAlphabets:
         for tag, path in self.paths.items():
             self.abcs[tag] = get_alphabets(path)
 
-    def get_abc_by_name(self, name):
-        for _, abcs in self.abcs.items():
+    def get_alphabet(self, name, tag=None):
+        for tag_, abcs in self.abcs.items():
+            if tag and tag != tag_:
+                continue
             for abc in abcs:
-                if abc.name == name:
+                if name == abc.name or name == abc.handle:
                     return abc
         return None
 
@@ -26,25 +28,23 @@ class TexnoMagicAlphabets:
         self.abcs[tag].insert(0, abc)
         return abc
 
-    def stats(self):
-        stats = []
+    def pretty(self):
+        s = []
         for tag, abcs in self.abcs.items():
-            stats.append('%d %s' % (len(abcs), tag))
-
-        if not stats:
-            stats = ['no alphabets found :(']
-
-        return ", ".join(stats)
+            s.append('%d %s' % (len(abcs), tag))
+        if not s:
+            s = ['no alphabets found :(']
+        return ", ".join(s)
 
     def __repr__(self):
-        return "<TexnoMagicAlphabets: %s>" % self.stats()
+        return "<TexnoMagicAlphabets: %s>" % self.pretty()
 
 
 def get_alphabets(paths=None):
     paths = paths or common.ALPHABETS_PATHS
     abcs = []
-    for abc_info_path in paths.glob('*/texno_alphabet.json'):
-        abc = TexnoMagicAlphabet()
+    for abc_info_path in paths.glob(f'*/{abc_.CONTROL_FILE}'):
+        abc = abc_.TexnoMagicAlphabet()
         abc.load(abc_info_path.parent)
         abcs.append(abc)
     return abcs

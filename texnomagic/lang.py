@@ -6,7 +6,8 @@ from parsimonious.nodes import NodeVisitor
 
 
 # Parsing Expression Grammar (PEG) for TexnoMagic Language
-TEXNO_MAGIC_GRAMMAR = """
+TEXNOMAGIC_GRAMMAR = """# TexnoMagic PEG Grammar
+
 spell = spell_bolt / spell_ball / spell_beam / spell_area / spell_cone / spell_self / spell_shield / spell_blink
 
 
@@ -54,7 +55,7 @@ ws = " "+
 
 class TexnoMagicLanguage:
     def __init__(self):
-        self.grammar = Grammar(TEXNO_MAGIC_GRAMMAR)
+        self.grammar = Grammar(TEXNOMAGIC_GRAMMAR)
 
     def parse(self, text):
         """

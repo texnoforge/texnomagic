@@ -1,7 +1,7 @@
 # TexnoMagic
 
-**TexnoMagic** is a free and open source Python 3 library and format for magic
-symbol recognition and symbol-based language parsing.
+**TexnoMagic** is a free and open source Python 3 library and format for
+**symbol recognition** and symbol-based language parsing.
 
 I created **TexnoMagic** after prototyping serveral systems for magic
 symbol recognition and invocation as well as systems for creating magic
@@ -68,15 +68,14 @@ python -m build
 
 ## Use
 
-### GUI 🖱️
-
-[wopeditor] is a project dedicated to providing comprehensive GUI for
-TexnoMagic.
 
 ### CLI ⌨️
 
-`texnomagic` script should be installed, run it without arguments to get a
-summary of avaliable commands options:
+A full-featured `git`-like Command-Line Interface with colors support is
+available through `texnomagic` script.
+
+The `texnomagic` script should be installed by default, run it without arguments
+to get a summary of avaliable commands options:
 
 ```
 $> texnomagic
@@ -90,20 +89,16 @@ Options:
   -h, --help  Show this message and exit.
 
 Commands:
-  check-abcs     Check all/selected alphabets for issues.
-  download-mods  Download Words of Power mods from wop.mod.io.
-  flip-y         Flip Y axis for all symbols in alphabet.
-  list-abcs      List all/selected TexnoMagic alphabets.
-  list-mods      List online Words of Power mods from wop.mod.io.
-  server         Start TexnoMagic TCP server on PORT.
-  spell          Parse TexnoMagic spell.
-  train-abcs     Train (missing) models for all/selected alphabets.
+  abc     Manage TexnoMagic alphabets.
+  mod     Manage Words of Power mods.
+  server  Start TexnoMagic TCP server on PORT.
+  spell   Parse and work with TexnoMagic Spells.
 ```
 
 Add `-h`/`--help` after a command to get usage for that command:
 
 ```
-$> texnomagic download-mods -h
+$> texnomagic abc -h
 ```
 
 If your shell doesn't see the script (i.e. when not in `$PATH`), you can invoke
@@ -122,6 +117,13 @@ You can find code examples in:
 * [python-wopeditor](https://github.com/texnoforge/python-wopeditor/blob/master/wopeditor/wopeditor.py) (archived project)
 
 See [reference docs] for `texnomagic` python module.
+
+
+### GUI 🖱️
+
+[wopeditor] is a project dedicated to providing comprehensive GUI for
+TexnoMagic.
+
 
 ### Godot Engine ⚙️
 

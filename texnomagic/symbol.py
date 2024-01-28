@@ -108,10 +108,13 @@ class TexnoMagicSymbol:
             return random.choice(self.drawings)
         return None
 
-    def stats(self, full=False):
-        if full:
-            return '%s (%s): %s drawings @ %s' % (self.name, self.meaning, len(self.drawings), self.path)
-        return '%s (%s)' % (self.name, self.meaning)
+    def pretty(self, path=False) -> str:
+        s = f'[green]{self.meaning}[/]'
+        if self.name != self.meaning:
+            s += f' ([bright_green]{self.name}[/])'
+        if path:
+            s += f' @ [white]{self.path}[/]'
+        return s
 
     def __repr__(self):
-        return '<TexnoMagicSymbol %s>' % self.stats()
+        return '<TexnoMagicSymbol %s>' % self.pretty()

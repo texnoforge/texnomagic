@@ -7,15 +7,22 @@ from texnomagic import common
 from texnomagic.symbol import TexnoMagicSymbol
 
 
+CONTROL_FILE = 'texno_alphabet.json'
+
+
 class TexnoMagicAlphabet:
     def __init__(self, path=None, name=None):
+        if path and path.name.lower() == CONTROL_FILE:
+            # accept path to alphabet control file as well
+            path = path.parent
+
         self.path = path
         self.name = name
         self._symbols = None
 
     @property
     def info_path(self):
-        return self.path / 'texno_alphabet.json'
+        return self.path / CONTROL_FILE
 
     @property
     def symbols_path(self):
@@ -199,10 +206,29 @@ class TexnoMagicAlphabet:
             return None
         return random.choice(symbols)
 
-    def stats(self, full=False):
-        if full:
-            return "%s: %s symbols @ %s" % (self.name, len(self.symbols), self.path)
-        return "%s: %s symbols" % (self.name, len(self.symbols))
+    def as_dict(self, symbols=True) -> dict:
+        d = {
+            'name': self.name,
+            'handle': self.handle,
+            'path': str(self.path),
+            'n_symbols': len(self.symbols),
+        }
+        if symbols:
+            d['symbols'] = [s.meaning for s in self.symbols]
+        return d
+
+    def pretty(self, path=False) -> str:
+        s = f'[cyan]{self.name}[/]: [white]{len(self.symbols)}[/] symbols'
+        if path:
+            s += f' @ [white]{self.path}[/]'
+        return s
 
     def __repr__(self):
-        return "<TexnoMagicAlphabet: %s>" % self.stats()
+        return f"<TexnoMagicAlphabet: {self.pretty()}>"
+
+
+def find_alphabet_at_path(path=None) -> TexnoMagicAlphabet | None:
+    control = common.find_file_at_parents(CONTROL_FILE, path)
+    if control:
+        return TexnoMagicAlphabet(control)
+    return None

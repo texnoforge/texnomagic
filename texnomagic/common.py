@@ -1,8 +1,18 @@
 import json
+import yaml
+import toml
 import numpy as np
 import os
 from pathlib import Path
 import re
+
+from rich.syntax import Syntax
+
+from texnomagic.console import console
+
+
+DUMP_FORMATS = ['toml', 'yaml', 'json']
+DUMP_FORMAT_DEFAULT = DUMP_FORMATS[0]
 
 
 def name2fn(name):
@@ -23,6 +33,7 @@ def get_data_path():
         # normal system :)
         p = Path.home() / '.local/share'
     return p / 'WordsOfPower'
+
 
 MIN_SCORE = 0.6
 
@@ -88,3 +99,38 @@ def int2bytes(x):
 
 def bytes2int(b):
     return int.from_bytes(b, byteorder="little")
+
+
+def pretty_dumps(data, format=DUMP_FORMAT_DEFAULT, indent=2):
+    match format:
+        case 'yaml':
+            return yaml.safe_dump(data, indent=indent, sort_keys=False)
+        case 'toml':
+            return toml.dumps(data)
+        case _:
+            return json.dumps(data, indent=indent, sort_keys=False)
+
+
+def pretty_print(data, format=DUMP_FORMAT_DEFAULT, **kwargs):
+    str = pretty_dumps(data, format=format, **kwargs)
+    syntax = Syntax(str, format)
+    console.print(syntax)
+
+
+def find_file_at_parents(fn : Path | str, path : Path | str | None = None) -> Path | None:
+    if path:
+        path = Path(path)
+    else:
+        path = Path()
+    cpath = path.absolute()
+
+    while True:
+        file_path = cpath / fn
+        if file_path.exists():
+            return file_path
+        next_cpath = cpath.parent
+        if next_cpath == cpath:
+            break
+        cpath = next_cpath
+
+    return None

@@ -69,8 +69,14 @@ class WoPOnlineMod:
         zipf = zipfile.ZipFile(filebytes)
         zipf.extractall(path)
 
-    def pretty_data(self):
-        return json.dumps(self.data, indent=4, sort_keys=True)
+    def as_dict(self):
+        return {
+            'name': self.name,
+            'name_id': self.name_id,
+            'profile_url': self.profile_url,
+            'filename': self.filename,
+            'binary_url': self.binary_url,
+        }
 
     def __repr__(self):
         return '<WoPOnlineMod: %s @ %s>' % (self.name, self.profile_url)

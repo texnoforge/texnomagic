@@ -28,7 +28,7 @@ from texnomagic import requests  # noqa
 
 
 LOG_FORMAT = '[TexnoMagic] %(message).64s'
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format=LOG_FORMAT)
+logging.basicConfig(stream=sys.stderr, level=logging.DEBUG, format=LOG_FORMAT)
 
 DEFAULT_PORT = 6969
 
@@ -47,7 +47,7 @@ def serve(host='localhost', port=DEFAULT_PORT, abcs=None):
             'abcs': abcs,
             'lang': TexnoMagicLanguage()
         }
-        logging.info("alphabets: %s" % abcs.stats())
+        logging.info("alphabets: %s" % abcs.pretty())
         logging.info("server is RUNNING at %s:%s (CTRL+C to terminate)", host, port)
         try:
             server.serve_forever()
