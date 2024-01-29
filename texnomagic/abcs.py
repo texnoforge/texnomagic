@@ -12,12 +12,13 @@ class TexnoMagicAlphabets:
         for tag, path in self.paths.items():
             self.abcs[tag] = get_alphabets(path)
 
-    def get_alphabet(self, name, tag=None):
+    def get_alphabet(self, name):
+        tag, _, abc_name = name.rpartition(':')
         for tag_, abcs in self.abcs.items():
             if tag and tag != tag_:
                 continue
             for abc in abcs:
-                if name == abc.name or name == abc.handle:
+                if abc_name == abc.name or abc_name == abc.handle:
                     return abc
         return None
 
@@ -43,7 +44,7 @@ class TexnoMagicAlphabets:
 def get_alphabets(paths=None):
     paths = paths or common.ALPHABETS_PATHS
     abcs = []
-    for abc_info_path in paths.glob(f'*/{abc_.CONTROL_FILE}'):
+    for abc_info_path in paths.glob(f'*/{abc_.INFO_FILE}'):
         abc = abc_.TexnoMagicAlphabet()
         abc.load(abc_info_path.parent)
         abcs.append(abc)

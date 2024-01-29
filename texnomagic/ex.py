@@ -24,3 +24,7 @@ class NotFound(TexnoMagicException):
 
 class AlphabetNotFound(TexnoMagicException):
     returncode = 31
+
+
+class SymbolNotFound(TexnoMagicException):
+    returncode = 32

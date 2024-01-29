@@ -7,13 +7,13 @@ from texnomagic import common
 from texnomagic.symbol import TexnoMagicSymbol
 
 
-CONTROL_FILE = 'texno_alphabet.json'
+INFO_FILE = 'texno_alphabet.json'
 
 
 class TexnoMagicAlphabet:
     def __init__(self, path=None, name=None):
-        if path and path.name.lower() == CONTROL_FILE:
-            # accept path to alphabet control file as well
+        if path and path.name.lower() == INFO_FILE:
+            # accept path to alphabet info file as well
             path = path.parent
 
         self.path = path
@@ -22,7 +22,7 @@ class TexnoMagicAlphabet:
 
     @property
     def info_path(self):
-        return self.path / CONTROL_FILE
+        return self.path / INFO_FILE
 
     @property
     def symbols_path(self):
@@ -191,9 +191,9 @@ class TexnoMagicAlphabet:
 
         return results
 
-    def get_symbol_by_name(self, name):
+    def get_symbol(self, name):
         for s in self.symbols:
-            if s.name == name:
+            if s.name == name or s.meaning == name:
                 return s
         return None
 
@@ -228,7 +228,7 @@ class TexnoMagicAlphabet:
 
 
 def find_alphabet_at_path(path=None) -> TexnoMagicAlphabet | None:
-    control = common.find_file_at_parents(CONTROL_FILE, path)
-    if control:
-        return TexnoMagicAlphabet(control)
+    info = common.find_file_at_parents(INFO_FILE, path)
+    if info:
+        return TexnoMagicAlphabet(info)
     return None

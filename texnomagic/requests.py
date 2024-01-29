@@ -26,7 +26,7 @@ def spell(context, text):
 def recognize(context, abc, curves):
     if not curves:
         return []
-    _abc = context['abcs'].get_abc_by_name(name=abc)
+    _abc = context['abcs'].get_alphabet(abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
 
@@ -44,7 +44,7 @@ def recognize(context, abc, curves):
 def recognize_top(context, abc, curves, n=0):
     if not curves:
         return []
-    _abc = context['abcs'].get_abc_by_name(name=abc)
+    _abc = context['abcs'].get_alphabet(name=abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
 
@@ -60,10 +60,10 @@ def recognize_top(context, abc, curves, n=0):
 
 @method
 def train_symbol(context, abc, symbol, n_gauss=0):
-    _abc = context['abcs'].get_abc_by_name(name=abc)
+    _abc = context['abcs'].get_alphabet(abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
-    _symbol = _abc.get_symbol_by_name(name=symbol)
+    _symbol = _abc.get_symbol(symbol)
     if not _symbol:
         raise ValueError("requested symbol isn't available: %s" % symbol)
     r = _symbol.train_model(n_gauss=n_gauss)
@@ -74,10 +74,10 @@ def train_symbol(context, abc, symbol, n_gauss=0):
 
 @method
 def model_preview(context, abc, symbol):
-    _abc = context['abcs'].get_abc_by_name(name=abc)
+    _abc = context['abcs'].get_alphabet(abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
-    _symbol = _abc.get_symbol_by_name(name=symbol)
+    _symbol = _abc.get_symbol(symbol)
     if not _symbol:
         raise ValueError("requested symbol isn't available: %s" % symbol)
     model = _symbol.model
@@ -99,7 +99,7 @@ def download_mod(context, mod):
 
 @method
 def export_abc(context, abc):
-    _abc = context['abcs'].get_abc_by_name(name=abc)
+    _abc = context['abcs'].get_alphabet(abc)
     if not _abc:
         raise ValueError("requested alphabet isn't available: %s" % abc)
     return Success(_abc.export())

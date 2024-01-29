@@ -25,6 +25,8 @@ def show(abc, format):
     Show details of a TexnoMagic alphabet.
 
     By default, tries to detect alphabet from current directory.
+
+    Select a specific alphabet by passing its name or handle as argument.
     """
     alphabet = cli_common.get_alphabet_of_fail(abc)
     alphabet.load()

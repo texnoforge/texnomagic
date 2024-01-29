@@ -8,8 +8,15 @@ from texnomagic.drawing import TexnoMagicDrawing
 from texnomagic.model import TexnoMagicSymbolModel
 
 
+INFO_FILE = 'texno_symbol.json'
+
+
 class TexnoMagicSymbol:
     def __init__(self, path=None, name=None, meaning=None):
+        if path and path.name.lower() == INFO_FILE:
+            # accept path to symbol info file as well
+            path = path.parent
+
         self.path = path
         self.name = name
         self.meaning = meaning
@@ -108,13 +115,35 @@ class TexnoMagicSymbol:
             return random.choice(self.drawings)
         return None
 
-    def pretty(self, path=False) -> str:
+    def as_dict(self):
+        d = {
+            'name': self.name,
+            'meaning': self.meaning,
+            'path': str(self.path),
+            'n_drawings': len(self.drawings),
+        }
+        if self.model:
+            d['model'] = self.model.as_dict()
+        return d
+
+    def pretty(self, n_drawings=False, model=False, path=False) -> str:
         s = f'[green]{self.meaning}[/]'
         if self.name != self.meaning:
             s += f' ([bright_green]{self.name}[/])'
+        if n_drawings:
+            s += f' - [white]{len(self.drawings)}[/] drawings'
+        if model and self.model:
+            s += f' - {self.model.pretty()}'
         if path:
             s += f' @ [white]{self.path}[/]'
         return s
 
     def __repr__(self):
         return '<TexnoMagicSymbol %s>' % self.pretty()
+
+
+def find_symbol_at_path(path=None) -> TexnoMagicSymbol | None:
+    info = common.find_file_at_parents(INFO_FILE, path)
+    if info:
+        return TexnoMagicSymbol(info)
+    return None
