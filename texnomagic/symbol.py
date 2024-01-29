@@ -37,12 +37,12 @@ class TexnoMagicSymbol:
         return self.path / 'model'
 
     @property
-    def images_path(self):
-        return self.path / 'images'
+    def image_base_path(self):
+        return self.path / 'image'
 
     @property
     def image_svg_path(self):
-        return self.images_path / IMAGE_SVG_FILE
+        return self.image_base_path / IMAGE_SVG_FILE
 
     @property
     def handle(self):
