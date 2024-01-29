@@ -9,6 +9,7 @@ from texnomagic.model import TexnoMagicSymbolModel
 
 
 INFO_FILE = 'texno_symbol.json'
+IMAGE_SVG_FILE = 'symbol.svg'
 
 
 class TexnoMagicSymbol:
@@ -25,7 +26,7 @@ class TexnoMagicSymbol:
 
     @property
     def info_path(self):
-        return self.path / 'texno_symbol.json'
+        return self.path / INFO_FILE
 
     @property
     def drawings_path(self):
@@ -34,6 +35,14 @@ class TexnoMagicSymbol:
     @property
     def model_path(self):
         return self.path / 'model'
+
+    @property
+    def images_path(self):
+        return self.path / 'images'
+
+    @property
+    def image_svg_path(self):
+        return self.images_path / IMAGE_SVG_FILE
 
     @property
     def handle(self):

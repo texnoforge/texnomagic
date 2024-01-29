@@ -148,6 +148,7 @@ class TexnoMagicAlphabet:
         """
         check alphabet for problems
         """
+        # NOTE: This needs a rewrite into something less ugly.
         warns = dict()
 
         def log_warn(key, val=1.0):
@@ -160,6 +161,8 @@ class TexnoMagicAlphabet:
         for symbol in self.symbols:
             if not symbol.model.ready:
                 log_warn(('warn', 'missing_model', symbol), -1)
+            if not symbol.image_svg_path.exists():
+                log_warn(('warn', 'missing_svg', symbol), -1)
             for drawing in symbol.drawings:
                 scores = self.scores(drawing)
                 rsymbol, rscore = scores[0]
@@ -181,6 +184,8 @@ class TexnoMagicAlphabet:
                 msg = "%s drawing got high score in %s: %s" % (args[0].meaning, args[1].meaning, score)
             elif prob == 'missing_model':
                 msg = "%s symbol is missing model" % args[0].meaning
+            elif prob == 'missing_svg':
+                msg = "%s symbol is missing SVG image" % args[0].meaning
             else:
                 msg = "%s drawing recognized as %s: %s" % (args[0].meaning, args[1].meaning, score)
             if n > 1:
