@@ -151,7 +151,7 @@ class TexnoMagicSymbol:
         return '<TexnoMagicSymbol %s>' % self.pretty()
 
 
-def find_symbol_at_path(path=None) -> TexnoMagicSymbol | None:
+def find_symbol_at_path(path=None):
     info = common.find_file_at_parents(INFO_FILE, path)
     if info:
         return TexnoMagicSymbol(info)

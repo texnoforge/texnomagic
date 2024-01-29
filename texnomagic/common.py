@@ -102,13 +102,12 @@ def bytes2int(b):
 
 
 def pretty_dumps(data, format=DUMP_FORMAT_DEFAULT, indent=2):
-    match format:
-        case 'yaml':
-            return yaml.safe_dump(data, indent=indent, sort_keys=False)
-        case 'toml':
-            return toml.dumps(data)
-        case _:
-            return json.dumps(data, indent=indent, sort_keys=False)
+    if format == 'toml':
+        return toml.dumps(data)
+    if format == 'yaml':
+        return yaml.safe_dump(data, indent=indent, sort_keys=False)
+    else:
+        return json.dumps(data, indent=indent, sort_keys=False)
 
 
 def pretty_print(data, format=DUMP_FORMAT_DEFAULT, **kwargs):
@@ -117,7 +116,7 @@ def pretty_print(data, format=DUMP_FORMAT_DEFAULT, **kwargs):
     console.print(syntax)
 
 
-def find_file_at_parents(fn : Path | str, path : Path | str | None = None) -> Path | None:
+def find_file_at_parents(fn, path=None):
     if path:
         path = Path(path)
     else:

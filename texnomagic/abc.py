@@ -222,7 +222,7 @@ class TexnoMagicAlphabet:
             d['symbols'] = [s.meaning for s in self.symbols]
         return d
 
-    def pretty(self, path=False) -> str:
+    def pretty(self, path=False):
         s = f'[cyan]{self.name}[/]: [white]{len(self.symbols)}[/] symbols'
         if path:
             s += f' @ [white]{self.path}[/]'
@@ -232,7 +232,7 @@ class TexnoMagicAlphabet:
         return f"<TexnoMagicAlphabet: {self.pretty()}>"
 
 
-def find_alphabet_at_path(path=None) -> TexnoMagicAlphabet | None:
+def find_alphabet_at_path(path=None):
     info = common.find_file_at_parents(INFO_FILE, path)
     if info:
         return TexnoMagicAlphabet(info)
