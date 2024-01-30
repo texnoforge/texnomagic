@@ -53,3 +53,33 @@ def get_symbol_or_fail(symbol):
             print("- select TexnoMagic symbol by name passing ALPHABET/SYMBOL argument")
             raise ex.SymbolNotFound()
     return _symbol
+
+
+def print_drawings(drawings, stats=True):
+    n_points = 0
+    n_curves = 0
+    n_bytes = 0
+    n = len(drawings)
+
+    for drawing in drawings:
+        n_points += len(drawing.points)
+        n_curves += len(drawing.curves)
+        n_bytes += drawing.file_size
+        drawing.load()
+        console.print(drawing.pretty())
+
+    if not stats or n <= 0:
+        return
+
+    avg_points = n_points / float(n)
+    avg_curves = n_curves / float(n)
+    avg_bytes = n_bytes / float(n)
+
+    print()
+    console.print("[bold white]average[/]: %.1f points, "
+                  "%.1f curves, %d kB"
+                  % (avg_points, avg_curves, avg_bytes / 1024.0))
+    print()
+    console.print("[bold white]total[/]: %.1f points, "
+                  "%.1f curves, %d kB, %d drawings"
+                  % (n_points, n_curves, n_bytes / 1024.0, n))

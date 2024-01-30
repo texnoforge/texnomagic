@@ -1,5 +1,6 @@
 import csv
 import itertools
+import math
 import numpy as np
 
 
@@ -10,6 +11,7 @@ class TexnoMagicDrawing:
         self.points_range = points_range
         self._curves = None
         self._points = None
+        self._file_size = None
         if curves:
             self.set_curves(curves)
 
@@ -24,6 +26,12 @@ class TexnoMagicDrawing:
         if self._points is None:
             self.load_curves()
         return self._points
+
+    @property
+    def file_size(self):
+        if self._file_size is None:
+            self._file_size = self.path.stat().st_size
+        return self._file_size
 
     @property
     def name(self):
@@ -124,6 +132,16 @@ class TexnoMagicDrawing:
         if not self.path or not self.path.exists():
             return
         self.path.unlink()
+
+    def pretty(self, size=True):
+        n_curves = len(self.curves)
+        n_points = len(self.points)
+        s = f"[white bold]{self.path.name}[/]: "
+        s += f"{n_points} points, {n_curves} curves"
+        if size:
+            fsize = math.ceil(self.file_size / 1024.0)
+            s += f", {fsize} kB"
+        return s
 
     def __repr__(self):
         return '<TexnoMagicDrawing @ %s: %d points in %d curves>' % (
