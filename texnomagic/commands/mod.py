@@ -36,7 +36,7 @@ def list(format):
 @mod.command()
 @click.argument('mod', nargs=-1)
 @click.option('-a', '--all', is_flag=True,
-              help="Download ALL mods. (default: only selected)")
+              help="Download ALL mods.  [default: only selected]")
 def download(mod, all):
     """
     Download Words of Power mods from wop.mod.io.

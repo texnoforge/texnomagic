@@ -121,7 +121,7 @@ def check(abc):
 @abc.command()
 @click.argument('abc', required=False)
 @click.option('-a', '--all', is_flag=True,
-              help="Re-train all models. (default: only missing)")
+              help="Re-train all models.  [default: only missing]")
 def train(abc, all):
     """
     Train (missing) models for alphabet.

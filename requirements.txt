@@ -1,8 +1,10 @@
-click               # clean CLI library
-jsonrpcserver >= 5  # JSON-RPC server
-parsimonious        # language parsing (PEG)
-pyyaml              # YAML format support
-requests            # HTTP for humans
-rich                # terminal colors
-scikit-learn        # symbol model training and recognition
-toml                # TOML format support
+click          # clean CLI library
+jsonrpcserver  # JSON-RPC server
+parsimonious   # language parsing (PEG)
+pycairo        # SVG
+pygame         # GUI
+pyyaml         # YAML format support
+requests       # HTTP for humans
+rich           # terminal colors
+scikit-learn   # symbol model training and recognition
+toml           # TOML format support

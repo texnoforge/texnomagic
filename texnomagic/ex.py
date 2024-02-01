@@ -28,3 +28,7 @@ class AlphabetNotFound(TexnoMagicException):
 
 class SymbolNotFound(TexnoMagicException):
     returncode = 32
+
+
+class DrawingNotFound(TexnoMagicException):
+    returncode = 33

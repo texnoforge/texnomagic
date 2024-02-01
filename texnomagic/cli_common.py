@@ -1,6 +1,9 @@
+from pathlib import Path
+
 from texnomagic.abcs import TexnoMagicAlphabets
 from texnomagic.abc import find_alphabet_at_path
 from texnomagic.symbol import find_symbol_at_path
+from texnomagic.drawing import TexnoMagicDrawing
 from texnomagic.console import console
 from texnomagic import common
 from texnomagic import ex
@@ -83,3 +86,15 @@ def print_drawings(drawings, stats=True):
     console.print("[bold white]total[/]: %.1f points, "
                   "%.1f curves, %d kB, %d drawings"
                   % (n_points, n_curves, n_bytes / 1024.0, n))
+
+
+def parse_drawings_arg(drawings):
+    r = []
+    for d in drawings:
+        drawing_path = Path(d)
+        if not drawing_path.exists():
+            console.log(f"[red]Drawing file not found[/]: [white]{d}[/]")
+            raise ex.DrawingNotFound(d)
+        dr = TexnoMagicDrawing(drawing_path)
+        r.append(dr)
+    return r

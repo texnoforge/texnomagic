@@ -1,6 +1,6 @@
 # TexnoMagic
 
-**TexnoMagic** is a free and open source Python 3 library and format for
+**TexnoMagic** is a free and open source Python 3 library, CLI and format for
 **symbol recognition** and symbol-based language parsing.
 
 I created **TexnoMagic** after prototyping serveral systems for magic
@@ -19,22 +19,34 @@ to get a better idea of what I'm trying to achieve.
 
 ## Status
 
-**alpha**: integration with [wopeditor] and [wop.mod.io] mod portal
+**alpha**: working well, but interfaces aren't final yet
+
 
 ### Features
 
-- save and load symbols to/from user files
-- portable open format based on simple JSON/CSV files
-- first user-created alphabets uploaded to [wop.mod.io] mod portal
-- train Gaussian Mixture Models (GMM) from symbol data
-- real-time symbol recognition
+- portable open format based on proven and widely supported standards:
+  - JSON for metadata
+  - CSV for symbol drawing data (fast and easy to parse)
+  - SVG for infinitely scalable symbol images
+- provide consistent and practical directory structure
+- save and load symbols to/from well-defined user files
+- manage symbols in alphabets
+- manage training data (drawings) for individual symbols
+- show symbol drawings in a GUI
+- export symbols to SVG/PNG images
+- download and use mods from [wop.mod.io] mod portal easily
+- train symbol models from drawings
+  - currently uses Gaussian Mixture Models (GMM)
+  - neural networks support is possible
+- use symbol models for real-time symbol recognition
 - spell language parser based of Parsing Expression Grammars (PEG)
-- interfaces:
-    - python module from [PyPI] (`texnomagic`)
-    - Command-Line Interface (`texnomagic.cli`)
-    - simple TCP server using JSON-RPC (`texnomagic.server`) - universal interface
 - tests, linting, CI
-- ⚠ format and API not stable yet
+- proper python packaging, available from [PyPI]
+- interfaces:
+  - Python module (`texnomagic`)
+  - Command-Line Interface (`texnomagic.cli`)
+  - simple TCP server using JSON-RPC (`texnomagic.server`) - universal interface
+- ⚠ format and API aren't final yet
 - ⚠ docs need more content
 
 
@@ -89,16 +101,35 @@ Options:
   -h, --help  Show this message and exit.
 
 Commands:
-  abc     Manage TexnoMagic alphabets.
-  mod     Manage Words of Power mods.
-  server  Start TexnoMagic TCP server on PORT.
-  spell   Parse and work with TexnoMagic Spells.
+  abc      Manage TexnoMagic alphabets.
+  drawing  Manage TexnoMagic drawings.
+  mod      Manage Words of Power mods.
+  server   Start TexnoMagic TCP server on PORT.
+  spell    Parse and work with TexnoMagic Spells.
+  symbol   Manage TexnoMagic symbols.
 ```
 
 Add `-h`/`--help` after a command to get usage for that command:
 
 ```
-$> texnomagic abc -h
+$> texnomagic drawing -h
+
+Usage: texnomagic drawing [OPTIONS] COMMAND [ARGS]...
+
+  Manage TexnoMagic drawings.
+
+  A drawings is a series of curves defined by 2D points.
+
+  They are usually stored as simple CSV files.
+
+Options:
+  -h, --help  Show command help.
+
+Commands:
+  export  Export TexnoMagic drawing(s) as images.
+  info    Show information about TexnoMagic drawing(s).
+  list    List all drawings in a TexnoMagic symbol.
+  show    Display TexnoMagic drawing(s) in GUI.
 ```
 
 If your shell doesn't see the script (i.e. when not in `$PATH`), you can invoke
