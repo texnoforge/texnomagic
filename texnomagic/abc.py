@@ -228,8 +228,11 @@ class TexnoMagicAlphabet:
             s += f' @ [white]{self.path}[/]'
         return s
 
+    def __str__(self):
+        return f'{self.name}: {len(self.symbols)} symbols'
+
     def __repr__(self):
-        return f"<TexnoMagicAlphabet: {self.pretty()}>"
+        return f"<TexnoMagicAlphabet: {self.__str__()}>"
 
 
 def find_alphabet_at_path(path=None):
