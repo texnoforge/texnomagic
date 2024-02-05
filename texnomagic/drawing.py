@@ -5,13 +5,12 @@ import numpy as np
 
 import cairo
 
+from texnomagic import common
+
 
 RESOLUTION_DEFAULT = 1000
 LINE_WIDTH_DEFAULT = 0.04
 MARGIN_DEFAULT = 0.05
-
-EXPORT_FORMATS = ['svg', 'png']
-EXPORT_FORMAT_DEFAULT = 'svg'
 
 
 class TexnoMagicDrawing:
@@ -179,12 +178,13 @@ class TexnoMagicDrawing:
         return ctx
 
     def export(self, out_path,
-               format=EXPORT_FORMAT_DEFAULT,
+               format=common.IMAGE_FORMAT_DEFAULT,
                res=RESOLUTION_DEFAULT,
                margin=MARGIN_DEFAULT,
                line_width=LINE_WIDTH_DEFAULT):
 
-        assert(format in EXPORT_FORMATS)
+        assert(format in common.IMAGE_FORMATS)
+
         if format == 'svg':
             surface = cairo.SVGSurface(out_path, res, res)
         else:

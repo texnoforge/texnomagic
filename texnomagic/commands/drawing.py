@@ -2,6 +2,7 @@ from pathlib import Path
 
 import click
 
+from texnomagic import common
 from texnomagic import cli_common
 from texnomagic import drawing as drawing_mod
 from texnomagic.gui.drawing import show_drawings_gui
@@ -77,8 +78,8 @@ jjkjjk
 @drawing.command()
 @click.argument('drawing', nargs=-1, required=True)
 @click.option('-f', '--format',
-              default=drawing_mod.EXPORT_FORMAT_DEFAULT, show_default=True,
-              type=click.Choice(drawing_mod.EXPORT_FORMATS),
+              default=common.IMAGE_FORMAT_DEFAULT, show_default=True,
+              type=click.Choice(common.IMAGE_FORMATS),
               help="Select output format.")
 @click.option('-r', '--resolution',
               default=drawing_mod.RESOLUTION_DEFAULT, show_default=True,

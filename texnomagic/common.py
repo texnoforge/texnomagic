@@ -12,7 +12,10 @@ from texnomagic.console import console
 
 
 DUMP_FORMATS = ['toml', 'yaml', 'json']
-DUMP_FORMAT_DEFAULT = DUMP_FORMATS[0]
+DUMP_FORMAT_DEFAULT = 'toml'
+
+IMAGE_FORMATS = ['svg', 'png']
+IMAGE_FORMAT_DEFAULT = 'svg'
 
 
 def name2fn(name):
