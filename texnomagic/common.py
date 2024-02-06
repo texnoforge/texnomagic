@@ -57,9 +57,10 @@ CORE_SYMBOLS_ORDER = [
     # elements
     'fire',
     'ice',
-    'lightning',
     'water',
     'air',
+    'lightning',
+    'electro',
     'earth',
     'life',
     'death',
