@@ -32,7 +32,6 @@ to get a better idea of what I'm trying to achieve.
 - save and load symbols to/from well-defined user files
 - manage symbols in alphabets
 - manage training data (drawings) for individual symbols
-- show symbol drawings in a GUI
 - export symbols to SVG/PNG images
 - download and use mods from [wop.mod.io] mod portal easily
 - train symbol models from drawings

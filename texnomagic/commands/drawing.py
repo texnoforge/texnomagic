@@ -5,7 +5,6 @@ import click
 from texnomagic import common
 from texnomagic import cli_common
 from texnomagic import drawing as drawing_mod
-from texnomagic.gui.drawing import show_drawings_gui
 
 
 @click.group()
@@ -37,7 +36,7 @@ def list(symbol):
 
 @drawing.command()
 @click.argument('drawing', nargs=-1, required=True)
-def info(drawing):
+def show(drawing):
     """
     Show information about TexnoMagic drawing(s).
 
@@ -47,32 +46,6 @@ def info(drawing):
     """
     drawings = cli_common.parse_drawings_arg(drawing)
     cli_common.print_drawings(drawings)
-
-
-@drawing.command()
-@click.argument('drawing', nargs=-1, required=True)
-@click.option('-r', '--resolution',
-              default=drawing_mod.RESOLUTION_DEFAULT, show_default=True,
-              help="Set image resolution.")
-@click.option('-w', '--line-width',
-              default=drawing_mod.LINE_WIDTH_DEFAULT, show_default=True,
-              help="Set relative drawing line width.")
-@click.option('-m', '--margin',
-              default=drawing_mod.MARGIN_DEFAULT, show_default=True,
-              help="Set relative margin around the drawing.")
-@click.option('-M', '--merge', is_flag=True,
-              help="Merge all drawings in a single image.")
-def show(drawing, resolution, line_width, margin, merge):
-    """
-    Display TexnoMagic drawing(s) in GUI.
-jjkjjk
-    Select one or more drawing CSV files as arguments.
-
-    Use `texnomagic drawing export` to save as images (PNG, SVG).
-    """
-    drawings = cli_common.parse_drawings_arg(drawing)
-
-    show_drawings_gui(drawings, merge=merge, resolution=resolution, margin=margin, line_width=line_width)
 
 
 @drawing.command()
