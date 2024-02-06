@@ -1,5 +1,6 @@
 import json
 import os
+from pathlib import PurePosixPath
 import random
 import shutil
 
@@ -210,6 +211,24 @@ class TexnoMagicAlphabet:
         if len(symbols) < 1:
             return None
         return random.choice(symbols)
+
+    def gen_readme_md(self, heading=3):
+        """
+        Generate Markdown for alphabet README.md
+        """
+        htxt = heading * '#'
+        txt = ''
+        for s in self.symbols:
+            img_path = PurePosixPath().joinpath(*s.get_image_path().parts[-4:])
+            stxt = (f"{htxt} {s.meaning} - {s.name}\n\n"
+                    f"![{s.meaning}]({img_path})\n")
+            if len(s.drawings) > 0:
+                d_path = PurePosixPath().joinpath(*s.drawings_path.parts[-3:])
+                stxt += f'\n{len(s.drawings)} [drawings]({d_path})\n'
+
+            txt += stxt + '\n'
+
+        return txt.rstrip()
 
     def as_dict(self, symbols=True) -> dict:
         d = {

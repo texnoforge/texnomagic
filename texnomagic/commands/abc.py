@@ -141,6 +141,20 @@ def train(abc, all):
 
 @abc.command()
 @click.argument('abc', required=False)
+@click.option('-h', '--heading', type=int, default=3, show_default=True,
+              help="Heading level.")
+def readme(abc, heading):
+    """
+    Generate Markdown symbols list for alphabet README.md.
+    """
+    alphabet = cli_common.get_alphabet_of_fail(abc)
+    alphabet.load()
+
+    print(alphabet.gen_readme_md(heading=heading))
+
+
+@abc.command()
+@click.argument('abc', required=False)
 def flip_y(abc):
     """
     Flip Y axis for all symbols in alphabet.
