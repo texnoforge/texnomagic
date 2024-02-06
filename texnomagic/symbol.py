@@ -1,15 +1,16 @@
 import json
 import numpy as np
 import random
+import shutil
 import time
 
 from texnomagic import common
+from texnomagic import ex
 from texnomagic.drawing import TexnoMagicDrawing
 from texnomagic.model import TexnoMagicSymbolModel
 
 
 INFO_FILE = 'texno_symbol.json'
-IMAGE_SVG_FILE = 'symbol.svg'
 
 
 class TexnoMagicSymbol:
@@ -41,10 +42,6 @@ class TexnoMagicSymbol:
         return self.path / 'image'
 
     @property
-    def image_svg_path(self):
-        return self.image_base_path / IMAGE_SVG_FILE
-
-    @property
     def handle(self):
         return common.name2handle(self.name)
 
@@ -53,6 +50,9 @@ class TexnoMagicSymbol:
         if self._model is None:
             self.load_model()
         return self._model
+
+    def get_image_path(self, format=common.IMAGE_FORMAT_DEFAULT):
+        return self.image_base_path / f'symbol.{format}'
 
     def load(self, path=None):
         if path:
@@ -123,6 +123,32 @@ class TexnoMagicSymbol:
         if self.drawings:
             return random.choice(self.drawings)
         return None
+
+    def export_image(
+            self,
+            out_path,
+            format=common.IMAGE_FORMAT_DEFAULT,
+            **kwargs):
+
+        image_path = self.get_image_path(format=format)
+        if image_path.exists():
+            # just copy over existing image
+            shutil.copy(image_path, out_path)
+            return True
+
+        if format == 'png':
+            image_path = self.get_image_path(format='svg')
+            if image_path.exists():
+                # TODO: export symbol.svg to PNG
+                print("TODO: convert symbol.svg to PNG")
+
+        d = self.random_drawing()
+        if d:
+            # no image present - render from random curve
+            d.export(out_path, format=format, **kwargs)
+            return True
+
+        raise ex.ImageNotFound()
 
     def as_dict(self):
         d = {

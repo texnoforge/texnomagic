@@ -161,7 +161,7 @@ class TexnoMagicAlphabet:
         for symbol in self.symbols:
             if not symbol.model.ready:
                 log_warn(('warn', 'missing_model', symbol), -1)
-            if not symbol.image_svg_path.exists():
+            if not symbol.get_image_path().exists():
                 log_warn(('warn', 'missing_svg', symbol), -1)
             for drawing in symbol.drawings:
                 scores = self.scores(drawing)
