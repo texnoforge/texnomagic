@@ -14,7 +14,7 @@ INFO_FILE = 'texno_symbol.json'
 
 
 class TexnoMagicSymbol:
-    def __init__(self, path=None, name=None, meaning=None):
+    def __init__(self, path=None, meaning=None, name=None):
         if path and path.name.lower() == INFO_FILE:
             # accept path to symbol info file as well
             path = path.parent
@@ -173,8 +173,11 @@ class TexnoMagicSymbol:
             s += f' @ [white]{self.path}[/]'
         return s
 
+    def __str__(self):
+        return f'{self.meaning} ({self.name})'
+
     def __repr__(self):
-        return '<TexnoMagicSymbol %s>' % self.pretty()
+        return '<TexnoMagicSymbol %s>' % self.__str__()
 
 
 def find_symbol_at_path(path=None):

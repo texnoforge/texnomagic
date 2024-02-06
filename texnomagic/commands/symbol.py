@@ -1,8 +1,11 @@
 import click
+from rich.prompt import Prompt
 
 from texnomagic.console import console
 from texnomagic import common
 from texnomagic import cli_common
+from texnomagic import ex
+from texnomagic.symbol import TexnoMagicSymbol
 
 
 @click.group()
@@ -81,6 +84,41 @@ def list(abc, names, meanings, format):
     console.print(f"# {len(alphabet.symbols)} symbols @ {alphabet.symbols_path}")
     for symbol in alphabet.symbols:
         console.print(symbol.pretty(n_drawings=True, model=True))
+
+
+@symbol.command()
+@click.argument('abc', required=False)
+@click.option('-m', '--meaning',
+              help="Symbol meaning. Should be lowercase english.")
+@click.option('-n', '--name',
+              help="Symbol name. Any string is fine.")
+def new(abc, meaning, name):
+    """
+    Create a new TexnoMagic symbol.
+
+    By default, tries to detect alphabet from current directory.
+
+    Select a specific alphabet by passing its name or handle as argument.
+    """
+    alphabet = cli_common.get_alphabet_of_fail(abc)
+
+    if not (meaning or name):
+        meaning = Prompt.ask("Symbol Meaning (lowercase english)")
+        name = Prompt.ask("Symbol Name (any string)")
+        print()
+        if not (meaning or name):
+            console.print("[red]ERROR[/]: symbol meaning or name is required")
+            raise ex.InvalidInput()
+
+    if not name:
+        name = meaning
+    if not meaning:
+        meaning = name
+    meaning = common.name2handle(meaning)
+
+    symbol = TexnoMagicSymbol(meaning=meaning, name=name)
+    alphabet.save_new_symbol(symbol)
+    console.print(f"SAVED NEW symbol {symbol.pretty(path=True)}")
 
 
 TEXNOMAGIC_CLI_COMMANDS = [symbol]
