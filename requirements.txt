@@ -1,7 +1,6 @@
 click          # clean CLI library
 jsonrpcserver  # JSON-RPC server
 parsimonious   # language parsing (PEG)
-pycairo        # SVG
 pyyaml         # YAML format support
 requests       # HTTP for humans
 rich           # terminal colors

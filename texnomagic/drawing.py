@@ -3,15 +3,6 @@ import itertools
 import math
 import numpy as np
 
-import cairo
-
-from texnomagic import common
-
-
-RESOLUTION_DEFAULT = 1000
-LINE_WIDTH_DEFAULT = 0.04
-MARGIN_DEFAULT = 0.05
-
 
 class TexnoMagicDrawing:
 
@@ -141,63 +132,6 @@ class TexnoMagicDrawing:
         if not self.path or not self.path.exists():
             return
         self.path.unlink()
-
-    def render_cairo(self,
-                     cairo_context,
-                     res=RESOLUTION_DEFAULT,
-                     margin=MARGIN_DEFAULT,
-                     line_width=LINE_WIDTH_DEFAULT):
-        """
-        Render drawing path using cairo surface context.
-
-        This is used to render curves as SVG and PNG - see cairo docs.
-        """
-        line_width = min(0.5, line_width)
-        margin = min(0.45, line_width)
-
-        ctx = cairo_context
-        ctx.scale(res, res)
-        ctx.set_source_rgb(0, 0, 0)
-        ctx.paint()
-        ctx.fill()
-
-        ctx.set_source_rgb(1.0, 1.0, 1.0)
-        ctx.set_line_width(line_width)
-        ctx.set_line_cap(cairo.LineCap.ROUND)
-        ctx.set_line_join(cairo.LineJoin.ROUND)
-
-        margin_real = margin + 0.5 * line_width
-        content_size = 1.0 - 2 * margin_real
-        for curve in self.curves_fit_area(np.full(2, margin_real), np.full(2, content_size)):
-            x, y = curve[0]
-            ctx.move_to(x, y)
-            for x, y in curve[1:]:
-                ctx.line_to(x, y)
-            ctx.stroke()
-
-        return ctx
-
-    def export(self, out_path,
-               format=common.IMAGE_FORMAT_DEFAULT,
-               res=RESOLUTION_DEFAULT,
-               margin=MARGIN_DEFAULT,
-               line_width=LINE_WIDTH_DEFAULT):
-
-        assert(format in common.IMAGE_FORMATS)
-
-        if format == 'svg':
-            surface = cairo.SVGSurface(out_path, res, res)
-        else:
-            surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, res, res)
-        ctx = cairo.Context(surface)
-
-        self.render_cairo(ctx, res=res, line_width=line_width, margin=margin)
-
-        if format == 'png':
-            surface.write_to_png(out_path)
-
-        surface.finish()
-        surface.flush()
 
     def pretty(self, size=True):
         n_curves = len(self.curves)

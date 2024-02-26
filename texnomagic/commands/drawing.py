@@ -48,45 +48,4 @@ def show(drawing):
     cli_common.print_drawings(drawings)
 
 
-@drawing.command()
-@click.argument('drawing', nargs=-1, required=True)
-@click.option('-f', '--format',
-              default=common.IMAGE_FORMAT_DEFAULT, show_default=True,
-              type=click.Choice(common.IMAGE_FORMATS),
-              help="Select output format.")
-@click.option('-r', '--resolution',
-              default=drawing_mod.RESOLUTION_DEFAULT, show_default=True,
-              help="Set image resolution.")
-@click.option('-w', '--line-width',
-              default=drawing_mod.LINE_WIDTH_DEFAULT, show_default=True,
-              help="Set relative drawing line width.")
-@click.option('-m', '--margin',
-              default=drawing_mod.MARGIN_DEFAULT, show_default=True,
-              help="Set relative margin around the drawing.")
-@click.option('-O', '--result-dir', type=Path,
-              help=("Save results into specified dir"
-                    "  [default: same as input]"))
-def export(drawing, format, resolution, line_width, margin, result_dir=None):
-    """
-    Export TexnoMagic drawing(s) as SVG/PNG images.
-
-    Select one or more drawing CSV files as arguments.
-
-    Use `texnomagic drawing show` to view in GUI.
-    """
-    drawings = cli_common.parse_drawings_arg(drawing)
-
-    if result_dir:
-        result_dir.mkdir(parents=True, exist_ok=True)
-
-    for d in drawings:
-        new_name = f'{d.path.stem}.{format}'
-        if result_dir:
-            out_path = result_dir / new_name
-        else:
-            out_path = d.path.parent / new_name
-
-        d.export(out_path=out_path, format=format, res=resolution, line_width=line_width, margin=margin)
-
-
 TEXNOMAGIC_CLI_COMMANDS = [drawing]
