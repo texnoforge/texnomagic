@@ -1,10 +1,6 @@
-from pathlib import Path
-
 import click
 
-from texnomagic import common
 from texnomagic import cli_common
-from texnomagic import drawing as drawing_mod
 
 
 @click.group()

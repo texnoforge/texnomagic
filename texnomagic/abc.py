@@ -217,17 +217,20 @@ class TexnoMagicAlphabet:
         Generate Markdown for alphabet README.md
         """
         htxt = heading * '#'
-        txt = ''
+        txt_ref = ''
+        txt_body = ''
         for s in self.symbols:
             img_path = PurePosixPath().joinpath(*s.get_image_path().parts[-4:])
-            stxt = (f"{htxt} {s.meaning} - {s.name}\n\n"
-                    f"![{s.meaning}]({img_path})\n")
+            stxt = (f"{htxt} {s}\n\n"
+                    f"![{s}]({img_path})\n")
             if len(s.drawings) > 0:
                 d_path = PurePosixPath().joinpath(*s.drawings_path.parts[-3:])
                 stxt += f'\n{len(s.drawings)} [drawings]({d_path})\n'
 
-            txt += stxt + '\n'
+            txt_ref += f"* [{s}](#{s.name}-{s.meaning.lower()})\n"
+            txt_body += stxt + '\n'
 
+        txt = f"**{len(self.symbols)}** symbols:\n\n{txt_ref}\n{txt_body}"
         return txt.rstrip()
 
     def as_dict(self, symbols=True) -> dict:

@@ -136,16 +136,19 @@ class TexnoMagicSymbolModel:
         self.ready = True
         return True
 
-    def as_dict(self):
+    def as_dict(self, relative_to=None):
+        path = self.path
+        if relative_to:
+            path = path.relative_to(relative_to)
         return {
             'model_type': 'GMM',
             'n_gauss': self.n_gauss,
-            'score_average': self.score_avg,
-            'path': str(self.path),
+            'score_avg': self.score_avg,
         }
 
     def pretty(self):
-        return f"[magenta]GMM[/] model with {self.n_gauss} gaussians"
+        return (f"[magenta]GMM[/] model (n_gauss: {self.n_gauss}, "
+                "score_avg: %.1f)" % self.score_avg)
 
     def __repr__(self):
         return '<TexnoMagicSymbolModel @ %s>' % self.path

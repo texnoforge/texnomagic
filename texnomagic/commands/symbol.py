@@ -68,22 +68,25 @@ def list(abc, names, meanings, format):
         return
 
     out_list = None
-    if meanings:
+    if names and meanings:
+        # name (meaning)
+        out_list = [s.pretty() for s in alphabet.symbols]
+    elif meanings:
         # list meanings only
         out_list = [s.meaning for s in alphabet.symbols]
-    if names:
+    elif names:
         # names meanings only
         out_list = [s.name for s in alphabet.symbols]
 
     if out_list:
         for o in out_list:
-            print(o)
+            console.print(o)
         return
 
     # print in text format (default)
     console.print(f"# {len(alphabet.symbols)} symbols @ {alphabet.symbols_path}")
     for symbol in alphabet.symbols:
-        console.print(symbol.pretty(n_drawings=True, model=True))
+        console.print(symbol.pretty(drawings=True, images=True, model=True))
 
 
 @symbol.command()

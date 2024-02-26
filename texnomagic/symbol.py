@@ -23,6 +23,7 @@ class TexnoMagicSymbol:
         self.name = name
         self.meaning = meaning
         self._drawings = None
+        self._images = None
         self._model = None
 
     @property
@@ -54,6 +55,20 @@ class TexnoMagicSymbol:
     def get_image_path(self, format=common.IMAGE_FORMAT_DEFAULT):
         return self.image_base_path / f'symbol.{format}'
 
+    def get_images(self):
+        imgs = {}
+        for format in common.IMAGE_FORMATS:
+            image_path = self.get_image_path(format=format)
+            if image_path.exists():
+                imgs[format] = image_path
+        return imgs
+
+    @property
+    def images(self):
+        if self._images is None:
+            self._images = self.get_images()
+        return self._images
+
     def load(self, path=None):
         if path:
             self.path = path
@@ -77,9 +92,8 @@ class TexnoMagicSymbol:
             self._drawings.append(drawing)
 
     def load_model(self):
-        model = TexnoMagicSymbolModel(self.model_path)
-        model.load()
-        self._model = model
+        self._model = TexnoMagicSymbolModel(self.model_path)
+        self._model.load()
 
     def train_model(self, n_gauss=0):
         if not self._model:
@@ -151,30 +165,41 @@ class TexnoMagicSymbol:
         raise ex.ImageNotFound()
 
     def as_dict(self):
+        images = {f: str(p.relative_to(self.path)) for f, p in self.images.items()}
         d = {
             'name': self.name,
             'meaning': self.meaning,
             'path': str(self.path),
             'n_drawings': len(self.drawings),
+            'images': images,
         }
         if self.model:
-            d['model'] = self.model.as_dict()
+            d['model'] = self.model.as_dict(relative_to=self.path)
         return d
 
-    def pretty(self, n_drawings=False, model=False, path=False) -> str:
-        s = f'[green]{self.meaning}[/]'
+    def pretty(self, drawings=False, images=False, model=False, path=False) -> str:
+        s = f'[bright_green]{self.name}[/]'
         if self.name != self.meaning:
-            s += f' ([bright_green]{self.name}[/])'
-        if n_drawings:
-            s += f' - [white]{len(self.drawings)}[/] drawings'
-        if model and self.model:
-            s += f' - {self.model.pretty()}'
+            s += f' ([green]{self.meaning}[/])'
+
+        extras = []
+        if images and self.images:
+            fmts = [f'[blue]{f.upper()}[/]' for f in self.images.keys()]
+            extras.append(f"{', '.join(fmts)} image")
+        if drawings and self.drawings:
+            extras.append(f'[white]{len(self.drawings)}[/] drawings')
+        if model and self.model.ready:
+            extras.append(f'{self.model.pretty()}')
+        if extras:
+            s += f": {', '.join(extras)}"
+
         if path:
             s += f' @ [white]{self.path}[/]'
+
         return s
 
     def __str__(self):
-        return f'{self.meaning} ({self.name})'
+        return f'{self.name} ({self.meaning})'
 
     def __repr__(self):
         return '<TexnoMagicSymbol %s>' % self.__str__()
