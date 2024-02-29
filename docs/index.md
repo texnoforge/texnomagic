@@ -18,12 +18,15 @@ to get a better idea of what I'm trying to achieve.
 
 See [TexnoLatin](https://github.com/texnoforge/texnolatin) reference alphabet.
 
+
 ## Status: alpha
 
 **alpha**: working well, but interfaces aren't final yet
 
 Python **3.12** is not yet supported due to `jsonrpcserver` / `oslash` dep
 [breakage](https://github.com/explodinglabs/jsonrpcserver/issues/273).
+
+**[TexnoMagic news](news.md)**
 
 
 ### Features
