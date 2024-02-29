@@ -17,9 +17,12 @@ You can read my posts about
 to get a better idea of what I'm trying to achieve.
 
 
-## Status
+## Status: alpha
 
 **alpha**: working well, but interfaces aren't final yet
+
+Python **3.12** is not yet supported due to `jsonrpcserver` / `oslash` dep
+[breakage](https://github.com/explodinglabs/jsonrpcserver/issues/273).
 
 
 ### Features
@@ -51,11 +54,14 @@ to get a better idea of what I'm trying to achieve.
 
 ## Install
 
-TexnoMagic is available from [PyPI] for Python **3.8+** (latest tested: **3.12**):
+TexnoMagic is available from [PyPI] for Python **3.8+** (latest tested: **3.11**):
 
 ```
 pip install texnomagic
 ```
+
+Python **3.12** is not yet supported due to `jsonrpcserver` / `oslash` dep
+[breakage](https://github.com/explodinglabs/jsonrpcserver/issues/273).
 
 You can install / develop / build from source as with any other python module.
 
