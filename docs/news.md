@@ -1,4 +1,4 @@
-# TexnoMagic news
+# TexnoMagic News
 
 ## texnomagic 0.7.0
 

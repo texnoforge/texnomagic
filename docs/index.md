@@ -26,7 +26,7 @@ See [TexnoLatin](https://github.com/texnoforge/texnolatin) reference alphabet.
 Python **3.12** is not yet supported due to `jsonrpcserver` / `oslash` dep
 [breakage](https://github.com/explodinglabs/jsonrpcserver/issues/273).
 
-**[TexnoMagic news](news.md)**
+**[TexnoMagic News](news.md)**
 
 
 ### Features

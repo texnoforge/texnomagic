@@ -11,6 +11,7 @@ theme:
     accent: cyan
 nav:
   - index.md
+  - news.md
 markdown_extensions:
   - admonition
   - toc:
