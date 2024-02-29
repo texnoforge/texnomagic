@@ -16,6 +16,7 @@ You can read my posts about
 
 to get a better idea of what I'm trying to achieve.
 
+See [TexnoLatin](https://github.com/texnoforge/texnolatin) reference alphabet.
 
 ## Status: alpha
 
@@ -142,11 +143,9 @@ $> python -m texnomagic.cli list-abcs --full
 
 You can find code examples in:
 
+* [texnomagic/commands](https://github.com/texnoforge/texnomagic/tree/master/texnomagic/commands)
+* [texnomagic/requests.py](https://github.com/texnoforge/texnomagic/blob/master/texnomagic/requests.py)
 * [tests/](https://github.com/texnoforge/texnomagic/tree/master/tests)
-* [texnomagic/cli.py](https://github.com/texnoforge/texnomagic/blob/master/texnomagic/cli.py)
-* [python-wopeditor](https://github.com/texnoforge/python-wopeditor/blob/master/wopeditor/wopeditor.py) (archived project)
-
-See [reference docs] for `texnomagic` python module.
 
 
 ### GUI 🖱️
@@ -209,7 +208,6 @@ Feel free to drop by
 [#wopeditor @ texnoforge discord](https://discord.gg/Dq3vaeg3pG).
 
 
-[reference docs]: https://texnoforge.github.io/texnomagic/reference/texnomagic/
 [wopeditor]: https://texnoforge.github.io/wopeditor/
 [texnomagic.client]: https://github.com/texnoforge/texnomagic/blob/master/texnomagic/client.py
 [texnomagic.server]: https://github.com/texnoforge/texnomagic/blob/master/texnomagic/server.py
