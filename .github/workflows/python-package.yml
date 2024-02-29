@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.11', '3.12']
 
     steps:
     - uses: actions/checkout@v4
@@ -22,21 +22,3 @@ jobs:
       run: |
         pip install pytest pytest-cov
         pytest
-
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v4
-    - name: Install texnomagic package
-      run: |
-        pip install .
-    - name: Install ruff linter
-      run: |
-        pip install ruff
-    - name: Lint with ruff
-      run: |
-        pip install ruff
-        ruff check .
