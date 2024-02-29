@@ -35,7 +35,6 @@ Python **3.12** is not yet supported due to `jsonrpcserver` / `oslash` dep
 - save and load symbols to/from well-defined user files
 - manage symbols in alphabets
 - manage training data (drawings) for individual symbols
-- export symbols to SVG/PNG images
 - download and use mods from [wop.mod.io] mod portal easily
 - train symbol models from drawings
   - currently uses Gaussian Mixture Models (GMM)
@@ -117,24 +116,19 @@ Commands:
 Add `-h`/`--help` after a command to get usage for that command:
 
 ```
-$> texnomagic drawing -h
+$> texnomagic symbol -h
 
-Usage: texnomagic drawing [OPTIONS] COMMAND [ARGS]...
+Usage: texnomagic symbol [OPTIONS] COMMAND [ARGS]...
 
-  Manage TexnoMagic drawings.
-
-  A drawings is a series of curves defined by 2D points.
-
-  They are usually stored as simple CSV files.
+  Manage TexnoMagic symbols.
 
 Options:
   -h, --help  Show command help.
 
 Commands:
-  export  Export TexnoMagic drawing(s) as images.
-  info    Show information about TexnoMagic drawing(s).
-  list    List all drawings in a TexnoMagic symbol.
-  show    Display TexnoMagic drawing(s) in GUI.
+  list  List all symbols in a TexnoMagic alphabet.
+  new   Create a new TexnoMagic symbol.
+  show  Show details of a TexnoMagic symbol.
 ```
 
 If your shell doesn't see the script (i.e. when not in `$PATH`), you can invoke
