@@ -29,7 +29,7 @@ def show(abc, format):
     Select a specific alphabet by passing its name or handle as argument.
     """
     alphabet = cli_common.get_alphabet_of_fail(abc)
-    alphabet.load()
+
     common.pretty_print(alphabet.as_dict(), format)
 
 
@@ -108,7 +108,6 @@ def check(abc):
     Check alphabet for issues.
     """
     alphabet = cli_common.get_alphabet_of_fail(abc)
-    alphabet.load()
 
     console.print(f"[green]CHECK[/] alphabet: {alphabet.pretty(path=True)}")
     r = alphabet.check()
@@ -120,6 +119,18 @@ def check(abc):
 
 @abc.command()
 @click.argument('abc', required=False)
+def normalize(abc):
+    """
+    Normalize alphabet symbols.
+    """
+    alphabet = cli_common.get_alphabet_of_fail(abc)
+
+    console.print(f"[green]NORMALIZE[/] alphabet: {alphabet.pretty(path=True)}")
+    alphabet.normalize()
+
+
+@abc.command()
+@click.argument('abc', required=False)
 @click.option('-a', '--all', is_flag=True,
               help="Re-train all models.  [default: only missing]")
 def train(abc, all):
@@ -127,7 +138,6 @@ def train(abc, all):
     Train (missing) models for alphabet.
     """
     alphabet = cli_common.get_alphabet_of_fail(abc)
-    alphabet.load()
 
     console.print(f"[green]TRAIN[/] alphabet models: {alphabet.pretty(path=True)}")
     new, fail, old = alphabet.train_models(all=all)
@@ -148,7 +158,6 @@ def readme(abc, heading):
     Generate Markdown symbols list for alphabet README.md.
     """
     alphabet = cli_common.get_alphabet_of_fail(abc)
-    alphabet.load()
 
     print(alphabet.gen_readme_md(heading=heading))
 
@@ -160,7 +169,6 @@ def flip_y(abc):
     Flip Y axis for all symbols in alphabet.
     """
     alphabet = cli_common.get_alphabet_of_fail(abc)
-    alphabet.load()
 
     console.print(f"[yellow]FLIP Y[/] alphabet: {alphabet.pretty(path=True)}")
     for symbol in alphabet.symbols:

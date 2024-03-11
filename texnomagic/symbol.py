@@ -136,6 +136,12 @@ class TexnoMagicSymbol:
             return random.choice(self.drawings)
         return None
 
+    def normalize(self):
+        for d in self.drawings:
+            if d.points.any():
+                d.normalize()
+                d.save()
+
     def as_dict(self):
         images = {f: str(p.relative_to(self.path)) for f, p in self.images.items()}
         d = {

@@ -124,4 +124,15 @@ def new(abc, meaning, name):
     console.print(f"SAVED NEW symbol {symbol.pretty(path=True)}")
 
 
+@symbol.command()
+@click.argument('symbol', required=False)
+def normalize(symbol):
+    """
+    Normalize drawings of selected TexnoMagic symbol.
+    """
+    _symbol = cli_common.get_symbol_or_fail(symbol)
+    console.print(f"[green]NORMALIZING[/] symbol: {_symbol.pretty(drawings=True)}")
+    _symbol.normalize()
+
+
 TEXNOMAGIC_CLI_COMMANDS = [symbol]

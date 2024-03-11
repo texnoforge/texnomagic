@@ -105,6 +105,10 @@ class TexnoMagicAlphabet:
             base_dir=self.path.name,
         )
 
+    def normalize(self):
+        for s in self.symbols:
+            s.normalize()
+
     def train_models(self, all=False):
         """
         train symbol models with available drawings
@@ -126,14 +130,14 @@ class TexnoMagicAlphabet:
     def calibrate(self):
         self.train_models(all=True)
 
-    def scores(self, drawing):
+    def scores(self, drawing, reverse=True):
         """
         recognize drawing using all symbol models
 
         return a list of (symbol, score) tuples ordered by score desc
         """
         s = [(symbol, symbol.model.score(drawing)) for symbol in self.symbols]
-        s = sorted(s, key=lambda x: x[1], reverse=True)
+        s = sorted(s, key=lambda x: x[1], reverse=reverse)
         return s
 
     def recognize(self, drawing):

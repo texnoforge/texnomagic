@@ -88,8 +88,11 @@ class TexnoMagicDrawing:
         """
         normalize drawing points in-place into <0, self.points_range> range
         """
+        if len(self.points) == 0:
+            return
+
         # move to [0,0]
-        self._points -= np.min(self._points, axis=0)
+        self._points -= np.min(self.points, axis=0)
         # normalize
         k = self.points_range / np.max((np.max(np.max(self._points, axis=0)), 0.2))
         self._points *= k

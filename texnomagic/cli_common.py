@@ -13,7 +13,7 @@ OUTPUT_FORMATS = ['text'] + common.DUMP_FORMATS
 OUTPUT_FORMAT_DEFAULT = 'text'
 
 
-def get_alphabet_of_fail(abc):
+def get_alphabet_of_fail(abc, auto_load=True):
     alphabet = None
     if abc:
         abcs = TexnoMagicAlphabets()
@@ -31,10 +31,13 @@ def get_alphabet_of_fail(abc):
             print("- select TexnoMagic alphabet by name using an argument")
             raise ex.AlphabetNotFound()
 
+    if auto_load:
+        alphabet.load()
+
     return alphabet
 
 
-def get_symbol_or_fail(symbol):
+def get_symbol_or_fail(symbol, auto_load=True):
     _symbol = None
     if symbol:
         abc_name, _, symbol_name = symbol.rpartition('/')
@@ -55,6 +58,10 @@ def get_symbol_or_fail(symbol):
             print("- run from a (sub-)directory of a TexnoMagic symbol")
             print("- select TexnoMagic symbol by name passing ALPHABET/SYMBOL argument")
             raise ex.SymbolNotFound()
+
+    if auto_load:
+        _symbol.load()
+
     return _symbol
 
 
