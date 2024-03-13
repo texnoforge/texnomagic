@@ -5,12 +5,18 @@ from texnomagic import common
 class TexnoMagicAlphabets:
     def __init__(self, paths=None):
         self.paths = paths or common.ALPHABETS_PATHS
-        self.abcs = {}
+        self._abcs = None
+
+    @property
+    def abcs(self):
+        if self._abcs is None:
+            self.load()
+        return self._abcs
 
     def load(self):
-        self.abcs = {}
+        self._abcs = {}
         for tag, path in self.paths.items():
-            self.abcs[tag] = get_alphabets(path)
+            self._abcs[tag] = get_alphabets(path)
 
     def get_alphabet(self, name):
         tag, _, abc_name = name.rpartition(':')
