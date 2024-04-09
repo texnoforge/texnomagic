@@ -1,5 +1,24 @@
 # TexnoMagic News
 
+## texnomagic 0.7.1
+
+!!! WARNING
+    Not Yet Released - In Development
+
+Released 2024-04-??
+
+### Improvement
+
+- `jsonrpcserver` dep is now optional, enabling Python >= 3.12
+    - Add Python 3.12 job to CI
+- new useful commands:
+    - `texnomagic drawing recognize`
+    - `texnomagic drawing normalize`
+    - `texnomagic symbol normalize`
+    - `texnomagic abc normalize`
+- more comments and doc strings in interesting places
+- small code and flow improvements
+
 ## texnomagic 0.7.0
 
 Released 2024-02-29

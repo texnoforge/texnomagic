@@ -1,5 +1,5 @@
 click          # clean CLI library
-jsonrpcserver  # JSON-RPC server
+jsonrpcserver  # [OPTIONAL] JSON-RPC server
 parsimonious   # language parsing (PEG)
 pyyaml         # YAML format support
 requests       # HTTP for humans

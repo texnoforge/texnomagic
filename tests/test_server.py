@@ -5,8 +5,13 @@ import pytest
 
 from texnomagic.client import TexnoMagicClient
 from texnomagic.server import serve
+from texnomagic.jsonrpcserver import JSONRPCSERVER_AVAILABLE
 
 import commontest  # common testing code
+
+
+if not JSONRPCSERVER_AVAILABLE:
+    pytest.skip("jsonrpcserver module not available", allow_module_level=True)
 
 
 @pytest.fixture(autouse=True, scope="session")

@@ -32,3 +32,7 @@ class SymbolNotFound(TexnoMagicException):
 
 class DrawingNotFound(TexnoMagicException):
     returncode = 33
+
+
+class ModuleNotAvailable(TexnoMagicException):
+    returncode = 50

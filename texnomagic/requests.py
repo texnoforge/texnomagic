@@ -4,7 +4,7 @@ TexnoMagic RPC handling logic
 Individual functions in this module marked with @jsonrpcserver.method decorator
 are used for Remote Procedure Calls (RPC) by the TexnoMagic server.
 """
-from jsonrpcserver import method, Success
+from texnomagic.jsonrpcserver import method, Success
 
 from texnomagic import __version__
 from texnomagic.drawing import TexnoMagicDrawing

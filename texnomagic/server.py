@@ -17,7 +17,7 @@ import logging
 import socketserver
 import sys
 
-from jsonrpcserver import dispatch
+from texnomagic.jsonrpcserver import dispatch, ensure_jsonrpcserver
 
 from texnomagic import __version__
 from texnomagic import common
@@ -37,6 +37,8 @@ def serve(host='localhost', port=DEFAULT_PORT, abcs=None):
     """
     start TexnoMagic TCP server and serve forever
     """
+    ensure_jsonrpcserver()
+
     logging.info("START TexnoMagic TCP server %s on %s:%s ..." % (__version__, host, port))
     if not abcs:
         abcs = TexnoMagicAlphabets()

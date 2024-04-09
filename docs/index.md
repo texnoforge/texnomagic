@@ -23,8 +23,10 @@ See [TexnoLatin](https://github.com/texnoforge/texnolatin) reference alphabet.
 
 **alpha**: working well, but interfaces aren't final yet
 
-Python **3.12** is not yet supported due to `jsonrpcserver` / `oslash` dep
+JSON-RPC is currently broken on Python **3.12** due to `jsonrpcserver` / `oslash` dep
 [breakage](https://github.com/explodinglabs/jsonrpcserver/issues/273).
+`jsonrpcserver` is now an optional dep not installed by default to enable
+running of Python 3.12 before this gets fixed.
 
 **[TexnoMagic News](news.md)**
 
