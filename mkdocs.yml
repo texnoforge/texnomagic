@@ -2,6 +2,19 @@ site_name: TexnoMagic
 site_url: https://texnoforge.github.io/texnomagic/
 repo_name: texnoforge/texnomagic
 repo_url: https://github.com/texnoforge/texnomagic
+nav:
+  - index.md
+  - news.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: True
+
 theme:
   name: material
   logo: img/x.png
@@ -9,10 +22,7 @@ theme:
     scheme: slate
     primary: black
     accent: cyan
-nav:
-  - index.md
-  - news.md
-markdown_extensions:
-  - admonition
-  - toc:
-      permalink: True
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
