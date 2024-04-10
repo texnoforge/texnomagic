@@ -7,7 +7,7 @@
 
 Released 2024-04-??
 
-### Improvement
+### Improvements
 
 - `jsonrpcserver` dep is now optional, enabling Python >= 3.12
     - Add Python 3.12 job to CI
@@ -16,7 +16,9 @@ Released 2024-04-??
     - `texnomagic drawing normalize`
     - `texnomagic symbol normalize`
     - `texnomagic abc normalize`
-- more comments and doc strings in interesting places
+- new Drawing, Symbol, and Alphabet reference docs using `mkdocstrings`
+    - add docstrings and type hints - nicer code AND docs
+    - bump minimal Python to 3.10 due to typing improvements
 - small code and flow improvements
 
 ## texnomagic 0.7.0

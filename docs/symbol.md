@@ -1,0 +1,3 @@
+# TexnoMagic Symbol
+
+::: texnomagic.symbol

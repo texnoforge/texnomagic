@@ -59,14 +59,11 @@ running of Python 3.12 before this gets fixed.
 
 ## Install
 
-TexnoMagic is available from [PyPI] for Python **3.8+** (latest tested: **3.11**):
+TexnoMagic is available from [PyPI] for Python **3.10+** (latest tested: **3.12**):
 
 ```
 pip install texnomagic
 ```
-
-Python **3.12** is not yet supported due to `jsonrpcserver` / `oslash` dep
-[breakage](https://github.com/explodinglabs/jsonrpcserver/issues/273).
 
 You can install / develop / build from source as with any other python module.
 

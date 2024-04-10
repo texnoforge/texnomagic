@@ -19,5 +19,5 @@ jobs:
       - name: Install deps
         run: |
           pip install .
-          pip install mkdocs-material
+          pip install -r doc-requirements.txt
       - run: mkdocs gh-deploy --force

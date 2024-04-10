@@ -1,0 +1,3 @@
+# TexnoMagic Drawing
+
+::: texnomagic.drawing
