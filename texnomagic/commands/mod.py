@@ -2,7 +2,7 @@ import click
 
 from texnomagic import common
 from texnomagic import mods
-from texnomagic.console import console
+from texnomagic import console
 from texnomagic import cli_common
 
 

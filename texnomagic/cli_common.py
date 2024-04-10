@@ -4,7 +4,7 @@ from texnomagic.abcs import TexnoMagicAlphabets
 from texnomagic.abc import find_alphabet_at_path
 from texnomagic.symbol import find_symbol_at_path
 from texnomagic.drawing import TexnoMagicDrawing
-from texnomagic.console import console
+from texnomagic import console
 from texnomagic import common
 from texnomagic import ex
 

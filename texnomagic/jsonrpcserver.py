@@ -1,4 +1,4 @@
-from texnomagic.console import console
+from texnomagic import console
 JSONRPCSERVER_AVAILABLE = False
 
 

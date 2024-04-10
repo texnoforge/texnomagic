@@ -2,7 +2,7 @@ import click
 
 from texnomagic import abc as abc_mod
 from texnomagic import cli_common
-from texnomagic.console import console
+from texnomagic import console
 from texnomagic import ex
 
 

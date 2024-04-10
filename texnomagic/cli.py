@@ -11,11 +11,13 @@ import click
 from texnomagic import __version__
 from texnomagic import commands
 from texnomagic import ex
+from texnomagic import console as console_mod
 
 
 log = logging.getLogger(__name__)
 
 
+COLOR_SYSTEMS = ['auto', 'none', 'standard', '256', 'truecolor', 'windows']
 CONTEXT_SETTINGS = {
     'help_option_names': ['-h', '--help'],
 }
@@ -24,10 +26,17 @@ CONTEXT_SETTINGS = {
 @click.group(context_settings=CONTEXT_SETTINGS)
 @click.version_option(__version__, message='%(version)s',
                       help="Show TexnoMagic version and exit.")
-def cli():
+@click.option('-C', '--color', default='auto', show_default=True,
+              type=click.Choice(COLOR_SYSTEMS),
+              help="Set color mode.")
+def cli(color):
     """
     TexnoMagic CLI
     """
+    if color == 'none':
+        console_mod.console = console_mod.Console(color_system=None)
+    elif color != 'auto':
+        console_mod.console = console_mod.Console(color_system=color)
 
 
 def __load_commands():

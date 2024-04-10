@@ -2,7 +2,7 @@ import click
 from rich.syntax import Syntax
 
 from texnomagic import common
-from texnomagic.console import console
+from texnomagic import console
 from texnomagic import lang
 
 

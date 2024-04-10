@@ -8,7 +8,7 @@ import re
 
 from rich.syntax import Syntax
 
-from texnomagic.console import console
+from texnomagic import console
 
 
 DUMP_FORMATS = ['toml', 'yaml', 'json']

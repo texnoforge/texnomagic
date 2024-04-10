@@ -1,7 +1,7 @@
 import click
 
 from texnomagic.abcs import TexnoMagicAlphabets
-from texnomagic.console import console
+from texnomagic import console
 from texnomagic import common
 from texnomagic import cli_common
 

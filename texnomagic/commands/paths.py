@@ -1,7 +1,7 @@
 import click
 import os
 
-from texnomagic.console import console
+from texnomagic import console
 from texnomagic import common
 from texnomagic import ex
 
