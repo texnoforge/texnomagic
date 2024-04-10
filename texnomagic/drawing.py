@@ -152,8 +152,8 @@ class TexnoMagicDrawing:
         See also [normalize][texnomagic.drawing.TexnoMagicDrawing.normalize].
 
         Args:
-          pos: position / offset (x, y)
-          size: desired size (width, height)
+          pos: position / offset (x, y) - relative <0, 1>
+          size: desired size (width, height) - relative <0, 1>
 
         Returns:
           Curves scaled to fit desired area.
@@ -200,9 +200,12 @@ class TexnoMagicDrawing:
             s += f", {fsize} kB"
         return s
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         if self._curves is None:
             info = "curves not loaded"
         else:
             info = f"{len(self._points)} points, {len(self._curves)} curves"
-        return f"<TexnoMagicDrawing @ {self.path}: {info}>"
+        return f"{self.name}: {info}"
+
+    def __repr__(self) -> str:
+        return '<TexnoMagicSymbol %s>' % self.__str__()

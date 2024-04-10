@@ -5,6 +5,7 @@ repo_url: https://github.com/texnoforge/texnomagic
 nav:
   - index.md
   - news.md
+  - cookbook.md
   - drawing.md
   - symbol.md
   - abc.md
@@ -22,6 +23,10 @@ plugins:
   - search
   - autorefs
   - mkdocstrings
+  - markdown-exec:
+      ansi: required
+  - macros:
+      module_name: docs
 
 theme:
   name: material
