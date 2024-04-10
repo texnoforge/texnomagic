@@ -13,7 +13,7 @@ OUTPUT_FORMATS = ['text'] + common.DUMP_FORMATS
 OUTPUT_FORMAT_DEFAULT = 'text'
 
 
-def get_alphabet_of_fail(abc, auto_load=True):
+def get_alphabet_or_fail(abc, auto_load=True):
     alphabet = None
     if abc:
         abcs = TexnoMagicAlphabets()
@@ -45,7 +45,7 @@ def get_symbol_or_fail(symbol, auto_load=True):
             console.print(f"[red]Inavlid symbol spec[/]: [green]{symbol}[/]")
             console.print("\nPlease use ALPHABET/SYMBOL format.")
             raise ex.InvalidInput(symbol)
-        _abc = get_alphabet_of_fail(abc_name)
+        _abc = get_alphabet_or_fail(abc_name)
         _symbol = _abc.get_symbol(symbol_name)
         if not _symbol:
             console.print(f"[yellow]TexnoMagic symbol not found[/]: [green]{symbol}[/]")

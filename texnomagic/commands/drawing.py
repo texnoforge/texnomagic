@@ -111,7 +111,7 @@ def recognize(drawing, abc, symbol, min_score, max_score, max_drawings, max_symb
             raise ex.AlphabetNotFound()
         rabc.load()
     elif abc:
-        rabc = cli_common.get_alphabet_of_fail(abc)
+        rabc = cli_common.get_alphabet_or_fail(abc)
     elif symbol:
         rsymbol = cli_common.get_symbol_or_fail(symbol)
 

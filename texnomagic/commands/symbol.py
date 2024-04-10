@@ -53,7 +53,7 @@ def list(abc, names, meanings, format):
 
     Select a specific alphabet by passing its name or handle as argument.
     """
-    alphabet = cli_common.get_alphabet_of_fail(abc)
+    alphabet = cli_common.get_alphabet_or_fail(abc)
     alphabet.load()
 
     # are we outputting data or text?
@@ -103,7 +103,7 @@ def new(abc, meaning, name):
 
     Select a specific alphabet by passing its name or handle as argument.
     """
-    alphabet = cli_common.get_alphabet_of_fail(abc)
+    alphabet = cli_common.get_alphabet_or_fail(abc)
 
     if not (meaning or name):
         meaning = Prompt.ask("Symbol Meaning (lowercase english)")
