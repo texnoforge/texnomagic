@@ -1,0 +1,3 @@
+[submodule "alphabets/texnolatin"]
+	path = alphabets/texnolatin
+	url = https://github.com/texnoforge/texnolatin/

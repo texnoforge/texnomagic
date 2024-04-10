@@ -44,7 +44,7 @@ def test_symbol_model_io(symbol):
 
 
 def test_symbol_model_recognize(abc):
-    r = abc.check()
-    assert r.get('error', []) == []
-    for warn in r.get('warn', []):
-        print("WARNING: %s" % warn)
+    for s in abc.symbols:
+        d = s.random_drawing()
+        sr, _score = abc.recognize(d)
+        assert sr == s
