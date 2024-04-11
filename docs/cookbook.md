@@ -40,6 +40,72 @@ Ensure the Alphabet is visible:
 {{ 'abc list' | exec_cmd }}
 
 
+## Load Alphabet
+
+It's recommended to access individual [Symbols](symbol.md) and
+[Drawings](drawing.md) (data) through [TexnoMagicAlphabet](abc.md) class.
+
+
+### Load Alphabet from standard paths
+
+All further examples use `get_alphabet_or_fail` helper function to quickly get
+`TexnoMagicAlphabet` instance from standard paths by name like this:
+
+```python exec="true" source="material-block" result="ansi"
+from texnomagic.cli_common import get_alphabet_or_fail
+
+abc = get_alphabet_or_fail("texnolatin")
+
+print(abc)
+```
+
+`get_alphabet_or_fail` is a convenience wrapper which auto-loads the Alphabet or
+prints a pretty error message and exists when Alphabet isn't found.
+
+See {{ 'texnomagic/cli_common.py' | file_link }} for details and inspiration.
+
+
+### Load Alphabet from current dir
+
+You can use `get_alphabet_or_fail` without `path` argument to look for an
+Alphabet in current directory and its parents:
+
+```python
+from texnomagic.cli_common import get_alphabet_or_fail
+
+abc = get_alphabet_or_fail()
+```
+
+Or you can use `find_alphabet_at_path` directly to search any path:
+
+```python exec="true" source="material-block" result="ansi"
+from pathlib import Path
+from texnomagic.abc import find_alphabet_at_path
+
+abc_path = Path('alphabets/texnolatin/symbols/fire')
+abc = find_alphabet_at_path(abc_path)
+abc.load()
+
+print(abc)
+```
+
+
+### Load Alphabet from any path
+
+You can load Alphabet directly by passing its `path` to [TexnoMagicAlphabet](abc.md) and calling `load` method:
+
+```python exec="true" source="material-block" result="ansi"
+from pathlib import Path
+from texnomagic.abc import TexnoMagicAlphabet
+
+abc_path = Path('alphabets/texnolatin')
+abc = TexnoMagicAlphabet(path=abc_path)
+abc.load()
+
+print(abc)
+```
+
+
 ## List Symbols from Alphabet
 
 **CLI**:
@@ -56,7 +122,7 @@ for symbol in abc.symbols:
 	print(symbol)
 ```
 
-## List Drawings of a Symbol
+## List Drawings of Symbol
 
 Use `ALPHABET:SYMBOL` syntax to select a specific [Symbol](symbol.md).
 

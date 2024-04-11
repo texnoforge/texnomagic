@@ -13,7 +13,7 @@ OUTPUT_FORMATS = ['text'] + common.DUMP_FORMATS
 OUTPUT_FORMAT_DEFAULT = 'text'
 
 
-def get_alphabet_or_fail(abc, auto_load=True):
+def get_alphabet_or_fail(abc=None, auto_load=True):
     alphabet = None
     if abc:
         abcs = TexnoMagicAlphabets()
@@ -37,7 +37,7 @@ def get_alphabet_or_fail(abc, auto_load=True):
     return alphabet
 
 
-def get_symbol_or_fail(symbol, auto_load=True):
+def get_symbol_or_fail(symbol=None, auto_load=True):
     _symbol = None
     if symbol:
         abc_name, _, symbol_name = symbol.rpartition('/')

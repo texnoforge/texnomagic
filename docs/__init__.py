@@ -28,9 +28,7 @@ def define_env(env):
             fn = Path(path).relative_to(BASE_PATH)
         except ValueError:
             pass
-        return "[{fn}]({url}{fn})".format(
-            fn=fn,
-            url=BASE_CODE_URL)
+        return f"[{fn}]({BASE_CODE_URL}{fn})"
 
     @env.filter
     def file_raw(path):
