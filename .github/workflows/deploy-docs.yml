@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions-texnomagic[bot]
@@ -18,6 +20,10 @@ jobs:
           python-version: 3.x
       - name: Install deps
         run: |
-          pip install .
+          pip install .[png]
           pip install -r doc-requirements.txt
+      - name: Link TexnoLatin to user alphabets path
+        run: |
+          ln -sr alphabets/texnolatin/ "$(texnomagic paths -a user --mkdir)"
+          ls -la "$(texnomagic paths -a user)/texnolatin"
       - run: mkdocs gh-deploy --force
