@@ -11,16 +11,24 @@ Released 2024-04-??
 
 - `jsonrpcserver` dep is now optional, enabling Python >= 3.12
     - Add Python 3.12 job to CI
-- new useful commands to normalize/recognize drawings:
-    - `texnomagic drawing recognize`
+- new `texnomagic drawing recognize` command to recognize a [Drawing](drawing.md)
+    - a powerful command with many useful options, see `--help`
+- new `texnomagic drawing render` command to render [Drawing](drawing.md) to image such as PNG
+    - only available when `pillow` module is installed
+- new commands to normalize [Drawings](drawing.md):
     - `texnomagic drawing normalize`
     - `texnomagic symbol normalize`
     - `texnomagic abc normalize`
 - new `texnomagic paths` command to show/create/open alphabets paths
-- new Drawing, Symbol, and Alphabet reference docs using `mkdocstrings`
+- new `-C`/`--color` global option to control output color
+- new [Drawing](drawing.md), [Symbol](symbol.md), and [Alphabet](abc.md) reference docs using `mkdocstrings`
     - add docstrings and type hints - nicer code AND docs
     - bump minimal Python to 3.10 due to typing improvements
-- small code and flow improvements
+- new [Cookbook](cookbook.md) doc with CLI and Python examples
+    - executed using `markdown-exec` - always up-to-date
+    - CLI examples including ANSI color
+- better Symbol recognition tests
+- various code and flow improvements
 
 ## texnomagic 0.7.0
 

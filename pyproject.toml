@@ -26,6 +26,14 @@ dependencies = [
     "toml",
 ]
 
+[project.optional-dependencies]
+png = [
+    "pillow"
+]
+jsonrpc = [
+    "jsonrpcserver >= 5"
+]
+
 [project.scripts]
 texnomagic = "texnomagic.cli:main"
 

@@ -1,9 +1,12 @@
+from pathlib import Path
+
 import click
 
 from texnomagic import abc as abc_mod
 from texnomagic import cli_common
 from texnomagic import console
 from texnomagic import ex
+from texnomagic import render as render_mod
 
 
 @click.group()
@@ -59,6 +62,32 @@ def normalize(drawing):
             console.print(f"[green]NORMALIZING[/] drawing: {d.pretty()}")
             d.normalize()
             d.save()
+
+
+@drawing.command()
+@click.argument('drawing', nargs=-1, required=True)
+@click.option('-r', '--resolution',
+              default=1000, show_default=True,
+              help='Desired image resolution.')
+@click.option('-O', '--result-dir', type=Path,
+              help="Save image(s) into specified dir.")
+def render(drawing, resolution, result_dir):
+    """
+    Render TexnoMagic drawing(s) into raster image(s) (PNG).
+
+    Display the image by default, use -O/--result-dir to save instead.
+    """
+    drawings = cli_common.parse_drawings_arg(drawing)
+    if result_dir:
+        result_dir.mkdir(parents=True, exist_ok=True)
+    for d in drawings:
+        img = render_mod.render_drawing(d, res=resolution)
+        if result_dir:
+            out_path = result_dir / f'{d.path.stem}.png'
+            console.print(f"[green]SAVE DRAWING IMAGE[/]: [bold]{out_path}[/]")
+            img.save(out_path)
+        else:
+            img.show()
 
 
 @drawing.command()
