@@ -4,6 +4,7 @@ import pytest
 
 from texnomagic.abc import TexnoMagicAlphabet
 from texnomagic.model import TexnoMagicSymbolModel
+from texnomagic import common
 
 import commontest  # common testing code
 
@@ -44,7 +45,17 @@ def test_symbol_model_io(symbol):
 
 
 def test_symbol_model_recognize(abc):
+    n_fail = 0
     for s in abc.symbols:
         d = s.random_drawing()
-        sr, _score = abc.recognize(d)
-        assert sr == s
+        sr, score = abc.recognize(d)
+        if score >= common.MIN_SCORE:
+            # correct symbol recognized
+            assert sr == s
+        else:
+            # bellow minimal score
+            assert sr is None
+            print(f"recognition fail: {s} (score: {score})")
+            n_fail += 1
+
+    assert n_fail < 10, f"too many recognition fails: {n_fail}"

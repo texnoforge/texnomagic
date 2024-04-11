@@ -211,6 +211,8 @@ class TexnoMagicAlphabet:
                 if rsymbol.meaning != symbol.meaning:
                     log_warn(('error', 'wrong_symbol', symbol, rsymbol), rscore)
                     prob = 'wrong_symbol'
+                if rscore < common.MIN_SCORE:
+                    log_warn(('warn', 'low_score', symbol), rscore)
 
                 for rsy, rsc in scores[1:]:
                     # check scores for other symbols too
@@ -218,12 +220,14 @@ class TexnoMagicAlphabet:
                         lvl = 'warn'
                         if rsc > 0.8:
                             lvl = 'error'
-                        log_warn((lvl,'high_score', symbol, rsy), rsc)
+                        log_warn((lvl, 'high_score', symbol, rsy), rsc)
 
         results = {}
         for (level, prob, *args), (n, score) in warns.items():
             if prob == 'high_score':
                 msg = "%s drawing got high score in %s: %s" % (args[0].meaning, args[1].meaning, score)
+            elif prob == 'low_score':
+                msg = "%s drawing got low score: %s" % (args[0].meaning, score)
             elif prob == 'missing_model':
                 msg = "%s symbol is missing model" % args[0].meaning
             elif prob == 'missing_svg':
