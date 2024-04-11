@@ -1,11 +1,8 @@
 # TexnoMagic News
 
-## texnomagic 0.7.1
+## texnomagic 0.8.0
 
-!!! WARNING
-    Not Yet Released - In Development
-
-Released 2024-04-??
+Released 2024-04-11
 
 ### Improvements
 
