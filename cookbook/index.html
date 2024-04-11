@@ -1,0 +1,973 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://texnoforge.github.io/texnomagic/cookbook/">
+      
+      
+        <link rel="prev" href="../news/">
+      
+      
+        <link rel="next" href="../drawing/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>TexnoMagic Cookbook - TexnoMagic</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#texnomagic-cookbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TexnoMagic" class="md-header__button md-logo" aria-label="TexnoMagic" data-md-component="logo">
+      
+  <img src="../img/x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TexnoMagic
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TexnoMagic Cookbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/texnoforge/texnomagic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    texnoforge/texnomagic
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TexnoMagic" class="md-nav__button md-logo" aria-label="TexnoMagic" data-md-component="logo">
+      
+  <img src="../img/x.png" alt="logo">
+
+    </a>
+    TexnoMagic
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/texnoforge/texnomagic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    texnoforge/texnomagic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TexnoMagic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TexnoMagic News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TexnoMagic Cookbook
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TexnoMagic Cookbook
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-put-your-alphabets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where to put your Alphabets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-alphabet-texnolatin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get an Alphabet (TexnoLatin)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-alphabet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Load Alphabet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-alphabet-from-standard-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet from standard paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-alphabet-from-current-dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet from current dir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-alphabet-from-any-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet from any path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-symbols-from-alphabet" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Symbols from Alphabet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-drawings-of-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Drawings of Symbol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render-drawing-as-a-raster-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Render Drawing as a raster Image
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drawing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TexnoMagic Drawing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symbol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TexnoMagic Symbol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TexnoMagic Alphabet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-put-your-alphabets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where to put your Alphabets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-alphabet-texnolatin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get an Alphabet (TexnoLatin)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-alphabet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Load Alphabet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-alphabet-from-standard-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet from standard paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-alphabet-from-current-dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet from current dir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-alphabet-from-any-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Alphabet from any path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-symbols-from-alphabet" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Symbols from Alphabet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-drawings-of-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Drawings of Symbol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render-drawing-as-a-raster-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Render Drawing as a raster Image
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="texnomagic-cookbook">TexnoMagic Cookbook<a class="headerlink" href="#texnomagic-cookbook" title="Permanent link">&para;</a></h1>
+<p>A quick introduction to <a href="../">TexnoMagic</a> Python module and CLI using examples.</p>
+<h2 id="where-to-put-your-alphabets">Where to put your Alphabets<a class="headerlink" href="#where-to-put-your-alphabets" title="Permanent link">&para;</a></h2>
+<p>Even though you can work with <a href="../abc/">Alphabets</a> at any location, it's convenient to put them into expected paths where TexnoMagic looks by default.</p>
+<p>You can view alphabets paths using CLI:</p>
+<p><div class="highlight"><pre><span></span><code>texnomagic<span class="w"> </span>paths
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class=" -Color -Color-Bold">user</span> alphabets: <span class=" -Color -Color-Bold -Color-Bold-Magenta">/home/runner/.local/share/WordsOfPower/user/</span><span class=" -Color -Color-Bold -Color-Bold-BrightMagenta">alphabets</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">exists</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-Bold">mods</span> alphabets: <span class=" -Color -Color-Bold -Color-Bold-Magenta">/home/runner/.local/share/WordsOfPower/mods/</span><span class=" -Color -Color-Bold -Color-Bold-BrightMagenta">alphabets</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Yellow">doesn&#39;t </span>
+<span class=" -Color -Color-Yellow">exist</span><span class=" -Color -Color-Bold">)</span>
+</code></pre></div></p>
+<p>It's recommended to use the <code>user</code> path for your Alphabets.</p>
+<p>You can create and list <code>user</code> alphabets dir using CLI:</p>
+<p><div class="highlight"><pre><span></span><code>texnomagic<span class="w"> </span>paths<span class="w"> </span>--abcs<span class="w"> </span>user<span class="w"> </span>--mkdir
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/home/runner/.local/share/WordsOfPower/user/alphabets
+</code></pre></div></p>
+<p>Or open the dir using system file explorer:</p>
+<div class="highlight"><pre><span></span><code>texnomagic paths -a user -o
+</code></pre></div>
+<h2 id="get-an-alphabet-texnolatin">Get an Alphabet (TexnoLatin)<a class="headerlink" href="#get-an-alphabet-texnolatin" title="Permanent link">&para;</a></h2>
+<p>We'll be working with <a href="https://github.com/texnoforge/texnolatin/">TexnoLatin</a> reference Alphabet in all the examples and
+it's used for TexnoMagic testing as well.</p>
+<p>Here's some <code>bash</code> to clone latest <a href="https://github.com/texnoforge/texnolatin/">TexnoLatin</a> into expected <code>user</code> path:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>texnomagic<span class="w"> </span>paths<span class="w"> </span>--abcs<span class="w"> </span>user<span class="w"> </span>--mkdir<span class="k">)</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/texnoforge/texnolatin/
+</code></pre></div>
+<p>Ensure the Alphabet is visible:</p>
+<p><div class="highlight"><pre><span></span><code>texnomagic<span class="w"> </span>abc<span class="w"> </span>list
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># <span class=" -Color -Color-Bold -Color-Bold-White">1</span> <span class=" -Color -Color-Yellow">user</span> alphabets @ <span class=" -Color -Color-White">/home/runner/.local/share/WordsOfPower/user/alphabets</span>
+<span class=" -Color -Color-Cyan">TexnoLatin</span>: <span class=" -Color -Color-Bold -Color-Bold-White">24</span> symbols
+</code></pre></div></p>
+<h2 id="load-alphabet">Load Alphabet<a class="headerlink" href="#load-alphabet" title="Permanent link">&para;</a></h2>
+<p>It's recommended to access individual <a href="../symbol/">Symbols</a> and
+<a href="../drawing/">Drawings</a> (data) through <a href="../abc/">TexnoMagicAlphabet</a> class.</p>
+<h3 id="load-alphabet-from-standard-paths">Load Alphabet from standard paths<a class="headerlink" href="#load-alphabet-from-standard-paths" title="Permanent link">&para;</a></h3>
+<p>All further examples use <code>get_alphabet_or_fail</code> helper function to quickly get
+<code>TexnoMagicAlphabet</code> instance from standard paths by name like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">texnomagic.cli_common</span> <span class="kn">import</span> <span class="n">get_alphabet_or_fail</span>
+
+<span class="n">abc</span> <span class="o">=</span> <span class="n">get_alphabet_or_fail</span><span class="p">(</span><span class="s2">&quot;texnolatin&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown="1" >
+
+<div class="highlight"><pre><span></span><code>TexnoLatin: 24 symbols
+</code></pre></div>
+
+</div>
+<p><code>get_alphabet_or_fail</code> is a convenience wrapper which auto-loads the Alphabet or
+prints a pretty error message and exists when Alphabet isn't found.</p>
+<p>See <a href="https://github.com/texnoforge/texnomagic/blob/master/texnomagic/cli_common.py">texnomagic/cli_common.py</a> for details and inspiration.</p>
+<h3 id="load-alphabet-from-current-dir">Load Alphabet from current dir<a class="headerlink" href="#load-alphabet-from-current-dir" title="Permanent link">&para;</a></h3>
+<p>You can use <code>get_alphabet_or_fail</code> without <code>path</code> argument to look for an
+Alphabet in current directory and its parents:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">texnomagic.cli_common</span> <span class="kn">import</span> <span class="n">get_alphabet_or_fail</span>
+
+<span class="n">abc</span> <span class="o">=</span> <span class="n">get_alphabet_or_fail</span><span class="p">()</span>
+</code></pre></div>
+<p>Or you can use <code>find_alphabet_at_path</code> directly to search any path:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">texnomagic.abc</span> <span class="kn">import</span> <span class="n">find_alphabet_at_path</span>
+
+<span class="n">abc_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;alphabets/texnolatin/symbols/fire&#39;</span><span class="p">)</span>
+<span class="n">abc</span> <span class="o">=</span> <span class="n">find_alphabet_at_path</span><span class="p">(</span><span class="n">abc_path</span><span class="p">)</span>
+<span class="n">abc</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown="1" >
+
+<div class="highlight"><pre><span></span><code>TexnoLatin: 24 symbols
+</code></pre></div>
+
+</div>
+<h3 id="load-alphabet-from-any-path">Load Alphabet from any path<a class="headerlink" href="#load-alphabet-from-any-path" title="Permanent link">&para;</a></h3>
+<p>You can load Alphabet directly by passing its <code>path</code> to <a href="../abc/">TexnoMagicAlphabet</a> and calling <code>load</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">texnomagic.abc</span> <span class="kn">import</span> <span class="n">TexnoMagicAlphabet</span>
+
+<span class="n">abc_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;alphabets/texnolatin&#39;</span><span class="p">)</span>
+<span class="n">abc</span> <span class="o">=</span> <span class="n">TexnoMagicAlphabet</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">abc_path</span><span class="p">)</span>
+<span class="n">abc</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown="1" >
+
+<div class="highlight"><pre><span></span><code>TexnoLatin: 24 symbols
+</code></pre></div>
+
+</div>
+<h2 id="list-symbols-from-alphabet">List Symbols from Alphabet<a class="headerlink" href="#list-symbols-from-alphabet" title="Permanent link">&para;</a></h2>
+<p><strong>CLI</strong>:</p>
+<p><div class="highlight"><pre><span></span><code>texnomagic<span class="w"> </span>symbol<span class="w"> </span>list<span class="w"> </span>texnolatin
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># <span class=" -Color -Color-Bold -Color-Bold-Cyan">24</span> symbols @ 
+<span class=" -Color -Color-Magenta">/home/runner/.local/share/WordsOfPower/user/alphabets/texnolatin/</span><span class=" -Color -Color-BrightMagenta">symbols</span>
+<span class=" -Color -Color-BrightGreen">ignis</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">fire</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">29</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.9</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">gelu</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">ice</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">29</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">9</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.7</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">aqua</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">water</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">24</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">12</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-11.6</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">aer</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">air</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">48</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">10</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.3</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">fulgur</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">electro</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">39</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">5</span>, score_avg: 
+<span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.3</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">terra</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">earth</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">27</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.2</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">vita</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">life</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">37</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.4</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">mors</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">death</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">28</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.5</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">sagitta</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">bolt</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">39</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-11.9</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">sphaera</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">ball</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">34</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-11.7</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">spatium</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">space</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">30</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">16</span>, score_avg: 
+<span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.3</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">conus</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">cone</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">29</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">5</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.2</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">torrens</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">beam</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">22</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-11.7</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">ego</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">self</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">29</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">14</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.5</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">amica</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">friend</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">42</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">7</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.5</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">hostis</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">enemy</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">38</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">7</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.6</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">prope</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">close</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">27</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.0</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">procul</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">far</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">45</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.0</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">fortis</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">strong</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">31</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span>, score_avg: 
+<span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.3</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">infirmus</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">weak</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">25</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span>, score_avg: 
+<span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.2</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">magnus</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">big</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">39</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">3</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.6</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">parvus</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">small</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">32</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">3</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.7</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">celer</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">fast</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">31</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">6</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.8</span><span class=" -Color -Color-Bold">)</span>
+<span class=" -Color -Color-BrightGreen">tardus</span> <span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Green">slow</span><span class=" -Color -Color-Bold">)</span>: <span class=" -Color -Color-Blue">SVG</span> image, <span class=" -Color -Color-Bold -Color-Bold-White">35</span> drawings, <span class=" -Color -Color-Magenta">GMM</span> model <span class=" -Color -Color-Bold">(</span>n_gauss: <span class=" -Color -Color-Bold -Color-Bold-Cyan">6</span>, score_avg: <span class=" -Color -Color-Bold -Color-Bold-Cyan">-12.5</span><span class=" -Color -Color-Bold">)</span>
+</code></pre></div></p>
+<p><strong>Python</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">texnomagic.cli_common</span> <span class="kn">import</span> <span class="n">get_alphabet_or_fail</span>
+
+<span class="n">abc</span> <span class="o">=</span> <span class="n">get_alphabet_or_fail</span><span class="p">(</span><span class="s2">&quot;texnolatin&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">abc</span><span class="o">.</span><span class="n">symbols</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown="1" >
+
+<div class="highlight"><pre><span></span><code>ignis (fire)
+gelu (ice)
+aqua (water)
+aer (air)
+fulgur (electro)
+terra (earth)
+vita (life)
+mors (death)
+sagitta (bolt)
+sphaera (ball)
+spatium (space)
+conus (cone)
+torrens (beam)
+ego (self)
+amica (friend)
+hostis (enemy)
+prope (close)
+procul (far)
+fortis (strong)
+infirmus (weak)
+magnus (big)
+parvus (small)
+celer (fast)
+tardus (slow)
+</code></pre></div>
+
+</div>
+<h2 id="list-drawings-of-symbol">List Drawings of Symbol<a class="headerlink" href="#list-drawings-of-symbol" title="Permanent link">&para;</a></h2>
+<p>Use <code>ALPHABET:SYMBOL</code> syntax to select a specific <a href="../symbol/">Symbol</a>.</p>
+<p><strong>CLI</strong>:</p>
+<p><div class="highlight"><pre><span></span><code>texnomagic<span class="w"> </span>drawing<span class="w"> </span>list<span class="w"> </span>texnolatin/fire
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class=" -Color -Color-Bold -Color-Bold-White">fire_1709239728798.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">227</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709588014524.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">110</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709501601465.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">92</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709332562598.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">711</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">26</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1710079121173.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">466</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">17</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709229817510.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">115</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709471244496.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">105</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709229788382.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">135</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709332548305.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">480</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">18</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709478169231.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">132</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709416663416.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">127</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709501625734.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">201</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709332604781.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">432</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">16</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709416630930.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">113</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709538199887.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">211</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">8</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709416667312.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">115</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709501509004.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">110</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709229865605.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">98</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709571045075.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">62</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">3</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709231416786.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">51</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709571040678.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">64</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">3</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1710023927370.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">104</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1710079109175.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">512</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">19</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709332540122.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">698</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">25</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709231398891.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">55</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709416639519.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">125</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709538240512.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">148</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">6</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709321796565.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">242</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">9</span> kB
+<span class=" -Color -Color-Bold -Color-Bold-White">fire_1709334725070.csv</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">443</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">16</span> kB
+
+<span class=" -Color -Color-Bold -Color-Bold-White">average</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">223.6</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.1</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">7</span> kB
+
+<span class=" -Color -Color-Bold -Color-Bold-White">total</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">6484.0</span> points, <span class=" -Color -Color-Bold -Color-Bold-Cyan">33.0</span> curves, <span class=" -Color -Color-Bold -Color-Bold-Cyan">227</span> kB, <span class=" -Color -Color-Bold -Color-Bold-Cyan">29</span> drawings
+</code></pre></div></p>
+<p><strong>Python</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">texnomagic.cli_common</span> <span class="kn">import</span> <span class="n">get_alphabet_or_fail</span>
+
+<span class="n">abc</span> <span class="o">=</span> <span class="n">get_alphabet_or_fail</span><span class="p">(</span><span class="s2">&quot;texnolatin&quot;</span><span class="p">)</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">get_symbol</span><span class="p">(</span><span class="s2">&quot;fire&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">drawing</span> <span class="ow">in</span> <span class="n">symbol</span><span class="o">.</span><span class="n">drawings</span><span class="p">:</span>
+    <span class="n">drawing</span><span class="o">.</span><span class="n">load_curves</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">drawing</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown="1" >
+
+<div class="highlight"><pre><span></span><code>fire_1709239728798.csv: 227 points, 1 curves
+fire_1709588014524.csv: 110 points, 1 curves
+fire_1709501601465.csv: 92 points, 1 curves
+fire_1709332562598.csv: 711 points, 1 curves
+fire_1710079121173.csv: 466 points, 4 curves
+fire_1709229817510.csv: 115 points, 1 curves
+fire_1709471244496.csv: 105 points, 1 curves
+fire_1709229788382.csv: 135 points, 1 curves
+fire_1709332548305.csv: 480 points, 1 curves
+fire_1709478169231.csv: 132 points, 1 curves
+fire_1709416663416.csv: 127 points, 1 curves
+fire_1709501625734.csv: 201 points, 1 curves
+fire_1709332604781.csv: 432 points, 1 curves
+fire_1709416630930.csv: 113 points, 1 curves
+fire_1709538199887.csv: 211 points, 1 curves
+fire_1709416667312.csv: 115 points, 1 curves
+fire_1709501509004.csv: 110 points, 1 curves
+fire_1709229865605.csv: 98 points, 1 curves
+fire_1709571045075.csv: 62 points, 1 curves
+fire_1709231416786.csv: 51 points, 1 curves
+fire_1709571040678.csv: 64 points, 1 curves
+fire_1710023927370.csv: 104 points, 1 curves
+fire_1710079109175.csv: 512 points, 2 curves
+fire_1709332540122.csv: 698 points, 1 curves
+fire_1709231398891.csv: 55 points, 1 curves
+fire_1709416639519.csv: 125 points, 1 curves
+fire_1709538240512.csv: 148 points, 1 curves
+fire_1709321796565.csv: 242 points, 1 curves
+fire_1709334725070.csv: 443 points, 1 curves
+</code></pre></div>
+
+</div>
+<h2 id="render-drawing-as-a-raster-image">Render Drawing as a raster Image<a class="headerlink" href="#render-drawing-as-a-raster-image" title="Permanent link">&para;</a></h2>
+<p>You can render any <a href="../drawing/">Drawing</a> into a <code>PIL.Image</code> for display or
+further processing.</p>
+<p>To display a Drawing in 200x200 pixels resolution:</p>
+<p><strong>CLI</strong></p>
+<div class="highlight"><pre><span></span><code>texnomagic<span class="w"> </span>drawing<span class="w"> </span>render<span class="w"> </span>-r<span class="w"> </span><span class="m">200</span><span class="w"> </span>alphabets/texnolatin/symbols/fire/drawings/fire_1709229865605.csv
+</code></pre></div>
+<p><strong>Python</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">texnomagic.cli_common</span> <span class="kn">import</span> <span class="n">get_alphabet_or_fail</span>
+<span class="kn">from</span> <span class="nn">texnomagic.render</span> <span class="kn">import</span> <span class="n">render_drawing</span>
+
+<span class="n">abc</span> <span class="o">=</span> <span class="n">get_alphabet_or_fail</span><span class="p">(</span><span class="s2">&quot;texnolatin&quot;</span><span class="p">)</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">get_symbol</span><span class="p">(</span><span class="s2">&quot;friend&quot;</span><span class="p">)</span>
+<span class="n">drawing</span> <span class="o">=</span> <span class="n">symbol</span><span class="o">.</span><span class="n">random_drawing</span><span class="p">()</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">render_drawing</span><span class="p">(</span><span class="n">drawing</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown="1" >
+
+<div class="highlight"><pre><span></span><code>&lt;PIL.Image.Image image mode=L size=200x200 at 0x7F2D5020A330&gt;
+</code></pre></div>
+
+</div>
+<p>You can also display the image interactively:</p>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p>Or save it to a PNG file:</p>
+<div class="highlight"><pre><span></span><code>image.save(&#39;fire.png&#39;)
+</code></pre></div>
+<p>You can also easily convert the image into <code>numpy.array</code> and do what you want
+with it, for example use it to train neural networks using your own code:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">texnomagic.cli_common</span> <span class="kn">import</span> <span class="n">get_alphabet_or_fail</span>
+<span class="kn">from</span> <span class="nn">texnomagic.render</span> <span class="kn">import</span> <span class="n">render_drawing</span>
+
+<span class="n">abc</span> <span class="o">=</span> <span class="n">get_alphabet_or_fail</span><span class="p">(</span><span class="s2">&quot;texnolatin&quot;</span><span class="p">)</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">get_symbol</span><span class="p">(</span><span class="s2">&quot;friend&quot;</span><span class="p">)</span>
+<span class="n">drawing</span> <span class="o">=</span> <span class="n">symbol</span><span class="o">.</span><span class="n">random_drawing</span><span class="p">()</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">render_drawing</span><span class="p">(</span><span class="n">drawing</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">image_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Array shape: </span><span class="si">{</span><span class="n">image_array</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_array</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown="1" >
+
+<div class="highlight"><pre><span></span><code>Array shape: (16, 16)
+[[  0   0   0   0   0 255   0   0   0   0 255   0   0   0   0   0]
+ [  0   0   0   0   0 255   0   0   0   0 255   0   0   0   0   0]
+ [  0   0   0   0   0 255   0   0   0   0 255   0   0   0   0   0]
+ [  0   0   0   0   0 255   0   0   0   0 255   0   0   0   0   0]
+ [  0   0   0   0   0 255   0   0   0   0 255   0   0   0   0   0]
+ [  0   0   0   0   0 255   0   0   0   0 255   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [255 255   0   0   0   0   0   0   0   0   0   0   0   0   0 255]
+ [  0 255   0   0   0   0   0   0   0   0   0   0   0   0 255 255]
+ [  0 255   0   0   0   0   0   0   0   0   0   0   0   0 255   0]
+ [  0 255   0   0   0   0   0   0   0   0   0   0   0   0 255   0]
+ [  0 255 255   0   0   0   0   0   0   0   0   0   0 255 255   0]
+ [  0   0 255 255   0   0   0   0   0   0   0 255 255 255   0   0]
+ [  0   0   0 255 255 255   0   0   0   0 255 255   0   0   0   0]
+ [  0   0   0   0   0 255 255 255 255 255 255   0   0   0   0   0]]
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+    
+  </body>
+</html>
